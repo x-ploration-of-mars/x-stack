@@ -5,6 +5,7 @@ import Counter from "~/components/starter/counter/counter";
 import Hero from "~/components/starter/hero/hero";
 import Infobox from "~/components/starter/infobox/infobox";
 import Starter from "~/components/starter/next-steps/next-steps";
+import { QWebcam } from "~/integrations/react/qwebcam/qwebcam";
 
 export default component$(() => {
   return (
@@ -23,7 +24,13 @@ export default component$(() => {
         <Counter />
       </div>
 
+      <div style={{ display: "flex", justifyContent: "center" }}>
+        <QWebcam />
+      </div>
       <div class="container container-flex">
+        {/* <button class="button button-primary" onClick$={takePicture}>
+          Take a picture
+        </button> */}
         <Infobox>
           <div q:slot="title" class="icon icon-cli">
             CLI Commands

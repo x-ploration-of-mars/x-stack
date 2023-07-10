@@ -9,8 +9,9 @@
     "build": "qwik build",
     "build.client": "vite build",
     "build.preview": "vite build --ssr src/entry.preview.tsx",
+    "build.server": "vite build -c adapters/vercel-edge/vite.config.ts",
     "build.types": "tsc --incremental --noEmit",
-    "deploy": "echo 'Run \"npm run qwik add\" to install a server adapter'",
+    "deploy": "vercel deploy",
     "dev": "vite --mode ssr",
     "dev.debug": "node --inspect-brk ./node_modules/vite/bin/vite.js --mode ssr --force",
     "fmt": "prettier --write .",
@@ -23,16 +24,30 @@
   "devDependencies": {
     "@builder.io/qwik": "^1.2.6",
     "@builder.io/qwik-city": "^1.2.6",
+    "@builder.io/qwik-react": "0.5.0",
+    "@capacitor/cli": "^5.1.1",
     "@types/eslint": "8.40.2",
     "@types/node": "^20.4.0",
+    "@types/react": "18.2.13",
+    "@types/react-dom": "18.2.6",
     "@typescript-eslint/eslint-plugin": "5.61.0",
     "@typescript-eslint/parser": "5.61.0",
     "eslint": "8.44.0",
     "eslint-plugin-qwik": "^1.2.6",
     "prettier": "2.8.8",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
     "typescript": "5.1.6",
     "undici": "5.22.1",
+    "vercel": "^29.1.1",
     "vite": "4.4.0",
     "vite-tsconfig-paths": "4.2.0"
+  },
+  "dependencies": {
+    "@builder.io/qwik": "^1.2.6",
+    "@capacitor/android": "^5.1.1",
+    "@capacitor/core": "^5.1.1",
+    "@capacitor/ios": "^5.1.1",
+    "react-webcam": "^7.1.1"
   }
 }
