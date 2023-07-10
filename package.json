@@ -44,7 +44,6 @@
     "vite-tsconfig-paths": "4.2.0"
   },
   "dependencies": {
-    "@builder.io/qwik": "^1.2.6",
     "@capacitor/android": "^5.1.1",
     "@capacitor/core": "^5.1.1",
     "@capacitor/ios": "^5.1.1",
