@@ -7,6 +7,11 @@ export default component$(() => {
   return (
     <Form action={signIn}>
       <input type="hidden" name="providerId" value="github" />
+      <input
+        type="hidden"
+        name="options.callbackUrl"
+        value="http://qwik-auth-example.com/dashboard"
+      />
       <button>Sign In</button>
     </Form>
   );
