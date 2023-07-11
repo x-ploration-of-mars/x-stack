@@ -1,5 +1,6 @@
 /** @jsxImportSource react */
 import { qwikify$ } from "@builder.io/qwik-react";
+// import { Directory, Encoding, Filesystem } from "@capacitor/filesystem";
 import { useCallback, useRef } from "react";
 import Webcam from "react-webcam";
 
@@ -12,18 +13,30 @@ const WebcamComponent = () => {
 
   const webcamRef = useRef<Webcam & HTMLVideoElement>(null);
 
-  const downloadImage = (dataUrl: string, filename: string) => {
+  const downloadPhoto = (dataUrl: string, filename: string) => {
     const link = document.createElement("a");
     link.href = dataUrl;
     link.download = filename;
     link.click();
   };
 
+  // const savePhoto = async (dataUrl: string, fileName: string) => {
+  //   await Filesystem.writeFile({
+  //     path: fileName,
+  //     data: dataUrl,
+  //     directory: Directory.Data,
+  //     encoding: Encoding.UTF8,
+  //   });
+  // };
+
   const capture = useCallback(() => {
-    const image: string = webcamRef.current?.getScreenshot() as string;
-    console.log("image", image);
-    downloadImage(image, "myImage.png");
+    // const fileName = Date.now() + ".png";
+    const photo: string = webcamRef.current?.getScreenshot() as string;
+    console.log("photo", photo);
+    downloadPhoto(photo, "myImage.png");
+    // savePhoto(photo, fileName);
   }, [webcamRef]);
+
   return (
     <>
       <Webcam
@@ -33,7 +46,7 @@ const WebcamComponent = () => {
         ref={webcamRef}
         width={1280}
         videoConstraints={videoConstraints}
-        screenshotQuality={0.5}
+        screenshotQuality={1}
         imageSmoothing={true}
       />
       <div style={{ display: "flex", justifyContent: "center" }}>
