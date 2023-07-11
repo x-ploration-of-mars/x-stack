@@ -1,10 +1,5 @@
 import { component$ } from "@builder.io/qwik";
-import {
-  Form,
-  globalAction$,
-  routeAction$,
-  useNavigate,
-} from "@builder.io/qwik-city";
+import { Form, useNavigate } from "@builder.io/qwik-city";
 import { useAuthSignin } from "~/routes/plugin@auth";
 
 export default component$(() => {
