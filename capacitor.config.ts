@@ -6,6 +6,8 @@ const config: CapacitorConfig = {
   webDir: 'dist',
   server: {
     url: 'https://x-stack.vercel.app',
+    allowNavigation: ['https://discord.com'],
+
     androidScheme: 'https'
   }
 };

@@ -7,11 +7,6 @@ export default component$(() => {
   return (
     <Form action={signIn}>
       <input type="hidden" name="providerId" value="discord" />
-      <input
-        type="hidden"
-        name="options.callbackUrl"
-        value="http://localhost:3000/auth/callback"
-      />
       <button>Sign In</button>
     </Form>
   );
