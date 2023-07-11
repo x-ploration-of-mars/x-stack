@@ -7,7 +7,11 @@ export default component$(() => {
   const nav = useNavigate();
   return (
     <Form action={signOut} onSubmitCompleted$={() => nav()}>
-      <input type="hidden" name="callbackUrl" value="/" />
+      <input
+        type="hidden"
+        name="callbackUrl"
+        value="https://x-stack.vercel.app"
+      />
       <button>Sign Out</button>
     </Form>
   );

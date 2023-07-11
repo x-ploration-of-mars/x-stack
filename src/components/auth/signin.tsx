@@ -12,7 +12,7 @@ export default component$(() => {
       <input
         type="hidden"
         name="options.callbackUrl"
-        value="http://qwik-auth-example.com/dashboard"
+        value="https://x-stack.vercel.app"
       />
       <button>Sign In</button>
     </Form>
