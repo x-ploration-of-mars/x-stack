@@ -1,24 +1,33 @@
-import { $, component$ } from "@builder.io/qwik";
+import { component$, useVisibleTask$ } from "@builder.io/qwik";
 import type { DocumentHead } from "@builder.io/qwik-city";
+import Signin from "~/components/auth/signin";
 import Counter from "~/components/starter/counter/counter";
 import Hero from "~/components/starter/hero/hero";
 import Infobox from "~/components/starter/infobox/infobox";
 import Starter from "~/components/starter/next-steps/next-steps";
 import { QWebcam } from "~/integrations/react/qwebcam/qwebcam";
+import { useAuthSession } from "./plugin@auth";
+import Signout from "~/components/auth/signout";
 
-const writeFile = $(async () => {
-  try {
-    const response = await Filesystem.mkdir({
-      path: "secrets",
-      directory: Directory.Data,
-    });
-    console.log("response", response);
-  } catch (error) {
-    console.log("error", error);
-  }
-});
+// const writeFile = $(async () => {
+//   try {
+//     const response = await Filesystem.mkdir({
+//       path: "secrets",
+//       directory: Directory.Data,
+//     });
+//     console.log("response", response);
+//   } catch (error) {
+//     console.log("error", error);
+//   }
+// });
 
 export default component$(() => {
+  const session = useAuthSession();
+
+  useVisibleTask$(() => {
+    console.log("session", session.value?.user);
+  });
+
   return (
     <>
       <Hero />
@@ -38,6 +47,27 @@ export default component$(() => {
       <div style={{ display: "flex", justifyContent: "center" }}>
         <QWebcam />
       </div>
+      {!session.value?.user ? (
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            marginTop: "4rem",
+          }}
+        >
+          <Signin />
+        </div>
+      ) : (
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            marginTop: "4rem",
+          }}
+        >
+          <Signout />
+        </div>
+      )}
       <div class="container container-flex">
         {/* <button class="button button-primary" onClick$={takePicture}>
           Take a picture

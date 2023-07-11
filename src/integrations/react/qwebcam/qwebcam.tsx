@@ -47,6 +47,7 @@ const WebcamComponent = () => {
         width={1280}
         videoConstraints={videoConstraints}
         screenshotQuality={1}
+        mirrored={true}
         imageSmoothing={true}
       />
       <div style={{ display: "flex", justifyContent: "center" }}>
