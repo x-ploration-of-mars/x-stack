@@ -4,6 +4,7 @@ import { useAuthSignin } from "~/routes/plugin@auth";
 
 export default component$(() => {
   const signIn = useAuthSignin();
+
   return (
     <Form action={signIn}>
       <input type="hidden" name="providerId" value="discord" />
