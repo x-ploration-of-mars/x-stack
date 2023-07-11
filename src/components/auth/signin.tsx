@@ -6,7 +6,7 @@ export default component$(() => {
   const signIn = useAuthSignin();
   return (
     <Form action={signIn}>
-      <input type="hidden" name="providerId" value="discord" />
+      <input type="hidden" name="providerId" value="github" />
       <button>Sign In</button>
     </Form>
   );
