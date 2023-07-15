@@ -8,11 +8,7 @@ export default component$(() => {
   return (
     <Form action={signIn}>
       <input type="hidden" name="providerId" value="discord" />
-      <input
-        type="hidden"
-        name="options.callbackUrl"
-        value="https://x-stack.vercel.app"
-      />
+      <input type="hidden" name="options.callbackUrl" value="/" />
       <button>Sign In</button>
     </Form>
   );
