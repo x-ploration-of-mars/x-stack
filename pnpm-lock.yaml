@@ -49,6 +49,9 @@ devDependencies:
   '@types/react-dom':
     specifier: 18.2.6
     version: 18.2.6
+  '@types/set-cookie-parser':
+    specifier: ^2.4.2
+    version: 2.4.2
   '@typescript-eslint/eslint-plugin':
     specifier: 6.0.0
     version: 6.0.0(@typescript-eslint/parser@6.0.0)(eslint@8.44.0)(typescript@5.1.6)
@@ -70,6 +73,9 @@ devDependencies:
   react-dom:
     specifier: 18.2.0
     version: 18.2.0(react@18.2.0)
+  set-cookie-parser:
+    specifier: ^2.6.0
+    version: 2.6.0
   typescript:
     specifier: 5.1.6
     version: 5.1.6
@@ -2474,6 +2480,12 @@ packages:
 
   /@types/semver@7.5.0:
     resolution: {integrity: sha512-G8hZ6XJiHnuhQKR7ZmysCeJWE08o8T0AXtk5darsCaTVsYZhhgUrq53jizaR2FvsoeCwJhlmwTjkXBY5Pn/ZHw==}
+    dev: true
+
+  /@types/set-cookie-parser@2.4.2:
+    resolution: {integrity: sha512-fBZgytwhYAUkj/jC/FAV4RQ5EerRup1YQsXQCh8rZfiHkc4UahC192oH0smGwsXol3cL3A5oETuAHeQHmhXM4w==}
+    dependencies:
+      '@types/node': 20.4.1
     dev: true
 
   /@types/slice-ansi@4.0.0:

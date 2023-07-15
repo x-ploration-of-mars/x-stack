@@ -1,4 +1,4 @@
-import { serverAuth$ } from "@builder.io/qwik-auth";
+import { serverAuth$ } from "~/routes/plugin@customAuth";
 import Discord from "@auth/core/providers/discord";
 import type { Provider } from "@auth/core/providers";
 
