@@ -15,21 +15,23 @@ export const onRequest: RequestHandler = async ({
   redirect,
 }) => {
   const session: Session | null = sharedMap.get("session");
-  console.log("event url", url);
-  console.log("url.pathname", url.pathname === "/signin/");
   if (!session && url.pathname !== "/signin/") {
     throw redirect(302, `/signin`);
   }
+  console.log("request");
 };
 export const onGet: RequestHandler = async ({ cacheControl }) => {
   // Control caching for this request for best performance and to reduce hosting costs:
   // https://qwik.builder.io/docs/caching/
   cacheControl({
-    // Always serve a cached response by default, up to a week stale
-    staleWhileRevalidate: 60 * 60 * 24 * 7,
-    // Max once every 5 seconds, revalidate on the server to get a fresh version of this page
-    maxAge: 5,
+    noStore: true,
+    // // Always serve a cached response by default, up to a week stale
+    // staleWhileRevalidate: 60 * 60 * 24 * 7,
+    // // Max once every 5 seconds, revalidate on the server to get a fresh version of this page
+    // maxAge: 5,
   });
+
+  console.log("get");
 };
 
 export const useServerTimeLoader = routeLoader$(() => {
