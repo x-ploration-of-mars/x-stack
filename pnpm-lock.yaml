@@ -8,6 +8,9 @@ dependencies:
   '@capacitor/android':
     specifier: ^5.1.1
     version: 5.1.1(@capacitor/core@5.1.1)
+  '@capacitor/browser':
+    specifier: ^5.0.6
+    version: 5.0.6(@capacitor/core@5.1.1)
   '@capacitor/core':
     specifier: ^5.1.1
     version: 5.1.1
@@ -1446,6 +1449,14 @@ packages:
     resolution: {integrity: sha512-FaDg+Igjiz6ohH7yu5TpLHGCQbsjMMy+0a+idsyadTnz/IzRZwqlCyj4Jbqsb5J39j0hE8kqD3o1e5O5Ukbm2g==}
     peerDependencies:
       '@capacitor/core': ^5.1.0
+    dependencies:
+      '@capacitor/core': 5.1.1
+    dev: false
+
+  /@capacitor/browser@5.0.6(@capacitor/core@5.1.1):
+    resolution: {integrity: sha512-wEI7Na6PVzSP/00ud7pjbBwXwVG7HywCdy2fJT/hzF6yuHn4tDirbOvbr1JKd9LZqKs2Xn+TapV38JhBRhX6YA==}
+    peerDependencies:
+      '@capacitor/core': ^5.0.0
     dependencies:
       '@capacitor/core': 5.1.1
     dev: false

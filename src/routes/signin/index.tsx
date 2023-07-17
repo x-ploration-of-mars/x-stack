@@ -1,7 +1,5 @@
 import { component$ } from "@builder.io/qwik";
 import Signin from "~/components/auth/signin";
-import { useAuthSession } from "~/routes/plugin@auth";
-import Signout from "~/components/auth/signout";
 
 // const writeFile = $(async () => {
 //   try {
@@ -16,31 +14,18 @@ import Signout from "~/components/auth/signout";
 // });
 
 export default component$(() => {
-  const session = useAuthSession();
-
   return (
     <>
-      {!session.value?.user ? (
-        <div
-          style={{
-            display: "flex",
-            justifyContent: "center",
-            marginTop: "4rem",
-          }}
-        >
-          <Signin />
-        </div>
-      ) : (
-        <div
-          style={{
-            display: "flex",
-            justifyContent: "center",
-            marginTop: "4rem",
-          }}
-        >
-          <Signout />
-        </div>
-      )}
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          marginTop: "4rem",
+        }}
+      >
+        <Signin />
+      </div>
+      )
     </>
   );
 });

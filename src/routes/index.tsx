@@ -8,6 +8,7 @@ import Starter from "~/components/starter/next-steps/next-steps";
 import { QWebcam } from "~/integrations/react/qwebcam/qwebcam";
 import { useAuthSession } from "./plugin@auth";
 import Signout from "~/components/auth/signout";
+import InAppBrowser from "~/components/inAppBrowser/inAppBrowser";
 
 // const writeFile = $(async () => {
 //   try {
@@ -64,6 +65,8 @@ export default component$(() => {
           <Signout />
         </div>
       )}
+
+      <InAppBrowser />
       <div class="container container-flex">
         {/* <button class="button button-primary" onClick$={takePicture}>
           Take a picture
