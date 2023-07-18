@@ -1,4 +1,7 @@
 import { component$ } from "@builder.io/qwik";
+import { Browser } from "@capacitor/browser";
+
+const browser = Browser;
 
 export default component$(() => {
   return (
@@ -11,10 +14,8 @@ export default component$(() => {
         }}
       >
         <button
-          onClick$={async () => {
-            console.log("inAppBrowser click");
-            const { Browser } = await import("@capacitor/browser");
-            Browser.open({ url: "https://qwik.builder.io/" });
+          onClick$={() => {
+            browser.open({ url: "https://qwik.builder.io/" });
           }}
         >
           In App browser
