@@ -2,7 +2,7 @@ import { serverAuth$ } from "@builder.io/qwik-auth";
 import Discord from "@auth/core/providers/discord";
 import type { Provider } from "@auth/core/providers";
 
-export const { onRequest, useAuthSession, useAuthSignin, useAuthSignout } =
+export const serverAuthConfig =
   serverAuth$(({ env }) => ({
     secret: env.get("AUTH_SECRET"),
     trustHost: true,
@@ -13,3 +13,5 @@ export const { onRequest, useAuthSession, useAuthSignin, useAuthSignout } =
       }),
     ] as Provider[],
   }));
+
+  export const { onRequest, useAuthSession, useAuthSignin, useAuthSignout } = serverAuthConfig;

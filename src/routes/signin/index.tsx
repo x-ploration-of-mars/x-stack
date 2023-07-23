@@ -25,7 +25,6 @@ export default component$(() => {
       >
         <Signin />
       </div>
-      )
     </>
   );
 });

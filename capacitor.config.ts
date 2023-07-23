@@ -6,6 +6,7 @@ const config: CapacitorConfig = {
   webDir: 'dist',
   server: {
     url: 'https://x-stack.vercel.app',
+    
     androidScheme: 'https'
   }
 };
