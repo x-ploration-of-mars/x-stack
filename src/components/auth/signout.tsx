@@ -11,8 +11,3 @@ export default component$(() => {
     </Form>
   );
 });
-
-// export default component$(() => {
-//   const nav = useNavigate();
-//   return <button onClick$={() => nav("/signout/")}>Sign Out</button>;
-// });

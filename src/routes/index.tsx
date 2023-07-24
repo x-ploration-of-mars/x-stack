@@ -8,19 +8,6 @@ import Starter from "~/components/starter/next-steps/next-steps";
 import { QWebcam } from "~/integrations/react/qwebcam/qwebcam";
 import { useAuthSession } from "./plugin@auth";
 import Signout from "~/components/auth/signout";
-import InAppBrowser from "~/components/inAppBrowser/inAppBrowser";
-
-// const writeFile = $(async () => {
-//   try {
-//     const response = await Filesystem.mkdir({
-//       path: "secrets",
-//       directory: Directory.Data,
-//     });
-//     console.log("response", response);
-//   } catch (error) {
-//     console.log("error", error);
-//   }
-// });
 
 export default component$(() => {
   const session = useAuthSession();
@@ -66,7 +53,6 @@ export default component$(() => {
         </div>
       )}
 
-      <InAppBrowser />
       <div class="container container-flex">
         {/* <button class="button button-primary" onClick$={takePicture}>
           Take a picture
