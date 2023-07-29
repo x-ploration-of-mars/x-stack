@@ -17,13 +17,13 @@ export const RouterHead = component$(() => {
       <link
         rel="icon"
         type="image/svg+xml"
-        href="/X-logo-V2_transparent-light.svg"
+        href="/X-logo-V3_transparent-light.ico"
         media="(prefers-color-scheme: dark)"
       />
       <link
         rel="icon"
         type="image/svg+xml"
-        href="/X-logo-V2_transparent-dark.svg"
+        href="/X-logo-V3_transparent-dark.ico"
         media="(prefers-color-scheme: light)"
       />
 
