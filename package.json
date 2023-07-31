@@ -19,7 +19,10 @@
     "lint": "eslint \"src/**/*.ts*\"",
     "preview": "qwik build preview && vite preview --open",
     "start": "vite --open --mode ssr",
-    "qwik": "qwik"
+    "qwik": "qwik",
+    "db:generate": "drizzle-kit generate:mysql",
+    "db:push": "drizzle-kit push:mysql",
+    "db:up": "drizzle-kit up:mysql"
   },
   "devDependencies": {
     "@auth/core": "^0.9.0",
@@ -34,6 +37,7 @@
     "@types/set-cookie-parser": "^2.4.2",
     "@typescript-eslint/eslint-plugin": "6.0.0",
     "@typescript-eslint/parser": "6.0.0",
+    "drizzle-kit": "^0.19.12",
     "eslint": "8.44.0",
     "eslint-plugin-qwik": "^1.2.6",
     "prettier": "3.0.0",
@@ -44,9 +48,13 @@
     "undici": "5.22.1",
     "vercel": "^31.0.2",
     "vite": "4.4.3",
-    "vite-tsconfig-paths": "4.2.0"
+    "vite-tsconfig-paths": "4.2.0",
+    "dotenv": "^16.3.1"
+
   },
   "dependencies": {
+    "@planetscale/database": "^1.10.0",
+    "drizzle-orm": "^0.27.2",
     "react-webcam": "^7.1.1"
   }
 }

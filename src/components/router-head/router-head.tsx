@@ -18,13 +18,6 @@ export const RouterHead = component$(() => {
         rel="icon"
         type="image/svg+xml"
         href="/X-logo-V3_transparent-light.ico"
-        media="(prefers-color-scheme: dark)"
-      />
-      <link
-        rel="icon"
-        type="image/svg+xml"
-        href="/X-logo-V3_transparent-dark.ico"
-        media="(prefers-color-scheme: light)"
       />
 
       {head.meta.map((m) => (

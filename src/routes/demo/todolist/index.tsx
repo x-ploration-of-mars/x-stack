@@ -3,25 +3,25 @@ import {
   type DocumentHead,
   routeLoader$,
   routeAction$,
+  Form,
   zod$,
   z,
-  Form,
 } from "@builder.io/qwik-city";
 import styles from "./todolist.module.css";
+import { db } from "~/routes/plugin@db";
+import { todoItems } from "~/routes/schema";
 
-interface ListItem {
-  text: string;
-}
+export const useListLoader = routeLoader$(async () => {
+  const list = await db.select().from(todoItems);
 
-export const list: ListItem[] = [];
-
-export const useListLoader = routeLoader$(() => {
+  console.log("todo list: ", list);
   return list;
 });
 
 export const useAddToListAction = routeAction$(
-  (item) => {
-    list.push(item);
+  async (data) => {
+    await db.insert(todoItems).values({ text: data.text });
+    console.log("action");
     return {
       success: true,
     };
@@ -59,7 +59,7 @@ export default component$(() => {
 
       <div class="container container-center">
         <Form action={action} spaReset>
-          <input type="text" name="text" required class={styles.input} />{" "}
+          <input type="text" name="text" required class={styles.input} />
           <button type="submit" class="button-dark">
             Add item
           </button>
