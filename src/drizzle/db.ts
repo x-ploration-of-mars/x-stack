@@ -5,7 +5,6 @@ import {
 
 import { drizzle } from "drizzle-orm/planetscale-serverless";
 import { connect } from "@planetscale/database";
-import "dotenv/config";
 
 import * as schema from "~/drizzle/schema";
 
