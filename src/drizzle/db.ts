@@ -3,11 +3,9 @@ import { connect } from "@planetscale/database";
 
 import * as schema from "~/drizzle/schema";
 
-export const db = () => {
-  const connection = connect({
-    host: process.env["DATABASE_HOST"],
-    username: process.env["DATABASE_USERNAME"],
-    password: process.env["DATABASE_PASSWORD"],
-  });
-  return drizzle(connection, { schema });
-};
+const connection = connect({
+  host: process.env["DATABASE_HOST"],
+  username: process.env["DATABASE_USERNAME"],
+  password: process.env["DATABASE_PASSWORD"],
+});
+export const db = drizzle(connection, { schema });

@@ -11,16 +11,16 @@ import styles from "./todolist.module.css";
 import { todoItems } from "~/drizzle/schema";
 import { db } from "~/drizzle/db";
 
-export const useListLoader = routeLoader$(async (requestEvent) => {
-  const list = await db(requestEvent).select().from(todoItems);
+export const useListLoader = routeLoader$(async () => {
+  const list = await db.select().from(todoItems);
 
   console.log("todo list: ", list);
   return list;
 });
 
 export const useAddToListAction = routeAction$(
-  async (data, requestEvent) => {
-    await db(requestEvent).insert(todoItems).values({ text: data.text });
+  async (data) => {
+    await db.insert(todoItems).values({ text: data.text });
     console.log("action");
     return {
       success: true,
