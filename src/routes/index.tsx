@@ -20,7 +20,7 @@ export default component$(() => {
       <div role="presentation" class="ellipsis"></div>
       <div role="presentation" class="ellipsis ellipsis-purple"></div>
 
-      <div class="container container-center container-spacing-xl">
+      <div class="container-center container-spacing-xl container">
         <h3>
           You can <span class="highlight">count</span>
           <br /> on me
@@ -28,7 +28,7 @@ export default component$(() => {
         <Counter />
       </div>
 
-      <div style={{ display: "flex", justifyContent: "center" }}>
+      <div class="flex justify-center">
         <QWebcam />
       </div>
       {!session.value?.user ? (
@@ -53,7 +53,7 @@ export default component$(() => {
         </div>
       )}
 
-      <div class="container container-flex">
+      <div class="container-flex container">
         {/* <button class="button button-primary" onClick$={takePicture}>
           Take a picture
         </button> */}

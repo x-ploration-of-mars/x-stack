@@ -1,11 +1,9 @@
 import { component$ } from "@builder.io/qwik";
 import styles from "./hero.module.css";
-import ImgThunder from "~/media/thunder.png?jsx";
 
 export default component$(() => {
   return (
     <div class={["container", styles.hero]}>
-      <ImgThunder class={styles["hero-image"]} />
       <h1>
         So <span class="highlight">fantastic</span>
         <br />
@@ -65,6 +63,7 @@ export default component$(() => {
             setTimeout(shoot, 200);
             setTimeout(shoot, 300);
             setTimeout(shoot, 400);
+            gtag("event", "celebrate");
           }}
         >
           Time to celebrate

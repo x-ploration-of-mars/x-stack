@@ -50,7 +50,7 @@ const WebcamComponent = () => {
         mirrored={true}
         imageSmoothing={true}
       />
-      <div style={{ display: "flex", justifyContent: "center" }}>
+      <div className="mt-10 flex justify-center">
         <button onClick={capture}>Capture photo</button>
       </div>
     </>
