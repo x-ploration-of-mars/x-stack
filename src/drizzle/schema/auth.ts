@@ -8,7 +8,6 @@ import {
   timestamp,
   uniqueIndex,
   varchar,
-  serial,
 } from "drizzle-orm/mysql-core";
 
 export const account = mysqlTable(
@@ -100,8 +99,3 @@ export const sessionRelations = relations(session, ({ one }) => ({
     references: [user.id],
   }),
 }));
-
-export const todoItems = mysqlTable("todo_items", {
-  id: serial("id").primaryKey(),
-  text: varchar("text", { length: 256 }),
-});
