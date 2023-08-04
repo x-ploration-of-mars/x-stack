@@ -8,7 +8,7 @@ import {
   z,
 } from "@builder.io/qwik-city";
 import styles from "./todolist.module.css";
-import { todoItems } from "~/drizzle/schema";
+import { todoItems } from "~/drizzle/schema/auth";
 import { db } from "~/drizzle/db";
 
 export const useListLoader = routeLoader$(async () => {
