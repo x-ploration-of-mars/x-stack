@@ -1,4 +1,4 @@
-import { component$ } from "@builder.io/qwik";
+import { component$, useVisibleTask$ } from "@builder.io/qwik";
 import { Link, type DocumentHead } from "@builder.io/qwik-city";
 import Signin from "~/components/auth/signin";
 import Counter from "~/components/starter/counter/counter";
@@ -11,6 +11,10 @@ import Signout from "~/components/auth/signout";
 
 export default component$(() => {
   const session = useAuthSession();
+
+  useVisibleTask$(() => {
+    console.log("session: ", session.value);
+  });
 
   return (
     <>

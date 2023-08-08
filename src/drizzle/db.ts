@@ -10,7 +10,9 @@ const connection = connect({
   password: process.env["DATABASE_PASSWORD"],
 });
 
+const schema = { ...AuthSchema, ...TodosSchema };
 export const adapterDB = drizzle(connection);
 export const db = drizzle(connection, {
-  schema: { ...AuthSchema, ...TodosSchema },
+  schema,
+  mode: "planetscale",
 });

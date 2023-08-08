@@ -14,6 +14,27 @@ import {
   pGetVerificationTokenByToken,
 } from "~/drizzle/prepared";
 
+/**
+ * Module augmentation for `next-auth` types. Allows us to add custom properties to the `session`
+ * object and keep type safety.
+ *
+ * @see https://next-auth.js.org/getting-started/typescript#module-augmentation
+ */
+declare module "@auth/core/types" {
+  interface Session extends DefaultSession {
+    user: DefaultSession["user"] & {
+      id: string;
+      // role: string;
+      // ...other properties
+    };
+  }
+
+  // interface User {
+  //   // role: string;
+  //   // ...other properties
+  // }
+}
+
 export const { onRequest, useAuthSession, useAuthSignin, useAuthSignout } =
   serverAuth$(({ env }) => ({
     secret: env.get("AUTH_SECRET"),
