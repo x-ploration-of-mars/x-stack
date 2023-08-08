@@ -102,6 +102,12 @@ pnpm deploy
 
 Notice that you might need a [Vercel account](https://docs.Vercel.com/get-started/) in order to complete this step!
 
+
+[UI frameworks 0b9cf9edb23443d2a247f174c8fc018d.csv](https://github.com/maieulchevalier/x-stack/files/12290254/UI.frameworks.0b9cf9edb23443d2a247f174c8fc018d.csv)
+
+
+
+
 ## Production deploy
 
 The project is ready to be deployed to Vercel. However, you will need to create a git repository and push the code to it.
