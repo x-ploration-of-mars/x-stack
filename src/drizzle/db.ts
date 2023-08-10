@@ -1,18 +1,13 @@
-import { drizzle } from "drizzle-orm/planetscale-serverless";
-import { connect } from "@planetscale/database";
+import { drizzle } from "drizzle-orm/mysql2";
+import mysql from "mysql2/promise";
 
-import * as AuthSchema from "./schema/auth";
+import * as AuthSchema from "~/drizzle/schema/auth";
 import * as TodosSchema from "~/drizzle/schema/todos";
 
-const connection = connect({
-  host: process.env["DATABASE_HOST"],
-  username: process.env["DATABASE_USERNAME"],
-  password: process.env["DATABASE_PASSWORD"],
+const connection = await mysql.createConnection({
+  uri: process.env.DATABASE_URL,
 });
 
 const schema = { ...AuthSchema, ...TodosSchema };
-export const adapterDB = drizzle(connection);
-export const db = drizzle(connection, {
-  schema,
-  mode: "planetscale",
-});
+
+export const db = drizzle(connection, { schema, mode: "planetscale" });

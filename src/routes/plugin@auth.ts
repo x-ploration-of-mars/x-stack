@@ -2,17 +2,8 @@ import { serverAuth$ } from "@builder.io/qwik-auth";
 import Discord from "@auth/core/providers/discord";
 import type { Provider } from "@auth/core/providers";
 
-import { DrizzleAdapter } from "~/drizzle/adapter";
-import { adapterDB } from "~/drizzle/db";
-import * as AuthSchema from "~/drizzle/schema/auth";
-import {
-  pGetSessionAndUser,
-  pGetSessionByToken,
-  pGetUserByAccount,
-  pGetUserByEmail,
-  pGetUserById,
-  pGetVerificationTokenByToken,
-} from "~/drizzle/prepared";
+import { DrizzleAdapter } from "@auth/drizzle-adapter";
+import { db } from "~/drizzle/db";
 
 /**
  * Module augmentation for `next-auth` types. Allows us to add custom properties to the `session`
@@ -45,20 +36,5 @@ export const { onRequest, useAuthSession, useAuthSignin, useAuthSignout } =
         clientSecret: env.get("DISCORD_CLIENT_SECRET")!,
       }),
     ] as Provider[],
-    adapter: DrizzleAdapter(adapterDB, {
-      schemas: {
-        account: AuthSchema.account,
-        session: AuthSchema.session,
-        user: AuthSchema.user,
-        verificationToken: AuthSchema.verificationToken,
-      },
-      prepared: {
-        getUserByEmail: pGetUserByEmail,
-        getUserById: pGetUserById,
-        getUserByAccount: pGetUserByAccount,
-        getSessionByToken: pGetSessionByToken,
-        getSessionAndUser: pGetSessionAndUser,
-        getVerificationTokenByToken: pGetVerificationTokenByToken,
-      },
-    }),
+    adapter: DrizzleAdapter(db),
   }));
