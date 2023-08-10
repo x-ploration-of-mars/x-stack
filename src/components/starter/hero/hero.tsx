@@ -1,16 +1,15 @@
 import { component$ } from "@builder.io/qwik";
-import styles from "./hero.module.css";
 
 export default component$(() => {
   return (
-    <div class={["container", styles.hero]}>
+    <div>
       <h1>
         So <span class="highlight">fantastic</span>
         <br />
         to have <span class="highlight">you</span> here
       </h1>
       <p>Have fun building your App with Qwik.</p>
-      <div class={styles["button-group"]}>
+      <div>
         <button
           onClick$={async () => {
             const defaults = {

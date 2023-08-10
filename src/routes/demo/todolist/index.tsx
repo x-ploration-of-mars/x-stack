@@ -7,7 +7,6 @@ import {
   zod$,
   z,
 } from "@builder.io/qwik-city";
-import styles from "./todolist.module.css";
 import { todoItems } from "~/drizzle/schema/todos";
 import { db } from "~/drizzle/db";
 
@@ -47,9 +46,9 @@ export default component$(() => {
 
       <div class="container-center container">
         {list.value.length === 0 ? (
-          <span class={styles.empty}>No items found</span>
+          <span>No items found</span>
         ) : (
-          <ul class={styles.list}>
+          <ul>
             {list.value.map((item, index) => (
               <li key={`items-${index}`}>{item.text}</li>
             ))}
@@ -59,15 +58,13 @@ export default component$(() => {
 
       <div class="container-center container">
         <Form action={action} spaReset>
-          <input type="text" name="text" required class={styles.input} />
+          <input type="text" name="text" required />
           <button type="submit" class="button-dark">
             Add item
           </button>
         </Form>
 
-        <p class={styles.hint}>
-          PS: This little app works even when JavaScript is disabled.
-        </p>
+        <p>PS: This little app works even when JavaScript is disabled.</p>
       </div>
     </>
   );
