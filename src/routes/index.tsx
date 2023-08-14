@@ -1,137 +1,78 @@
-import { component$, useVisibleTask$ } from "@builder.io/qwik";
+import { component$ } from "@builder.io/qwik";
 import { Link, type DocumentHead } from "@builder.io/qwik-city";
-import Signin from "~/components/auth/signin";
-import Counter from "~/components/starter/counter/counter";
-import Hero from "~/components/starter/hero/hero";
-import Infobox from "~/components/starter/infobox/infobox";
-import Starter from "~/components/starter/next-steps/next-steps";
-import { QWebcam } from "~/integrations/react/qwebcam/qwebcam";
-import { useAuthSession } from "./plugin@auth";
-import Signout from "~/components/auth/signout";
+import Signin from "./signin";
 
 export default component$(() => {
-  const session = useAuthSession();
-
-  useVisibleTask$(() => {
-    console.log("session: ", session.value);
-  });
-
   return (
     <>
-      <Hero />
-      <Starter />
-
-      <div role="presentation" class="ellipsis"></div>
-      <div role="presentation" class="ellipsis ellipsis-purple"></div>
-
-      <div class="container-center container-spacing-xl container">
-        <h3>
-          You can <span class="highlight">count</span>
-          <br /> on me
-        </h3>
-        <Counter />
+      <div class="md:hidden">
+        <image
+          src="/X-logo-V3_transparent-dark_48-48.png"
+          width={48}
+          height={48}
+          alt="Authentication"
+          class="light:hidden block"
+        />
       </div>
-
-      <div class="flex justify-center">
-        <QWebcam />
-      </div>
-      {!session.value?.user ? (
-        <div
-          style={{
-            display: "flex",
-            justifyContent: "center",
-            marginTop: "4rem",
-          }}
-        >
-          <Signin />
-        </div>
-      ) : (
-        <div
-          style={{
-            display: "flex",
-            justifyContent: "center",
-            marginTop: "4rem",
-          }}
-        >
-          <Signout />
-        </div>
-      )}
-
-      <div class="container-flex container">
-        {/* <button class="button button-primary" onClick$={takePicture}>
-          Take a picture
-        </button> */}
-        <Infobox>
-          <div q:slot="title" class="icon icon-cli">
-            CLI Commands
+      <div
+        class={`container relative hidden h-[100vh] flex-col items-center justify-center md:grid lg:max-w-none lg:grid-cols-2 lg:px-0`}
+      >
+        {/* Left Section */}
+        <div class="bg-muted relative hidden h-full flex-col p-10 text-white dark:border-r lg:flex">
+          <div class="absolute inset-0 bg-zinc-950" />
+          <div class="relative z-20 flex items-center text-lg font-medium">
+            <image
+              src="/X-logo-V3_transparent-dark_48-48.png"
+              width={24}
+              height={24}
+              alt="Authentication"
+              class="mr-2 block"
+            />
+            Acme Inc
           </div>
-          <>
-            <p>
-              <code>npm run dev</code>
-              <br />
-              Starts the development server and watches for changes
-            </p>
-            <p>
-              <code>npm run preview</code>
-              <br />
-              Creates production build and starts a server to preview it
-            </p>
-            <p>
-              <code>npm run build</code>
-              <br />
-              Creates production build
-            </p>
-            <p>
-              <code>npm run qwik add</code>
-              <br />
-              Runs the qwik CLI to add integrations
-            </p>
-          </>
-        </Infobox>
-
-        <div>
-          <Infobox>
-            <div q:slot="title" class="icon icon-apps">
-              Example Apps
+          <div class="relative z-20 mt-auto">
+            <blockquote class="space-y-2">
+              <p class="text-lg">
+                &ldquo;This library has saved me countless hours of work and
+                helped me deliver stunning designs to my clients faster than
+                ever before.&rdquo;
+              </p>
+              <footer class="text-sm">Sofia Davis</footer>
+            </blockquote>
+          </div>
+        </div>
+        {/* Right Section */}
+        <div class="lg:p-8">
+          <div class="mx-auto flex w-full flex-col justify-center space-y-6 sm:w-[350px]">
+            <div class="flex flex-col space-y-2 text-center">
+              <h1 class="text-2xl font-semibold tracking-tight">
+                Create an account
+              </h1>
+              <p class="text-muted-foreground text-sm">
+                Click the button below to create an account or sign in
+              </p>
             </div>
-            <p>
-              Have a look at the <Link href="/demo/flower">Flower App</Link> or
-              the <Link href="/demo/todolist">Todo App</Link>.
-            </p>
-          </Infobox>
-
-          <Infobox>
-            <div q:slot="title" class="icon icon-community">
-              Community
+            <div>
+              <Signin />
             </div>
-            <ul>
-              <li>
-                <span>Questions or just want to say hi? </span>
-                <a href="https://qwik.builder.io/chat" target="_blank">
-                  Chat on discord!
-                </a>
-              </li>
-              <li>
-                <span>Follow </span>
-                <a href="https://twitter.com/QwikDev" target="_blank">
-                  @QwikDev
-                </a>
-                <span> on Twitter</span>
-              </li>
-              <li>
-                <span>Open issues and contribute on </span>
-                <a href="https://github.com/BuilderIO/qwik" target="_blank">
-                  GitHub
-                </a>
-              </li>
-              <li>
-                <span>Watch </span>
-                <a href="https://qwik.builder.io/media/" target="_blank">
-                  Presentations, Podcasts, Videos, etc.
-                </a>
-              </li>
-            </ul>
-          </Infobox>
+            <p class="text-muted-foreground px-8 text-center text-sm">
+              By creating an account, you agree to our{" "}
+              <Link
+                href="/terms"
+                class="hover:text-primary underline underline-offset-4"
+              >
+                Terms of Service
+              </Link>{" "}
+              and{" "}
+              <Link
+                href="/privacy"
+                class="hover:text-primary underline underline-offset-4"
+              >
+                Privacy Policy
+              </Link>
+              .
+            </p>
+          </div>
         </div>
       </div>
     </>
@@ -142,8 +83,8 @@ export const head: DocumentHead = {
   title: "X-Stack",
   meta: [
     {
-      name: "description",
-      content: "Qwik site description",
+      name: "x-stack starter template",
+      content: "A template to start your project with x-tra peace of mind.",
     },
   ],
 };
