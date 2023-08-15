@@ -1,0 +1,32 @@
+.neon {
+    filter: drop-shadow(10px 5px 100px #fff) drop-shadow(0 0 2.5px #fff);
+    animation: flicker 4s;
+}
+
+
+@keyframes flicker {
+    0%, 10% {
+        opacity: 0;
+    }
+    11%, 13% {
+        opacity: 0.3;
+    }
+    14%, 16% {
+        opacity: 0;
+    }
+    17%, 19% {
+        opacity: 0.6;
+    }
+    20%, 22% {
+        opacity: 0;
+    }
+    23%, 25%, 27%, 29%, 31%, 33% {
+        opacity: 0.5;
+    }
+    26%, 28%, 30%, 32% {
+        opacity: 0.99;
+    }
+    34%, 100% {
+        opacity: 0.99;
+    }
+}
