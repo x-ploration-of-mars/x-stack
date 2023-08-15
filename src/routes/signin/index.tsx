@@ -54,8 +54,8 @@ export default component$(() => {
                 class="hover:text-primary underline underline-offset-4"
               >
                 Terms of Service
-              </Link>
-              and
+              </Link>{" "}
+              and{" "}
               <Link
                 href="/privacy"
                 class="hover:text-primary underline underline-offset-4"
