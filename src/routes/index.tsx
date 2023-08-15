@@ -5,7 +5,7 @@ import XGlow from "~/components/x-glow/x-glow";
 export default component$(() => {
   return (
     <>
-      <div class="relative h-[100vh] w-[100vw] flex-col bg-black text-white">
+      <div class="relative h-[100vh] w-[100vw] flex-col bg-gray-950 text-white">
         <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 transform">
           <XGlow />
         </div>

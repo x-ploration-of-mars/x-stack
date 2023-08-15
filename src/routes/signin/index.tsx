@@ -18,9 +18,8 @@ export default component$(() => {
                 width={48}
                 height={48}
                 alt="Authentication"
-                class="mr-2 block"
+                class="mr-2 block  drop-shadow-[0_0_2px_rgb(255,255,255)]"
               />
-              <span class="text-2xl">stack</span>
             </div>
 
             <div class="">
