@@ -12,7 +12,7 @@ export default component$(() => {
         <div class="bg-muted relative hidden h-full flex-col p-10 text-white dark:border-r lg:flex">
           <div class="absolute inset-0 -z-10 bg-black" />
           <div class="relative flex h-full flex-col justify-between">
-            <div class=" flex items-center text-lg font-medium">
+            <div class=" flex items-end text-lg font-medium">
               <image
                 src="/X-logo-V3_transparent-dark_96-96.png"
                 width={48}
@@ -20,7 +20,7 @@ export default component$(() => {
                 alt="Authentication"
                 class="mr-2 block"
               />
-              <span class="text-4xl">The Everything Stack</span>
+              <span class="text-2xl">stack</span>
             </div>
 
             <div class="">
@@ -39,10 +39,10 @@ export default component$(() => {
         <div class="flex w-full flex-col items-center justify-center lg:p-8">
           <div class=" space-y-6 sm:w-[350px]">
             <div class="flex flex-col space-y-2 text-center">
-              <h1 class="text-2xl font-semibold tracking-tight">
+              <h1 class="text-3xl font-semibold tracking-tight">
                 Build Anything
               </h1>
-              <p class="text-muted-foreground text-sm">Try today</p>
+              <p class="text-muted-foreground">Try today</p>
             </div>
             <div>
               <Signin />
