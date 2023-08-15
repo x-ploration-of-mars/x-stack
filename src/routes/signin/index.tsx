@@ -38,16 +38,16 @@ export default component$(() => {
         {/* Right Section */}
         <div class="flex w-full flex-col items-center justify-center lg:p-8">
           <div class=" space-y-6 sm:w-[350px]">
-            <div class="flex flex-col space-y-2 text-center">
-              <h1 class="text-3xl font-semibold tracking-tight">
+            <div class="flex flex-col space-y-4 text-center">
+              <h1 class="text-4xl font-semibold tracking-tight">
                 Build Anything
               </h1>
-              <p class="text-muted-foreground">Try today</p>
+              <h2 class="text-xl">Try today</h2>
             </div>
-            <div>
+            <div class="pt-4">
               <Signin />
             </div>
-            <p class="text-muted-foreground px-8 text-center text-sm">
+            <p class="px-8 text-center text-sm">
               By creating an account, you agree to our
               <Link
                 href="/terms"
