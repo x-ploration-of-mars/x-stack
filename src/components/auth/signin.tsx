@@ -12,7 +12,7 @@ export default component$(() => {
     <Form action={signIn} class="flex justify-center">
       <input type="hidden" name="providerId" value="discord" />
       <input type="hidden" name="options.callbackUrl" value="/" />
-      <Button variant="outline" type="button">
+      <Button variant="outline">
         <LuGithub class="mr-2" /> Sign In
       </Button>
     </Form>
