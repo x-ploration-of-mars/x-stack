@@ -6,7 +6,7 @@ export default component$(() => {
   return (
     <>
       <div
-        class={`container relative hidden h-[100vh] flex-col items-center justify-center md:grid lg:max-w-none lg:grid-cols-2 lg:px-0`}
+        class={`container relative grid h-[100vh] flex-col items-center justify-center lg:max-w-none lg:grid-cols-2 lg:px-0`}
       >
         {/* Left Section */}
         <div class="bg-muted relative hidden h-full flex-col p-10 text-white dark:border-r lg:flex">
@@ -36,11 +36,11 @@ export default component$(() => {
           </div>
         </div>
         {/* Right Section */}
-        <div class="lg:p-8">
-          <div class="mx-auto flex w-full flex-col justify-center space-y-6 sm:w-[350px]">
+        <div class="flex w-full flex-col items-center justify-center lg:p-8">
+          <div class=" space-y-6 sm:w-[350px]">
             <div class="flex flex-col space-y-2 text-center">
               <h1 class="text-2xl font-semibold tracking-tight">
-                Build anything
+                Build Anything
               </h1>
               <p class="text-muted-foreground text-sm">Try today</p>
             </div>
