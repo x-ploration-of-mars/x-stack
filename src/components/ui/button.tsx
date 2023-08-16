@@ -43,7 +43,7 @@ export interface ButtonProps
   asChild?: boolean;
 }
 
-const ReactButton = React.forwardRef<HTMLButtonElement, ButtonProps>(
+const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
   ({ className, variant, size, asChild = false, ...props }, ref) => {
     const Comp = asChild ? Slot : "button";
     return (
@@ -55,7 +55,7 @@ const ReactButton = React.forwardRef<HTMLButtonElement, ButtonProps>(
     );
   },
 );
-ReactButton.displayName = "Button";
+Button.displayName = "Button";
 
-const Button = qwikify$(ReactButton);
-export { Button, buttonVariants };
+const QButton = qwikify$(Button);
+export { QButton, buttonVariants };

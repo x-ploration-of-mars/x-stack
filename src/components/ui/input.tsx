@@ -8,7 +8,7 @@ import { cn } from "~/lib/utils";
 export interface InputProps
   extends React.InputHTMLAttributes<HTMLInputElement> {}
 
-const ReactInput = React.forwardRef<HTMLInputElement, InputProps>(
+const Input = React.forwardRef<HTMLInputElement, InputProps>(
   ({ className, type, ...props }, ref) => {
     return (
       <input
@@ -23,8 +23,8 @@ const ReactInput = React.forwardRef<HTMLInputElement, InputProps>(
     );
   },
 );
-ReactInput.displayName = "Input";
+Input.displayName = "Input";
 
-const Input = qwikify$(ReactInput);
+const QInput = qwikify$(Input);
 
-export { Input };
+export { QInput, Input };

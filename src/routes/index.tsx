@@ -3,10 +3,12 @@ import { Link, type DocumentHead } from "@builder.io/qwik-city";
 import { buttonVariants } from "~/components/ui/button";
 import XGlow from "~/components/x-glow/x-glow";
 
-import { LuArrowRight, LuGithub, LuListChecks } from "@qwikest/icons/lucide";
+import { LuArrowRight, LuGithub, LuUser } from "@qwikest/icons/lucide";
 import Signout from "~/components/auth/signout";
+import { useAuthSession } from "./plugin@auth";
 
 export default component$(() => {
+  const session = useAuthSession();
   return (
     <>
       <div class="relative h-[100vh] w-[100vw] flex-col bg-gray-950 text-white">
@@ -26,13 +28,10 @@ export default component$(() => {
           <Signout />
         </div>
         <div class="absolute bottom-24 flex w-full justify-around">
-          <Link
-            class={buttonVariants({ variant: "link" })}
-            href="/demo/todolist"
-          >
+          <Link class={buttonVariants({ variant: "link" })} href="/profile">
             <div class="flex items-center text-white drop-shadow-[0_0_1px_#fff]">
-              <LuListChecks class="mr-2" />
-              Todos
+              <LuUser class="mr-2" />
+              {session.value?.user.name ?? "Profile"}
             </div>
           </Link>
           <Link class={buttonVariants({ variant: "link" })} href="/docs">
