@@ -4,6 +4,7 @@ import { Button } from "~/components/ui/button";
 import XGlow from "~/components/x-glow/x-glow";
 
 import { LuStar } from "@qwikest/icons/lucide";
+import Signout from "~/components/auth/signout";
 
 export default component$(() => {
   return (
@@ -22,9 +23,7 @@ export default component$(() => {
             </Button>
           </div>
           <div class="md:hidden" />
-          <div class="drop-shadow-[0_0_2px_#fff]">
-            <Button variant="outline">Sign Out</Button>
-          </div>
+          <Signout />
         </div>
       </div>
     </>
