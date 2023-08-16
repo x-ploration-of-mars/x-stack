@@ -1,9 +1,9 @@
 import { component$ } from "@builder.io/qwik";
-import { type DocumentHead } from "@builder.io/qwik-city";
-import { Button } from "~/components/ui/button";
+import { Link, type DocumentHead } from "@builder.io/qwik-city";
+import { buttonVariants } from "~/components/ui/button";
 import XGlow from "~/components/x-glow/x-glow";
 
-import { LuGithub } from "@qwikest/icons/lucide";
+import { LuArrowRight, LuGithub, LuListChecks } from "@qwikest/icons/lucide";
 import Signout from "~/components/auth/signout";
 
 export default component$(() => {
@@ -13,16 +13,33 @@ export default component$(() => {
         <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 transform">
           <XGlow />
         </div>
-        <div class="absolute  top-24 flex w-full justify-around">
-          <div class="">
-            <Button variant="link">
-              <div class="flex items-center text-white drop-shadow-[0_0_1px_#fff]">
-                <LuGithub class="mr-2" />
-                Github
-              </div>
-            </Button>
-          </div>
+        <div class="absolute top-24 flex w-full justify-around">
+          <Link
+            class={buttonVariants({ variant: "link" })}
+            href="https://github.com"
+          >
+            <div class="flex items-center text-white drop-shadow-[0_0_1px_#fff]">
+              <LuGithub class="mr-2" />
+              Github
+            </div>
+          </Link>
           <Signout />
+        </div>
+        <div class="absolute bottom-24 flex w-full justify-around">
+          <Link
+            class={buttonVariants({ variant: "link" })}
+            href="/demo/todolist"
+          >
+            <div class="flex items-center text-white drop-shadow-[0_0_1px_#fff]">
+              <LuListChecks class="mr-2" />
+              Todos
+            </div>
+          </Link>
+          <Link class={buttonVariants({ variant: "link" })} href="/docs">
+            <div class="flex items-center text-white drop-shadow-[0_0_1px_#fff]">
+              Docs <LuArrowRight class="ml-2" />
+            </div>
+          </Link>
         </div>
       </div>
     </>
