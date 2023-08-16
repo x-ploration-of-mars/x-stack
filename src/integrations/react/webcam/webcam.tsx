@@ -2,16 +2,16 @@
 import { qwikify$ } from "@builder.io/qwik-react";
 // import { Directory, Encoding, Filesystem } from "@capacitor/filesystem";
 import { useCallback, useRef } from "react";
-import Webcam from "react-webcam";
+import WebcamComponent from "react-webcam";
 
-const WebcamComponent = () => {
+const ReactWebcam = () => {
   const videoConstraints: MediaTrackConstraints = {
     width: 800,
     height: 800,
     facingMode: "user",
   };
 
-  const webcamRef = useRef<Webcam & HTMLVideoElement>(null);
+  const webcamRef = useRef<WebcamComponent & HTMLVideoElement>(null);
 
   const downloadPhoto = (dataUrl: string, filename: string) => {
     const link = document.createElement("a");
@@ -39,7 +39,7 @@ const WebcamComponent = () => {
 
   return (
     <>
-      <Webcam
+      <WebcamComponent
         audio={false}
         height={720}
         screenshotFormat="image/jpeg"
@@ -57,4 +57,4 @@ const WebcamComponent = () => {
   );
 };
 
-export const QWebcam = qwikify$(WebcamComponent, { eagerness: "load" });
+export const Webcam = qwikify$(ReactWebcam, { eagerness: "load" });

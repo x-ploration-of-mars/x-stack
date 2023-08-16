@@ -3,7 +3,7 @@ import { type DocumentHead } from "@builder.io/qwik-city";
 import { Button } from "~/components/ui/button";
 import XGlow from "~/components/x-glow/x-glow";
 
-import { LuStar } from "@qwikest/icons/lucide";
+import { LuGithub } from "@qwikest/icons/lucide";
 import Signout from "~/components/auth/signout";
 
 export default component$(() => {
@@ -14,15 +14,14 @@ export default component$(() => {
           <XGlow />
         </div>
         <div class="absolute  top-24 flex w-full justify-around">
-          <div class="hidden  md:block">
+          <div class="">
             <Button variant="link">
-              <div class="text-white drop-shadow-[0_0_10px_#fff] md:flex md:items-center">
-                <LuStar class="mr-2" />
-                Star us on Github
+              <div class="flex items-center text-white drop-shadow-[0_0_1px_#fff]">
+                <LuGithub class="mr-2" />
+                Github
               </div>
             </Button>
           </div>
-          <div class="md:hidden" />
           <Signout />
         </div>
       </div>
