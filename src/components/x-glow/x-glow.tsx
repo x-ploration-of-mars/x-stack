@@ -1,16 +1,11 @@
 import { component$ } from "@builder.io/qwik";
 import styles from "./x-glow.module.css";
+import XLogo from "~/media/X-logo-V3_transparent-dark.png?jsx";
 
 export default component$(() => {
   return (
     <div>
-      <image
-        src="/X-logo-V3_transparent-dark.png"
-        width={280}
-        height={280}
-        alt="Authentication"
-        class={["mr-2", styles.neon]}
-      />
+      <XLogo alt="Authentication" class={[" mr-2 h-auto w-80", styles.neon]} />
     </div>
   );
 });
