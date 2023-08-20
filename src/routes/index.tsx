@@ -1,6 +1,6 @@
 import { component$ } from "@builder.io/qwik";
 import { Link, type DocumentHead } from "@builder.io/qwik-city";
-import { buttonVariants } from "~/components/ui/button";
+import { buttonVariants } from "~/integrations/react/ui/button";
 import XGlow from "~/components/x-glow/x-glow";
 
 import { LuArrowRight, LuGithub, LuUser } from "@qwikest/icons/lucide";
@@ -20,7 +20,7 @@ export default component$(() => {
             class={buttonVariants({ variant: "link" })}
             href="https://github.com"
           >
-            <div class="flex items-center text-white drop-shadow-[0_0_1px_#fff]">
+            <div class="flex items-center">
               <LuGithub class="mr-2" />
               Github
             </div>
@@ -29,13 +29,13 @@ export default component$(() => {
         </div>
         <div class="absolute bottom-24 flex w-full justify-around">
           <Link class={buttonVariants({ variant: "link" })} href="/profile">
-            <div class="flex items-center text-white drop-shadow-[0_0_1px_#fff]">
+            <div class="flex items-center">
               <LuUser class="mr-2" />
               {session.value?.user.name ?? "Profile"}
             </div>
           </Link>
           <Link class={buttonVariants({ variant: "link" })} href="/docs">
-            <div class="flex items-center text-white drop-shadow-[0_0_1px_#fff]">
+            <div class="flex items-center">
               Docs <LuArrowRight class="ml-2" />
             </div>
           </Link>

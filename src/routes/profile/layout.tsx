@@ -1,9 +1,7 @@
-import Image from "next/image";
-
-import { Separator } from "@/registry/new-york/ui/separator";
-import { SidebarNav } from "@/app/examples/forms/components/sidebar-nav";
+import { QSeparator } from "~/integrations/react/ui/separator";
 import { Slot, component$ } from "@builder.io/qwik";
 import { type DocumentHead } from "@builder.io/qwik-city";
+import SidebarNav from "~/components/sidebar-nav";
 
 export const head: DocumentHead = {
   title: "X-Stack",
@@ -42,14 +40,14 @@ export default component$(() => {
   return (
     <>
       <div class="md:hidden">
-        <Image
+        <image
           src="/examples/forms-light.png"
           width={1280}
           height={791}
           alt="Forms"
           class="block dark:hidden"
         />
-        <Image
+        <image
           src="/examples/forms-dark.png"
           width={1280}
           height={791}
@@ -64,7 +62,7 @@ export default component$(() => {
             Manage your account settings and set e-mail preferences.
           </p>
         </div>
-        <Separator class="my-6" />
+        <QSeparator className="my-6" />
         <div class="flex flex-col space-y-8 lg:flex-row lg:space-x-12 lg:space-y-0">
           <aside class="-mx-4 lg:w-1/5">
             <SidebarNav items={sidebarNavItems} />

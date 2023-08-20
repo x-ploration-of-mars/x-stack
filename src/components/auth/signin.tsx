@@ -1,9 +1,9 @@
 import { component$ } from "@builder.io/qwik";
 import { Form } from "@builder.io/qwik-city";
 import { useAuthSignin } from "~/routes/plugin@auth";
-import { QButton } from "../ui/button";
 
 import { LuGamepad2 } from "@qwikest/icons/lucide";
+import { QButton } from "~/integrations/react/ui/button";
 
 export default component$(() => {
   const signIn = useAuthSignin();

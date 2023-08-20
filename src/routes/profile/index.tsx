@@ -1,17 +1,10 @@
-import { Separator } from "@/registry/new-york/ui/separator";
-import { ProfileForm } from "@/app/examples/forms/profile-form";
+import { component$ } from "@builder.io/qwik";
+import { QProfile } from "~/integrations/react/profile";
 
-export default function SettingsProfilePage() {
+export default component$(() => {
   return (
-    <div class="space-y-6">
-      <div>
-        <h3 class="text-lg font-medium">Profile</h3>
-        <p class="text-muted-foreground text-sm">
-          This is how others will see you on the site.
-        </p>
-      </div>
-      <Separator />
-      <ProfileForm />
-    </div>
+    <>
+      <QProfile />
+    </>
   );
-}
+});
