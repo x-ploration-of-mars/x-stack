@@ -9,7 +9,7 @@ export default component$(() => {
     <Form action={signout}>
       <div class="drop-shadow-[0_0_2px_#fff]">
         <input type="hidden" name="callbackUrl" value="/" />
-        <QButton variant="link">
+        <QButton variant="link" type="submit">
           <div class="">Sign Out</div>
         </QButton>
       </div>

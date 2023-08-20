@@ -12,7 +12,7 @@ export default component$(() => {
     <Form action={signIn} class="flex justify-center">
       <input type="hidden" name="providerId" value="discord" />
       <input type="hidden" name="options.callbackUrl" value="/" />
-      <QButton variant="outline">
+      <QButton variant="outline" type="submit">
         <LuGamepad2 class="mr-2" /> Sign In
       </QButton>
     </Form>

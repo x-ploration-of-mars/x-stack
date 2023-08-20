@@ -2,6 +2,7 @@
 import { Separator } from "~/integrations/react/ui/separator";
 import { ProfileForm } from "~/integrations/react/profile/profile-form";
 import { qwikify$ } from "@builder.io/qwik-react";
+import { Toaster } from "~/integrations/react/ui/toaster";
 
 function Profile() {
   return (
@@ -14,9 +15,10 @@ function Profile() {
       </div>
       <Separator />
       <ProfileForm />
+      <Toaster />
     </div>
   );
 }
 
-const QProfile = qwikify$(Profile);
+const QProfile = qwikify$(Profile, { eagerness: "load" });
 export { QProfile };

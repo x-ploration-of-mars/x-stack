@@ -27,7 +27,7 @@ export default component$(() => {
                 <p class="text-lg">
                   &ldquo;This stack has saved me countless hours of set-up and
                   helped me deliver a full-featured app to my clients faster
-                  than I could have Imagined.&rdquo;
+                  than I could ever have Imagined.&rdquo;
                 </p>
                 <footer class="text-sm">Elon Mush</footer>
               </blockquote>
@@ -39,7 +39,7 @@ export default component$(() => {
           <div class=" space-y-6 sm:w-[350px]">
             <div class="flex flex-col space-y-4 text-center">
               <h1 class="text-4xl font-semibold tracking-tight">
-                Build Anything
+                The Everything Stack
               </h1>
               <h2 class="text-xl">Try today</h2>
             </div>
@@ -47,7 +47,7 @@ export default component$(() => {
               <Signin />
             </div>
             <p class="px-8 text-center text-sm">
-              By creating an account, you agree to our
+              By creating an account, you agree to our{" "}
               <Link
                 href="/terms"
                 class="hover:text-primary underline underline-offset-4"
