@@ -10,7 +10,7 @@ export default component$(() => {
       >
         {/* Left Section */}
         <div class="relative hidden h-full flex-col bg-muted p-10 text-white dark:border-r lg:flex">
-          <div class="absolute inset-0 -z-10 bg-black" />
+          <div class="absolute inset-0 -z-0 bg-black" />
           <div class="relative flex h-full flex-col justify-between">
             <div class=" flex items-end text-lg font-medium">
               <img
@@ -18,7 +18,7 @@ export default component$(() => {
                 width={48}
                 height={48}
                 alt="Authentication"
-                class="mr-2 block  drop-shadow-[0_0_2px_rgb(255,255,255)]"
+                class="mr-2 block drop-shadow-[0_0_2px_#fff]"
               />
             </div>
 

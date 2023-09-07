@@ -17,7 +17,12 @@ export default component$(() => {
         </div>
         <div class="absolute top-24 flex w-full justify-around">
           <Link
-            class={[buttonVariants({ variant: "link" }), "drop-shadow-[0_0_1px_#fff]"]}
+            class={[
+              "text-secondary",
+              buttonVariants({
+                variant: "link",
+              }),
+            ]}
             href="https://github.com"
           >
             <div class="flex items-center">
@@ -28,19 +33,13 @@ export default component$(() => {
           <Signout />
         </div>
         <div class="absolute bottom-24 flex w-full justify-around">
-          <Link
-            class={[buttonVariants({ variant: "link" }), "drop-shadow-[0_0_1px_#fff]"]}
-            href="/profile"
-          >
+          <Link class={[buttonVariants({ variant: "link" }), "text-secondary"]} href="/profile">
             <div class="flex items-center">
               <LuUser class="mr-2" />
               {session.value?.user.name ?? "Profile"}
             </div>
           </Link>
-          <Link
-            class={[buttonVariants({ variant: "link" }), "drop-shadow-[0_0_1px_#fff]"]}
-            href="/docs"
-          >
+          <Link class={[buttonVariants({ variant: "link" }), "text-secondary"]} href="/docs">
             <div class="flex items-center">
               Docs <LuArrowRight class="ml-2" />
             </div>
