@@ -1,5 +1,5 @@
 import { component$ } from "@builder.io/qwik";
-import styles from "./x-glow.module.css";
+import styles from "~/components/x-glow/x-glow.module.css";
 import XLogo from "~/media/X-logo-V3_transparent-dark.png?jsx";
 
 export default component$(() => {

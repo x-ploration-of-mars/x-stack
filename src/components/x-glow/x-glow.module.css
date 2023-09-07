@@ -1,6 +1,6 @@
 .neon {
     filter: drop-shadow(10px 5px 100px #fff) drop-shadow(0 0 2.5px #fff);
-    animation: flicker 4s;
+    animation: flicker 3s;
 }
 
 @keyframes flicker {

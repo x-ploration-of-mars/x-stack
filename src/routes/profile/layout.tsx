@@ -24,7 +24,7 @@ export default component$(() => {
         <div class="flex items-center space-y-0.5">
           <div class="">
             <Link href="/">
-              <LuChevronLeft class="h-12 w-12 text-primary" />
+              <LuChevronLeft class="h-12 w-12 text-muted-foreground" />
             </Link>
           </div>
           <div class="ml-2 flex">

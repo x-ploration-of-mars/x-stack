@@ -72,9 +72,9 @@ export default component$(() => {
           <div class="grid grid-cols-1 gap-x-8 gap-y-10 border-b border-primary/10 pb-12 md:grid-cols-3">
             <div>
               <h2 class="text-base font-semibold leading-7 text-primary">About you</h2>
-              <p class="mt-1 text-sm leading-6 text-gray-600">
-                Fill in this information if you want to network with fellow x-plorers. You will have
-                to fill required fields to appear in search results. Optional fields are optional.
+              <p class="mt-1 text-sm leading-6 text-muted-foreground">
+                Fill out this form to network with fellow x-plorers. You will have to fill required
+                fields to appear in search results.
               </p>
             </div>
 
@@ -120,7 +120,7 @@ export default component$(() => {
                       <Checkbox {...props} checked={field.value ?? false} />
                       <div>
                         <label class="font-medium text-primary">Available</label>
-                        <p class="text-sm text-gray-500">
+                        <p class="text-sm text-muted-foreground">
                           Decide whether you want to appear available or not in search results.
                         </p>
                       </div>
@@ -212,7 +212,7 @@ export default component$(() => {
           <div class="grid grid-cols-1 gap-x-8 gap-y-10 border-b border-primary/10 pb-12 md:grid-cols-3">
             <div>
               <h2 class="text-base font-semibold leading-7 text-primary">Contact</h2>
-              <p class="mt-1 text-sm leading-6 text-gray-600">
+              <p class="mt-1 text-sm leading-6 text-muted-foreground">
                 Tell us where we can reach out to you.
               </p>
             </div>
