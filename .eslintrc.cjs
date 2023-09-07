@@ -38,6 +38,6 @@ module.exports = {
     "no-console": "off",
     "no-case-declarations": "off",
     "prefer-spread": "off",
-    "qwik/no-react-props": "off",
+    "qwik/no-react-props": "off"
   },
 };

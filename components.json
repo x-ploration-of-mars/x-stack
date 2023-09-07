@@ -6,8 +6,8 @@
   "tailwind": {
     "config": "tailwind.config.js",
     "css": "src/global.css",
-    "baseColor": "slate",
-    "cssVariables": false
+    "baseColor": "zinc",
+    "cssVariables": true
   },
   "aliases": {
     "components": "~/integrations/react",
