@@ -31,18 +31,14 @@ export default component$(() => {
             class={[buttonVariants({ variant: "link" }), "text-secondary", xGlowStyles.neon]}
             href="/profile"
           >
-            <div class="flex items-center">
-              <LuUser class="mr-2" />
-              {session.value?.user.name ?? "Profile"}
-            </div>
+            <LuUser class="mr-2" />
+            {session.value?.user.name ?? "Profile"}
           </Link>
           <Link
             class={[buttonVariants({ variant: "link" }), "text-secondary", xGlowStyles.neon]}
             href="/docs"
           >
-            <div class="flex items-center">
-              Docs <LuArrowRight class="ml-2" />
-            </div>
+            Docs <LuArrowRight class="ml-2" />
           </Link>
         </div>
       </div>

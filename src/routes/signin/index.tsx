@@ -26,7 +26,7 @@ export default component$(() => {
               <blockquote class="space-y-2">
                 <p class="text-lg">
                   &ldquo;One stack to rule them all, one stack to find them, One stack to bring them
-                  all, and in the darkness bind them;.&rdquo;
+                  all, and in the darkness bind them.&rdquo;
                 </p>
                 <footer class="text-sm">Elon Mush</footer>
               </blockquote>
