@@ -26,17 +26,13 @@ A cli to let you choose great alternatives that better match your ambitious proj
   - Make your app performant right from the start thanks to built-in Resumability, Lazy-loading ($), Signals-based Reactivity, and Edge Deployment
   - Use any library from other frameworks (React ✅; Svelte, Solid & Vue incoming)
 - ✨ **Components ~~library~~ collection: Shadcn/ui (TailwindCSS w/ headless components)**
-    <aside>
-    ⚠️ Since some shadcn components must be imported with qwikify$, this is the hardest piece to use with Qwik atm. I have already started porting a few components and will spend most of my time on this before I can confidently release v1.
-    
-    </aside>
-    
-    - Own your components and create your own design system to match your brand requirements
-    - Copy/Paste UI templates to speed up your scaffolding
-    - Customize your sections and components easily with Tailwind utility classes
-    - Bring in your favorite icon library: Lucide, HeroIcons, Font Awesome, etc.
-    - Ship less CSS with Tailwind's JIT (just in time) engine
-    - Integrate your components with StoryBook
+  > ⚠️ Since some shadcn components must be imported with qwikify$, this is the hardest piece to use with Qwik atm. I have already started porting a few components and will spend most of my time on this before I can confidently release v1.
+  - Own your components and create your own design system to match your brand requirements
+  - Copy/Paste UI templates to speed up your scaffolding
+  - Customize your sections and components easily with Tailwind utility classes
+  - Bring in your favorite icon library: Lucide, HeroIcons, Font Awesome, etc.
+  - Ship less CSS with Tailwind's JIT (just in time) engine
+  - Integrate your components with StoryBook
 - 🔐 **Auth: Auth.js**
   - 100% free - no sneaky "free now, pay later"
   - Easily implement social and Otp login

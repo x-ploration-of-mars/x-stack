@@ -62,7 +62,7 @@ export default component$(() => {
               buttonVariants({ variant: "link" }),
               "drop-shadow-neon-sm animate-flicker text-secondary",
             ]}
-            href="/docs"
+            href="/documentation"
           >
             Docs <LuArrowRight class="ml-2" />
           </Link>
