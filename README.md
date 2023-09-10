@@ -1,110 +1,239 @@
-# Qwik City App ⚡️
+# [Readme.md](http://Readme.md)
 
-- [Qwik Docs](https://qwik.builder.io/)
-- [Discord](https://qwik.builder.io/chat)
-- [Qwik GitHub](https://github.com/BuilderIO/qwik)
-- [@QwikDev](https://twitter.com/QwikDev)
-- [Vite](https://vitejs.dev/)
+# The cross-platform serverless bleeding-edge stack that scales
+
+😌 Easier
+
+🚀 Faster
+
+🤑 Cheaper
+
+🌟 Limitless
+
+### Start with total peace of mind
+
+An all-in-one toolbox for you to stop worrying about DX, scalability, performance, security, compatibility, customizability, maintainability, data modeling, data quality, and costs. Start with a robust and empowering stack that is not going to fail you.
+
+### Forge your own opinion
+
+A place for you to easily weigh the pros and cons of each fullstack framework, components library/collection, API architecture, Database, ORM, analytics service, Auth toolkit, deployment strategy, and development tool.
+
+### Choose what you want
+
+A cli to let you choose great alternatives that better match your ambitious project requirements (tbd).
+
+# Introducing the 𝕏 stack
 
 ---
 
-## Project Structure
+- ⚡️ **Fullstack framework: Qwik**
+  - Build instantly interactive apps at any scale
+  - Enjoy the best DX imaginable with server actions/loaders, typescript server/client RPC calls, Valibot validation, Middlewares, Image optimization, etc.
+  - Make your app performant right from the start thanks to built-in Resumability, Lazy-loading ($), Signals-based Reactivity, and Edge Deployment
+  - Use any library from other frameworks (React ✅; Svelte, Solid & Vue incoming)
+- ✨ **Components ~~library~~ collection: Shadcn/ui (TailwindCSS w/ headless components)**
+    <aside>
+    ⚠️ Since some shadcn components must be imported with qwikify$, this is the hardest piece to use with Qwik atm. I have already started porting a few components and will spend most of my time on this before I can confidently release v1.
+    
+    </aside>
+    
+    - Own your components and create your own design system to match your brand requirements
+    - Copy/Paste UI templates to speed up your scaffolding
+    - Customize your sections and components easily with Tailwind utility classes
+    - Bring in your favorite icon library: Lucide, HeroIcons, Font Awesome, etc.
+    - Ship less CSS with Tailwind's JIT (just in time) engine
+    - Integrate your components with StoryBook
+- 🔐 **Auth: Auth.js**
+  - 100% free - no sneaky "free now, pay later"
+  - Easily implement social and Otp login
+  - RBAC/ABAC support with custom user properties
+  - Choose between Database or JWT sessions
+- 🦺 **API architecture: Server actions/loaders**
+  - Never break your app again with end-to-end type safety
+  - Query your backend even when you don't remember it with Intellisense/Auto-complete
+  - Validate Client requests with Zod
+  - Rate limit your requests with Upstash’s serverless Redis
+- 💪 **Database platform: Planetscale**
+  - It's cheap
+  - It scales like no other database
+  - Branch your database like you branch your code
+  - Organize your migrations with deploy requests
+  - Seamlessly deploy and revert schema changes with no downtime
+  - Get real-time insights into your database performance
+  - Integrate with third-party services for data warehousing, etc.
+- 💦 **ORM: Drizzle**
+  - Define a type-safe schema and take advantage of Intellisense/Auto-completion
+  - Write queries that are even faster than raw SQL
+  - Don't worry about joins (thank you, relational queries)
+  - Run migrations with ease
+  - Use it anywhere, even on the edge
+- 🎯 **Analytics: Firebase Analytics (GA4)**
+  - (100% free)[https://support.google.com/analytics/answer/1070983?hl=en#zippy=%2Cin-this-article]
+  - Keep track of your AARRR metrics with ease thanks to well-designed visualizations
+  - Enjoy the power of cohort-based analysis to measure app usage and learn from your users
+  - Run A/B tests with GrowthBook to find out what drives your users
+  - Works on any platform
+- 🍀 **Development tools:**
+  - Vscode extensions: Eslint, Prettier, Pretty Typescript Errors
+  - AI assistants: Codeium & chatgpt
+  - VScode shortcuts: `ctrl + d` `ctrl + f` `ctrl + shift + f` `ctrl + p`
+  - Logging (tbd)
+  - Icon generation: https://realfavicongenerator.net/
+- 🌐📱💻🥽 **Deployment: Vercel + PWA**
+  - Deploy your app seamlessly on the web, but also on mobile and desktop with just one codebase
+  - Take advantage of the wide ecosystem of npm libraries from the web
+  - Port your web app to native easily without impacting performance & development efforts
 
-This project is using Qwik with [QwikCity](https://qwik.builder.io/qwikcity/overview/). QwikCity is just an extra set of tools on top of Qwik to make it easier to build a full site, including directory-based routing, layouts, and more.
+Credits to [create-t3-app](https://github.com/t3-oss/create-t3-app) and [epic-stack](https://github.com/epicweb-dev/epic-stack) that I’ve used as inspiration to make this stack a better stack.
 
-Inside your project, you'll see the following directory structure:
+You’re welcome to join the [🔗Discord server](https://discord.gg/W4e8ReQWv2)f you have any questions or simply want to hang out with like-minded 𝕏-plorers.
 
-```
-├── public/
-│   └── ...
-└── src/
-    ├── components/
-    │   └── ...
-    └── routes/
-        └── ...
-```
+# How to (tdb)
 
-- `src/routes`: Provides the directory-based routing, which can include a hierarchy of `layout.tsx` layout files, and an `index.tsx` file as the page. Additionally, `index.ts` files are endpoints. Please see the [routing docs](https://qwik.builder.io/qwikcity/routing/overview/) for more info.
+# Evaluation & Alternatives (wip)
 
-- `src/components`: Recommended directory for components.
+## Fullstack Frameworks
 
-- `public`: Any static assets, like images, can be placed in the public directory. Please see the [Vite public directory](https://vitejs.dev/guide/assets.html#the-public-directory) for more info.
+### Qwik (w/ qwik-city)
 
-## Add Integrations and deployment
+### Svelte / Sveltekit
 
-Use the `pnpm qwik add` command to add additional integrations. Some examples of integrations includes: Cloudflare, Netlify or Express Server, and the [Static Site Generator (SSG)](https://qwik.builder.io/qwikcity/guides/static-site-generation/).
+### Solid.js / Solidstart
 
-```shell
-pnpm qwik add # or `yarn qwik add`
-```
+### React / Next.js
 
-## Development
+### React / Remix
 
-Development mode uses [Vite's development server](https://vitejs.dev/). The `dev` command will server-side render (SSR) the output during development.
+### Vue.js / Nuxt
 
-```shell
-npm start # or `yarn start`
-```
+### Angular
 
-> Note: during dev mode, Vite may request a significant number of `.js` files. This does not represent a Qwik production build.
+## Authentication
 
-## Preview
+### Auth.js (Next-Auth)
 
-The preview command will create a production build of the client modules, a production build of `src/entry.preview.tsx`, and run a local server. The preview server is only for convenience to preview a production build locally and should not be used as a production server.
+### Clerk
 
-```shell
-pnpm preview # or `yarn preview`
-```
+### Supertokens
 
-## Production
+### Supabase Auth
 
-The production build will generate client and server modules by running both client and server build commands. The build command will use Typescript to run a type check on the source code.
+### Firebase Auth
 
-```shell
-pnpm build # or `yarn build`
-```
+### Lucia
 
-## Vercel Edge
+### Auth0
 
-This starter site is configured to deploy to [Vercel Edge Functions](https://vercel.com/docs/concepts/functions/edge-functions), which means it will be rendered at an edge location near to your users.
+### Keycloak
 
-## Installation
+### FusionAuth
 
-The adaptor will add a new `vite.config.ts` within the `adapters/` directory, and a new entry file will be created, such as:
+### Okta
 
-```
-└── adapters/
-    └── vercel-edge/
-        └── vite.config.ts
-└── src/
-    └── entry.vercel-edge.tsx
-```
+### Onelogin
 
-Additionally, within the `package.json`, the `build.server` script will be updated with the Vercel Edge build.
+### AWS Cognito
 
-## Production build
+### Google Identity Platform
 
-To build the application for production, use the `build` command, this command will automatically run `pnpm build.server` and `pnpm build.client`:
+## Components collections → **[🔗](https://www.compart.com/en/unicode/U+1F517)**[comparison-table](https://docs.google.com/spreadsheets/d/1CHG5uK4AoMEl4giF9uY0RDJawjTdtT27gFwoIdRlxTY/edit#gid=225083988) (wip)
 
-```shell
-pnpm build
-```
+### Shadcn/ui
 
-[Read the full guide here](https://github.com/BuilderIO/qwik/blob/main/starters/adapters/vercel-edge/README.md)
+### Tailwind-ui
 
-## Dev deploy
+### Bootstrap
 
-To deploy the application for development:
+### MUI
 
-```shell
-pnpm deploy
-```
+### Bulma
 
-Notice that you might need a [Vercel account](https://docs.Vercel.com/get-started/) in order to complete this step!
+### Chakra-ui
 
+### Mantine
 
-## Production deploy
+### Ark UI
 
-The project is ready to be deployed to Vercel. However, you will need to create a git repository and push the code to it.
+## API Architecture
 
-You can [deploy your site to Vercel](https://vercel.com/docs/concepts/deployments/overview) either via a Git provider integration or through the Vercel CLI.
+### REST
+
+### Graphql
+
+### tRPC
+
+### loader/action RPC calls
+
+## Database Platform
+
+### Planetscale (MySQL)
+
+### Neon (Postgres)
+
+### CockroachDB (Postgres)
+
+### Supabase (Postgres)
+
+### Railway (Postgres)
+
+### SurrealDB (NewSQL)
+
+### Neo4j Aura (Graph)
+
+### MongoDB (Document)
+
+### Fauna
+
+### ArrangoDB
+
+## ORM
+
+### Knex
+
+### TypeORM
+
+### Prisma
+
+### Kysely
+
+### Drizzle
+
+## Analytics
+
+### GA4
+
+### Umami
+
+### Plausible
+
+### Mixpanel
+
+### Amplitude
+
+### Matomo
+
+### Piwik Pro
+
+### Heap
+
+### Hotjar
+
+### Gauges
+
+### PostHog
+
+## A/B Testing
+
+### Optimizely
+
+### Growthbook
+
+## Rate Limiting
+
+### Redis
+
+### Upstash
+
+# FAQ (tbd)
+
+# Contributors (tbd)
