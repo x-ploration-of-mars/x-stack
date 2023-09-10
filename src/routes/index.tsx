@@ -27,7 +27,7 @@ export default component$(() => {
               buttonVariants({ variant: "link" }),
               "drop-shadow-neon-sm animate-flicker text-secondary",
             ]}
-            href="https://discord.gg/XM5udevF53"
+            href="https://discord.gg/W4e8ReQWv2"
           >
             <LuGamepad2 class="mr-2" />
             Discord
@@ -39,7 +39,7 @@ export default component$(() => {
               buttonVariants({ variant: "link" }),
               "drop-shadow-neon-sm animate-flicker text-secondary",
             ]}
-            href="https://github.com"
+            href="https://github.com/x-ploration/x-stack"
           >
             <LuGithub class="mr-2" />
             Github

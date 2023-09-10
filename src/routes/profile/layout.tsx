@@ -17,7 +17,6 @@ export const head: DocumentHead = {
 export default component$(() => {
   const session = useAuthSession();
 
-  console.log("session", session.value?.expires);
   return (
     <>
       <div class="space-y-6 p-10 pb-16">
@@ -29,7 +28,7 @@ export default component$(() => {
           </div>
           <div class="ml-2 flex">
             <img
-              class="rounded-full"
+              class="min-w-[48px] rounded-full"
               src={session.value?.user.image ?? "https://via.placeholder.com/48"}
               alt="discord avatar"
               width={48}
@@ -44,9 +43,7 @@ export default component$(() => {
           </div>
         </div>
         <QSeparator className="my-6" />
-        <div class="flex justify-center lg:max-w-2xl">
-          <Slot />
-        </div>
+        <Slot />
       </div>
     </>
   );
