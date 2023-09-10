@@ -80,9 +80,19 @@ You’re welcome to join the [🔗Discord server](https://discord.gg/W4e8ReQWv2)
 
 <br>
 
-# How to (tdb)
+# How to (wip)
 
-<br>
+## Test locally
+
+- Clone project `git clone https://github.com/x-ploration/x-stack.git`
+- Install dependencies `npm install` | `pnpm install` | `yarn`
+
+### Add env variables
+
+- Copy `.env.example` into `.env`
+- Add `AUTH_SECRET` with this [secret generator](https://generate-secret.vercel.app/32) or with `openssl rand -base64 32`
+- Add Discord provider `DISCORD_CLIENT_ID` `DISCORD_CLIENT_SECRET` with https://discord.com/developers/applications. You will need to create a new application (top-right corner button `New Application`); and in oauth2 settings, add redirects to your localhost url (e.g. `http://localhost:5173/api/auth/callback/discord`) and your production url (e.g. `https://x-stack.vercel.app/api/auth/callback/discord`).
+- Add Planetscale env vars. `DATABASE` `DATABASE_HOST` `DATABASE_USERNAME` `DATABASE_PASSWORD` with https://app.planetscale.com/. Go to `branches`, select your branch, click `connect`, and copy the env vars.
 
 # Evaluation & Alternatives (wip)
 
