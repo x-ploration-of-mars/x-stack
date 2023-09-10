@@ -1,12 +1,8 @@
-# The cross-platform serverless bleeding-edge stack that scales
+<h1 align="center">The cross-platform serverless bleeding-edge stack that scales</h1>
+<br>
+<h3 align="center">😌 Easier | 🚀 Faster | 🤑 Cheaper | 🌟 Limitless</h3>
 
-😌 Easier
-
-🚀 Faster
-
-🤑 Cheaper
-
-🌟 Limitless
+<br>
 
 ### Start with total peace of mind
 
@@ -19,6 +15,8 @@ A place for you to easily weigh the pros and cons of each fullstack framework, c
 ### Choose what you want
 
 A cli to let you choose great alternatives that better match your ambitious project requirements (tbd).
+
+<br>
 
 # Introducing the 𝕏 stack
 
@@ -84,7 +82,11 @@ Credits to [create-t3-app](https://github.com/t3-oss/create-t3-app) and [epic-st
 
 You’re welcome to join the [🔗Discord server](https://discord.gg/W4e8ReQWv2)f you have any questions or simply want to hang out with like-minded 𝕏-plorers.
 
+<br>
+
 # How to (tdb)
+
+<br>
 
 # Evaluation & Alternatives (wip)
 
@@ -230,6 +232,10 @@ You’re welcome to join the [🔗Discord server](https://discord.gg/W4e8ReQWv2)
 
 ### Upstash
 
+<br>
+
 # FAQ (tbd)
+
+<br>
 
 # Contributors (tbd)
