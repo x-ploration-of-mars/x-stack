@@ -1,24 +1,32 @@
 import { component$ } from "@builder.io/qwik";
 import { Link, type DocumentHead } from "@builder.io/qwik-city";
 import { buttonVariants } from "~/components/ui/button";
-import XGlow from "~/components/x-glow/x-glow";
 
 import { LuArrowRight, LuGamepad2, LuGithub, LuUser } from "@qwikest/icons/lucide";
 import Signout from "~/components/auth/signout";
 import { useAuthSession } from "./plugin@auth";
-import xGlowStyles from "~/components/x-glow/x-glow.module.css";
 
 export default component$(() => {
   const session = useAuthSession();
   return (
     <>
       <div class="relative h-[100vh] w-[100vw] flex-col bg-primary">
-        <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 transform">
-          <XGlow />
+        <div
+          class={[
+            "drop-shadow-neon animate-flicker absolute left-1/2 top-1/2 flex -translate-x-1/2 -translate-y-1/2 transform justify-center text-white",
+          ]}
+          style={{
+            fontSize: "24rem",
+          }}
+        >
+          𝕏
         </div>
         <div class="xs:top-12 absolute top-36 flex w-full justify-center">
           <Link
-            class={[buttonVariants({ variant: "link" }), "text-secondary", xGlowStyles.neon]}
+            class={[
+              buttonVariants({ variant: "link" }),
+              "drop-shadow-neon-sm animate-flicker text-secondary",
+            ]}
             href="https://discord.gg/XM5udevF53"
           >
             <LuGamepad2 class="mr-2" />
@@ -27,7 +35,10 @@ export default component$(() => {
         </div>
         <div class="absolute top-24 flex w-full justify-around">
           <Link
-            class={[buttonVariants({ variant: "link" }), xGlowStyles.neon, "text-secondary"]}
+            class={[
+              buttonVariants({ variant: "link" }),
+              "drop-shadow-neon-sm animate-flicker text-secondary",
+            ]}
             href="https://github.com"
           >
             <LuGithub class="mr-2" />
@@ -37,14 +48,20 @@ export default component$(() => {
         </div>
         <div class="absolute bottom-24 flex w-full justify-around">
           <Link
-            class={[buttonVariants({ variant: "link" }), "text-secondary", xGlowStyles.neon]}
+            class={[
+              buttonVariants({ variant: "link" }),
+              "drop-shadow-neon-sm animate-flicker text-secondary",
+            ]}
             href="/profile"
           >
             <LuUser class="mr-2" />
             {session.value?.user.name ?? "Profile"}
           </Link>
           <Link
-            class={[buttonVariants({ variant: "link" }), "text-secondary", xGlowStyles.neon]}
+            class={[
+              buttonVariants({ variant: "link" }),
+              "drop-shadow-neon-sm animate-flicker text-secondary",
+            ]}
             href="/docs"
           >
             Docs <LuArrowRight class="ml-2" />

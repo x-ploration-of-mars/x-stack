@@ -8,6 +8,10 @@
     animation: flicker 3s;
 }
 
+.flicker {
+    animation: flicker 3s;
+}
+
 @keyframes flicker {
     0%, 15% {
         opacity: 0;

@@ -2,11 +2,11 @@
 module.exports = {
   darkMode: ["class"],
   content: [
-    './pages/**/*.{ts,tsx}',
-    './components/**/*.{ts,tsx}',
-    './app/**/*.{ts,tsx}',
-    './src/**/*.{ts,tsx}',
-	],
+    "./pages/**/*.{ts,tsx}",
+    "./components/**/*.{ts,tsx}",
+    "./app/**/*.{ts,tsx}",
+    "./src/**/*.{ts,tsx}",
+  ],
   theme: {
     container: {
       center: true,
@@ -17,7 +17,7 @@ module.exports = {
     },
     extend: {
       screens: {
-        "xs": "480px"
+        xs: "480px",
       },
       colors: {
         border: "hsl(var(--border))",
@@ -68,24 +68,43 @@ module.exports = {
           from: { height: "var(--radix-accordion-content-height)" },
           to: { height: 0 },
         },
-        "appear-suddenly": {
-          '0%, 99.99%': {
-            opacity: 0
+        flicker: {
+          "0%, 15%": {
+            opacity: 0,
           },
-          '100%': {
-            opacity: 1
-          }
-        }
+          "16%, 18%": {
+            opacity: 0.3,
+          },
+          "19%, 21%": {
+            opacity: 0,
+          },
+          "22%, 24%": {
+            opacity: 0.6,
+          },
+          "25%, 27%": {
+            opacity: 0,
+          },
+          "28%, 30%, 32%, 34%, 36%, 38%": {
+            opacity: 0.5,
+          },
+          "31%, 33%, 35%, 37%": {
+            opacity: 0.99,
+          },
+          "39%, 100%": {
+            opacity: 0.99,
+          },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
-        "appear-suddenly": "appear-suddenly 1.2s"
+        flicker: "flicker 3s",
+      },
+      dropShadow: {
+        "neon-sm": ["0 0 2px #fff"],
+        neon: ["10px 5px 100px #fff", "0 0 2px #fff"],
       },
     },
   },
-  plugins: [
-    require("tailwindcss-animate"),
-    require("@tailwindcss/forms")
-  ],
-}
+  plugins: [require("tailwindcss-animate"), require("@tailwindcss/forms")],
+};

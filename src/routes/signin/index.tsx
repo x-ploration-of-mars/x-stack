@@ -12,21 +12,13 @@ export default component$(() => {
         <div class="relative hidden h-full flex-col bg-muted p-10 text-white dark:border-r lg:flex">
           <div class="absolute inset-0 -z-0 bg-black" />
           <div class="relative flex h-full flex-col justify-between">
-            <div class=" flex items-end text-lg font-medium">
-              <img
-                src="/X-logo-V3_transparent-dark_96-96.png"
-                width={48}
-                height={48}
-                alt="Authentication"
-                class="mr-2 block drop-shadow-[0_0_2px_#fff]"
-              />
-            </div>
+            <div class={["drop-shadow-neon flex items-end text-5xl"]}>𝕏</div>
 
             <div class="">
               <blockquote class="space-y-2">
                 <p class="text-lg">
-                  &ldquo;One stack to rule them all, one stack to find them, One stack to bring them
-                  all, and in the darkness bind them.&rdquo;
+                  &ldquo;The 𝕏 stack is the one stack to rule them all, the one stack to find them,
+                  the one stack to bring them all, and in the darkness bind them.&rdquo;
                 </p>
                 <footer class="text-sm">Elon Mush</footer>
               </blockquote>
