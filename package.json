@@ -70,11 +70,11 @@
     "drizzle-orm": "^0.28.6",
     "drizzle-valibot": "^0.1.1",
     "lucide-react": "^0.276.0",
-    "mysql2": "^3.6.0",
+    "mysql2": "^3.6.1",
     "react-webcam": "^7.1.1",
     "tailwind-merge": "^1.14.0",
     "tailwindcss-animate": "^1.0.7",
-    "valibot": "^0.14.0",
+    "valibot": "^0.15.0",
     "zod": "^3.22.2"
   }
 }
