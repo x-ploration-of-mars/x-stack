@@ -1,5 +1,3 @@
-# [Readme.md](http://Readme.md)
-
 # The cross-platform serverless bleeding-edge stack that scales
 
 😌 Easier
@@ -23,8 +21,6 @@ A place for you to easily weigh the pros and cons of each fullstack framework, c
 A cli to let you choose great alternatives that better match your ambitious project requirements (tbd).
 
 # Introducing the 𝕏 stack
-
----
 
 - ⚡️ **Fullstack framework: Qwik**
   - Build instantly interactive apps at any scale

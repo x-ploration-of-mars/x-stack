@@ -24,7 +24,6 @@ pnpm-debug.log*
 lerna-debug.log*
 
 # Editor
-.vscode/*
 !.vscode/launch.json
 !.vscode/*.code-snippets
 
@@ -46,3 +45,8 @@ lerna-debug.log*
 #env
 .env
 .env.local
+
+#package managers
+pnpm-lock.yaml
+package-lock.json
+yarn.lock
