@@ -1,10 +1,14 @@
 import { component$ } from "@builder.io/qwik";
+import { Link } from "@builder.io/qwik-city";
 
 export default component$(() => {
   return (
     <>
       <div class="flex h-[100vh] w-[100vw] items-center justify-center">
-        <h1>Documentation</h1>
+        <h1>TBD</h1>
+        <h2>
+          Find current docs <Link href="https://github.com/x-ploration/x-stack">on github</Link>
+        </h2>
       </div>
     </>
   );
