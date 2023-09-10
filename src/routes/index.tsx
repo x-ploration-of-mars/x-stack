@@ -3,7 +3,7 @@ import { Link, type DocumentHead } from "@builder.io/qwik-city";
 import { buttonVariants } from "~/components/ui/button";
 import XGlow from "~/components/x-glow/x-glow";
 
-import { LuArrowRight, LuGithub, LuUser } from "@qwikest/icons/lucide";
+import { LuArrowRight, LuGamepad2, LuGithub, LuUser } from "@qwikest/icons/lucide";
 import Signout from "~/components/auth/signout";
 import { useAuthSession } from "./plugin@auth";
 import xGlowStyles from "~/components/x-glow/x-glow.module.css";
@@ -15,6 +15,15 @@ export default component$(() => {
       <div class="relative h-[100vh] w-[100vw] flex-col bg-primary">
         <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 transform">
           <XGlow />
+        </div>
+        <div class="xs:top-12 absolute top-36 flex w-full justify-center">
+          <Link
+            class={[buttonVariants({ variant: "link" }), "text-secondary", xGlowStyles.neon]}
+            href="https://discord.gg/XM5udevF53"
+          >
+            <LuGamepad2 class="mr-2" />
+            Discord
+          </Link>
         </div>
         <div class="absolute top-24 flex w-full justify-around">
           <Link

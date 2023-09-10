@@ -10,7 +10,7 @@ export default component$(() => {
   return (
     <Form action={signout}>
       <input type="hidden" name="callbackUrl" value="/" />
-      <Button variant={"link"} class={[xGlowStyles.neon, "text-secondary"]} type="submit">
+      <Button variant={"link"} class={[xGlowStyles.light, "text-secondary"]} type="submit">
         Sign Out <LuLogOut class="ml-2" />
       </Button>
     </Form>

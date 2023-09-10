@@ -4,7 +4,20 @@ import type { Provider } from "@auth/core/providers";
 
 import { DrizzleAdapter } from "@auth/drizzle-adapter";
 import { db } from "~/drizzle/db";
+import { users } from "~/drizzle/schema/auth";
+import { eq } from "drizzle-orm";
 
+type UpdateData = {
+  email?: string;
+  image?: string;
+  name?: string;
+};
+
+type NewProfile = {
+  username?: string;
+  email?: string | null;
+  image_url?: string;
+};
 /**
  * Module augmentation for `next-auth` types. Allows us to add custom properties to the `session`
  * object and keep type safety.
@@ -26,8 +39,8 @@ declare module "@auth/core/types" {
   // }
 }
 
-export const { onRequest, useAuthSession, useAuthSignin, useAuthSignout } =
-  serverAuth$(({ env }) => ({
+export const { onRequest, useAuthSession, useAuthSignin, useAuthSignout } = serverAuth$(
+  ({ env }) => ({
     secret: env.get("AUTH_SECRET"),
     trustHost: true,
     providers: [
@@ -37,4 +50,37 @@ export const { onRequest, useAuthSession, useAuthSignin, useAuthSignout } =
       }),
     ] as Provider[],
     adapter: DrizzleAdapter(db),
-  }));
+    callbacks: {
+      async signIn({ user, account, profile }) {
+        // update db user with discord profile when profile has changed on discord
+        const {
+          email: profileEmail,
+          image_url: profileImage,
+          username: profileUsername,
+        }: NewProfile = profile ?? {};
+
+        const { email: userEmail, image: userImage, name: userName, id: userId } = user;
+
+        if (account?.provider === "discord") {
+          const updateData: UpdateData = {};
+
+          if (profileEmail !== userEmail && profileEmail !== null) {
+            updateData.email = profileEmail;
+          }
+          if (profileImage !== userImage) {
+            updateData.image = profileImage;
+          }
+          if (profileUsername !== userName) {
+            updateData.name = profileUsername;
+          }
+
+          // Only run the update if there's something to update
+          if (Object.keys(updateData).length > 0) {
+            await db.update(users).set(updateData).where(eq(users.id, userId));
+          }
+        }
+        return true;
+      },
+    },
+  }),
+);

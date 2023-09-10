@@ -17,7 +17,7 @@ export const head: DocumentHead = {
 export default component$(() => {
   const session = useAuthSession();
 
-  console.log("session.value?.user.image", session.value?.user.image);
+  console.log("session", session.value?.expires);
   return (
     <>
       <div class="space-y-6 p-10 pb-16">

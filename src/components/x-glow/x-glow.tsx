@@ -5,7 +5,7 @@ import XLogo from "~/media/X-logo-V3_transparent-dark.png?jsx";
 export default component$(() => {
   return (
     <div>
-      <XLogo alt="X Logo" class={[" mr-2 h-auto w-80", styles.neon]} />
+      <XLogo alt="X Logo" class={[" mr-2 h-auto w-80", styles.light]} />
     </div>
   );
 });
