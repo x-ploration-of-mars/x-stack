@@ -47,6 +47,7 @@ export default component$(
                 variant={"default"}
                 ref={acceptCookiesButtonRef}
                 onClick$={() => {
+                  localStorage.setItem("hasAcceptedCookies", "true");
                   dialogRef.value?.close();
                 }}
               >

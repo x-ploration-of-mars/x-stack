@@ -7,7 +7,8 @@ export default component$(() => {
   const dialogRef = useSignal<HTMLDialogElement>();
 
   useVisibleTask$(() => {
-    dialogRef.value?.showModal();
+    if (!localStorage.getItem("hasAcceptedCookies"))
+      dialogRef.value?.showModal();
   });
 
   return (
