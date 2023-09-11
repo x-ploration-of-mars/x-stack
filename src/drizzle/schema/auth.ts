@@ -1,4 +1,11 @@
-import { int, timestamp, mysqlTable, primaryKey, varchar, boolean } from "drizzle-orm/mysql-core";
+import {
+  int,
+  timestamp,
+  mysqlTable,
+  primaryKey,
+  varchar,
+  boolean,
+} from "drizzle-orm/mysql-core";
 import type { AdapterAccount } from "@auth/core/adapters";
 
 import { createInsertSchema, createSelectSchema } from "drizzle-valibot";
@@ -26,46 +33,26 @@ export const users = mysqlTable("user", {
   publicEmail: varchar("publicEmail", { length: 255 }),
 });
 
-// const profileSchema = z.object({
-//   firstName: z
-//     .string()
-//     .min(1, "First name cannot be empty")
-//     .max(50, "First name is too long")
-//     .regex(/^[A-Za-z\s-]+$/, "First name can only contain letters, spaces, and hyphens")
-//     .transform((name) => name.trim())
-//     .refine((name) => !/\s{2,}/.test(name), "First name cannot have consecutive spaces"),
-//   lastName: z
-//     .string()
-//     .min(1, "First name cannot be empty")
-//     .max(50, "First name is too long")
-//     .regex(/^[A-Za-z\s-]+$/, "First name can only contain letters, spaces, and hyphens")
-//     .transform((name) => name.trim())
-//     .refine((name) => !/\s{2,}/.test(name), "First name cannot have consecutive spaces"),
-//   available: z.boolean(),
-//   website: z.string().url("Please provide a valid URL").max(255, "URL is too long"),
-//   github: z.string().url("Please provide a valid URL").max(255, "URL is too long"),
-//   linkedin: z.string().url("Please provide a valid URL").max(255, "URL is too long"),
-//   twitter: z.string().url("Please provide a valid URL").max(255, "URL is too long"),
-//   bio: z.string().max(512, "Bio is too long"),
-//   discordUserName: z.string(),
-//   publicEmail: z.string().email("Please provide a valid email"),
-//   oauthEmail: z.string().email("Please provide a valid email"),
-// });
-
 // Schema for inserting a user - can be used to validate API requests
 export const insertUserSchema = createInsertSchema(users, {
   firstName: () =>
     string([
       toTrimmed(),
       minLength(1, "First name cannot be empty"),
-      regex(/^[A-Za-z\s-]+$/, "First name can only contain letters, spaces, and hyphens"),
+      regex(
+        /^[A-Za-z\s-]+$/,
+        "First name can only contain letters, spaces, and hyphens"
+      ),
       regex(/^(?!.*\s{2,}).*$/, "First name cannot have consecutive spaces"),
     ]),
   lastName: () =>
     string([
       toTrimmed(),
       minLength(1, "First name cannot be empty"),
-      regex(/^[A-Za-z\s-]+$/, "First name can only contain letters, spaces, and hyphens"),
+      regex(
+        /^[A-Za-z\s-]+$/,
+        "First name can only contain letters, spaces, and hyphens"
+      ),
       regex(/^(?!.*\s{2,}).*$/, "First name cannot have consecutive spaces"),
     ]),
   website: () => string([url("Please provide a valid URL")]),
@@ -73,6 +60,7 @@ export const insertUserSchema = createInsertSchema(users, {
   linkedin: () => string([url("Please provide a valid URL")]),
   twitter: () => string([url("Please provide a valid URL")]),
   publicEmail: () => string([email("Please provide a valid email")]),
+  bio: () => string(),
 });
 
 // Schema for selecting a user - can be used to validate API responses
@@ -82,7 +70,9 @@ export const accounts = mysqlTable(
   "account",
   {
     userId: varchar("userId", { length: 255 }).notNull(),
-    type: varchar("type", { length: 255 }).$type<AdapterAccount["type"]>().notNull(),
+    type: varchar("type", { length: 255 })
+      .$type<AdapterAccount["type"]>()
+      .notNull(),
     provider: varchar("provider", { length: 255 }).notNull(),
     providerAccountId: varchar("providerAccountId", { length: 255 }).notNull(),
     refresh_token: varchar("refresh_token", { length: 255 }),
@@ -95,14 +85,16 @@ export const accounts = mysqlTable(
   },
   (account) => ({
     compoundKey: primaryKey(account.provider, account.providerAccountId),
-  }),
+  })
 );
 
 export const accountsLegacy = mysqlTable(
   "accounts",
   {
     userId: varchar("userId", { length: 255 }).notNull(),
-    type: varchar("type", { length: 255 }).$type<AdapterAccount["type"]>().notNull(),
+    type: varchar("type", { length: 255 })
+      .$type<AdapterAccount["type"]>()
+      .notNull(),
     provider: varchar("provider", { length: 255 }).notNull(),
     providerAccountId: varchar("providerAccountId", { length: 255 }).notNull(),
     refresh_token: varchar("refresh_token", { length: 255 }),
@@ -115,7 +107,7 @@ export const accountsLegacy = mysqlTable(
   },
   (account) => ({
     compoundKey: primaryKey(account.provider, account.providerAccountId),
-  }),
+  })
 );
 
 export const sessions = mysqlTable("session", {
@@ -139,5 +131,5 @@ export const verificationTokens = mysqlTable(
   },
   (vt) => ({
     compoundKey: primaryKey(vt.identifier, vt.token),
-  }),
+  })
 );
