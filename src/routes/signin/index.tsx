@@ -12,7 +12,6 @@ export default component$(() => {
 
   return (
     <>
-      {/* <button onClick$={() => dialogRef.value?.showModal()}>Show modal</button> */}
       <AcceptCookies dialogRef={dialogRef} />
       <div
         class={`container relative grid h-[100vh] flex-col items-center justify-center lg:max-w-none lg:grid-cols-2 lg:px-0`}
@@ -50,14 +49,14 @@ export default component$(() => {
             <p class="px-8 text-center text-sm">
               By creating an account, you agree to our{" "}
               <Link
-                href="/terms"
+                href="/public/terms-of-service"
                 class="underline underline-offset-4 hover:text-primary"
               >
                 Terms of Service
               </Link>{" "}
               and{" "}
               <Link
-                href="/privacy"
+                href="/public/privacy-policy"
                 class="underline underline-offset-4 hover:text-primary"
               >
                 Privacy Policy
