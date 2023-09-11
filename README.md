@@ -188,6 +188,8 @@ You’re welcome to join the [🔗Discord server](https://discord.gg/W4e8ReQWv2)
 
 ### Planetscale (MySQL)
 
+### Turso (SQLite)
+
 ### Neon (Postgres)
 
 ### CockroachDB (Postgres)
