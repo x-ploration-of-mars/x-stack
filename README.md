@@ -23,9 +23,9 @@ A cli to let you choose great alternatives that better match your ambitious proj
 - ⚡️ **Fullstack framework: Qwik**
   - Enjoy the best DX imaginable with server actions/loaders, typescript server/client RPC calls, Valibot validation, Middlewares, Image optimization, etc.
   - Make your app performant right from the start thanks to built-in Resumability, Lazy-loading ($), Signals-based Reactivity, and Edge Deployment
-  - Use any library from other frameworks (React ✅; Svelte, Solid & Vue incoming)
+  - Use any library from other frameworks (React & Angular ✅; Svelte, Solid & Vue incoming)
 - ✨ **Components ~~library~~ collection: Shadcn/ui (TailwindCSS w/ headless components)**
-  > ⚠️ Since some shadcn components must be imported with qwikify$, this is the hardest piece to use with Qwik atm. I have already started porting a few components and will spend most of my time on this before I can confidently release v1.
+  > ⚠️ Since some shadcn components must be rewritten natively or imported with qwikify$, this is a hard piece to use with Qwik atm. I have already started porting a few components and will spend most of my time on this before I can confidently release v1.
   - Own your components and create your own design system to match your own brand requirements
   - Copy/Paste UI templates to speed up your scaffolding
   - Customize your sections and components easily with Tailwind utility classes
@@ -114,19 +114,14 @@ You’re welcome to join the [🔗Discord server](https://discord.gg/W4e8ReQWv2)
 
 ## Fullstack Frameworks
 
-### Qwik (w/ qwik-city)
+TLDR: For most projects, the most important criteria for choosing a framework is the ecosystem.
 
-### Svelte / Sveltekit
-
-### Solid.js / Solidstart
-
-### React / Next.js
-
-### React / Remix
-
-### Vue.js / Nuxt
-
-### Angular
+- 1️⃣: Thanks to its serialized/resumable/compiled model, Qwik scores at the highest in many aspects: SSR _(ofc)_, but also Reactivity, DX, and **the ecosystem** (because you can run React inside of Qwik 👀). Anything you can do in React, you can do in Qwik. But the opposite is not true. I wonder what could be possibly done in other frameworks that couldn't be in Qwik 🤔.
+- 2️⃣: If you ask me, I'd say React / Next / Remix comes next (👈). They are not as good in terms of Reactivity as Svelte, Solid or even Vue, but you will find libraries you won't find natively built in the other frameworks (ex: [react webcam](https://www.npmjs.com/package/react-webcam)) and get newer trendy libraries sooner (hi 👋 [shadcn](https://github.com/shadcn-ui/ui)).
+- 3️⃣: I'd say it's Svelte, because it is lightweight and brings significant performance gains, and it has Sveltekit ready. Rich Harris has also got some swag 👌.
+- 4️⃣: Vue / Nuxt 3. Although I highly respect Daniel Roe, I think appart from small performance gains, Vue 3's composition api is simply React hooks into Vue. It isn't worth losing the ecosystem.
+- 5️⃣: Solid / Solidstart. Although Ryan is one of my heroes, Solidstart is still not solid (👈) enough to be used in production ☹️.
+- 6️⃣: Angular...
 
 ## Authentication
 
@@ -156,7 +151,7 @@ You’re welcome to join the [🔗Discord server](https://discord.gg/W4e8ReQWv2)
 
 ### Google Identity Platform
 
-## Components collections → **[🔗](https://www.compart.com/en/unicode/U+1F517)**[comparison-table](https://docs.google.com/spreadsheets/d/1CHG5uK4AoMEl4giF9uY0RDJawjTdtT27gFwoIdRlxTY/edit#gid=225083988) _(wip)_
+## Components collections → [🔗comparison-table](https://docs.google.com/spreadsheets/d/1CHG5uK4AoMEl4giF9uY0RDJawjTdtT27gFwoIdRlxTY/edit#gid=225083988) _(wip)_
 
 ### Shadcn/ui
 
@@ -256,10 +251,48 @@ You’re welcome to join the [🔗Discord server](https://discord.gg/W4e8ReQWv2)
 
 ### Upstash
 
+## Deployment
+
+### Vercel
+
+### Netlify
+
+### Cloudflare pages
+
+### AWS
+
+### GCP
+
+### Azure
+
+## Cross Platform solution
+
+### PWA
+
+### Capacitor
+
+### Tauri
+
+### React Native
+
 <br>
 
 # FAQ _(tbd)_
 
-<br>
+### Is the 𝕏 stack ready for production?
+
+Although some pieces are still in beta (auth.js, drizzle, valibot, qwik-ui's headless components), I am confident that this stack can already be used in production.
+
+> ⚠️ Since some shadcn components must be rewritten natively or imported with qwikify$, this is a hard piece to use with Qwik atm. I have already started porting a few components and will spend most of my time on this before I can confidently release v1.
+
+### Who are you?
+
+I'm an indie dev and I've had the chance to work on many projects that required learning many different technoligies. I have worked extensively with React vanilla in a project that used the GRAND stack (Graphql, React, Apollo, Neo4j Database). I've worked with Next 12 for my portfolio website using the t3 stack. I've worked with Nuxt 3 on a French government site. And I've tried my hands at Sveltekit for a side hustle. I have to admit, I've only read Solid's documentation 🙈.
+
+### Why?
+
+In July 2023, I started looking into making the t3 stack cross-platform with Capacitor. But one month of research later, I came up to the unintuitive conclusion that SSR applications can also perfectly serve as mobile apps if done well. The loader/action pattern thus became attractive and I started playing a bit with Remix, Next 13.4, Nuxt and Qwik. I was already a big fan of shadcn and I wanted it to be a part of my stack, so I thought Qwik and Nuxt were out of question. But looking in more closely, everything except shadcn was ready to use in Qwik while server actions were in beta in Next and there was no middleware capability in Remix. So I tried to see if anyone was working on a shadcn port and realized I could qwikify$ shadcn. Thus here I am with the 𝕏 stack on Qwik and qwikcn 🙃.
+
+> <br>
 
 # Contributors _(tbd)_
