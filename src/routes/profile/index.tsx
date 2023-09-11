@@ -19,6 +19,7 @@ import {
 import { type Input as valibotInput, pick, parse } from "valibot";
 import { useAuthSession } from "../plugin@auth";
 import { LuLoader2 } from "@qwikest/icons/lucide";
+import Label from "~/components/ui/label";
 
 const requestSchema = pick(insertUserSchema, [
   "firstName",
@@ -75,7 +76,7 @@ export default component$(() => {
   return (
     <>
       <Form onSubmit$={handleSubmit}>
-        <div class="max-w-7xl">
+        <div class="max-w-6xl">
           <div class="lg:pl-28">
             <div class="space-y-12">
               <div class="grid grid-cols-1  gap-x-8 gap-y-10 border-b border-primary/10 pb-12 md:grid-cols-3">
@@ -96,15 +97,17 @@ export default component$(() => {
                   <div class="sm:col-span-3">
                     <Field name="firstName">
                       {(field, props) => (
-                        <Input
-                          {...props}
-                          type="text"
-                          value={field.value}
-                          error={field.error}
-                          label="First name"
-                          autoComplete="given-name"
-                          required
-                        />
+                        <>
+                          <Label>First name *</Label>
+                          <Input
+                            {...props}
+                            type="text"
+                            value={field.value}
+                            error={field.error}
+                            autoComplete="given-name"
+                            required
+                          />
+                        </>
                       )}
                     </Field>
                   </div>
@@ -112,15 +115,17 @@ export default component$(() => {
                   <div class="sm:col-span-3">
                     <Field name="lastName">
                       {(field, props) => (
-                        <Input
-                          {...props}
-                          type="text"
-                          autoComplete="family-name"
-                          value={field.value}
-                          error={field.error}
-                          label="Last name"
-                          required
-                        />
+                        <>
+                          <Label>Last name *</Label>
+                          <Input
+                            {...props}
+                            type="text"
+                            autoComplete="family-name"
+                            value={field.value}
+                            error={field.error}
+                            required
+                          />
+                        </>
                       )}
                     </Field>
                   </div>
@@ -131,9 +136,7 @@ export default component$(() => {
                         <div class="relative flex gap-x-3">
                           <Checkbox {...props} checked={field.value ?? false} />
                           <div>
-                            <label class="font-medium text-primary">
-                              Available
-                            </label>
+                            <Label>Available</Label>
                             <p class="text-sm text-muted-foreground">
                               Decide whether you want to appear available or not
                               in search results.
@@ -147,14 +150,16 @@ export default component$(() => {
                   <div class="sm:col-span-5">
                     <Field name="website">
                       {(field, props) => (
-                        <Input
-                          {...props}
-                          type="text"
-                          value={field.value}
-                          error={field.error}
-                          label="Website/Portfolio"
-                          placeholder="www.example.com"
-                        />
+                        <>
+                          <Label>Website</Label>
+                          <Input
+                            {...props}
+                            type="text"
+                            value={field.value}
+                            error={field.error}
+                            placeholder="www.example.com"
+                          />
+                        </>
                       )}
                     </Field>
                   </div>
@@ -162,14 +167,16 @@ export default component$(() => {
                   <div class="sm:col-span-5">
                     <Field name="github">
                       {(field, props) => (
-                        <Input
-                          {...props}
-                          type="text"
-                          value={field.value}
-                          error={field.error}
-                          label="Github profile"
-                          placeholder="github.com/MaieulChevalier"
-                        />
+                        <>
+                          <Label>Github profile</Label>
+                          <Input
+                            {...props}
+                            type="text"
+                            value={field.value}
+                            error={field.error}
+                            placeholder="github.com/MaieulChevalier"
+                          />
+                        </>
                       )}
                     </Field>
                   </div>
@@ -177,14 +184,16 @@ export default component$(() => {
                   <div class="sm:col-span-5">
                     <Field name="linkedin">
                       {(field, props) => (
-                        <Input
-                          {...props}
-                          type="text"
-                          value={field.value}
-                          error={field.error}
-                          label="Linkedin profile"
-                          placeholder="linkedin.com/in/maieul-chevalier"
-                        />
+                        <>
+                          <Label>Linkedin profile</Label>
+                          <Input
+                            {...props}
+                            type="text"
+                            value={field.value}
+                            error={field.error}
+                            placeholder="linkedin.com/in/maieul-chevalier"
+                          />
+                        </>
                       )}
                     </Field>
                   </div>
@@ -192,37 +201,34 @@ export default component$(() => {
                   <div class="sm:col-span-5">
                     <Field name="twitter">
                       {(field, props) => (
-                        <Input
-                          {...props}
-                          type="text"
-                          value={field.value}
-                          error={field.error}
-                          label="Twitter profile"
-                          placeholder="twitter.com/MaieulChevalier"
-                        />
+                        <>
+                          <Label>Twitter profile</Label>
+                          <Input
+                            {...props}
+                            type="text"
+                            value={field.value}
+                            error={field.error}
+                            placeholder="twitter.com/MaieulChevalier"
+                          />
+                        </>
                       )}
                     </Field>
                   </div>
 
                   <div class="sm:col-span-6">
-                    <label
-                      html-for="bio"
-                      class="block font-medium leading-6 text-primary"
-                    >
-                      Bio
-                    </label>
-                    <div class="mt-2">
-                      <Field name="bio">
-                        {(field, props) => (
+                    <Field name="bio">
+                      {(field, props) => (
+                        <>
+                          <Label>Bio</Label>
                           <Textarea
                             {...props}
                             class="resize-none h-36"
                             value={field.value ?? ""}
                             error={field.error}
                           />
-                        )}
-                      </Field>
-                    </div>
+                        </>
+                      )}
+                    </Field>
                   </div>
                 </div>
               </div>
@@ -239,16 +245,17 @@ export default component$(() => {
 
                 <div class="grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6 md:col-span-2">
                   <div class="sm:col-span-4">
+                    <Label>Discord username</Label>
                     <Input
                       type="text"
                       value={session.value?.user.name}
                       error={session.value ? "" : "This field is required"}
-                      label="Discord Username"
                       readOnly
                     />
                   </div>
 
                   <div class="sm:col-span-4">
+                    <Label>Public email</Label>
                     <Field name="publicEmail">
                       {(field, props) => (
                         <Input
@@ -256,18 +263,17 @@ export default component$(() => {
                           type="email"
                           value={field.value}
                           error={field.error}
-                          label="Public email"
                         />
                       )}
                     </Field>
                   </div>
 
                   <div class="sm:col-span-4">
+                    <Label>Oauth email</Label>
                     <Input
                       type="email"
                       value={session.value?.user.email}
                       error={session.value ? "" : "This field is required"}
-                      label="Oauth email address"
                       readOnly
                     />
                   </div>

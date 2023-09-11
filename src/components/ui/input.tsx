@@ -7,19 +7,14 @@ type InputProps = Omit<QwikIntrinsicElements["input"], "children"> & {
 };
 
 const inputVariants = cva(
-  "flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus:border-input  focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50",
+  "flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus:border-input  focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
 );
 
-export default component$<InputProps>(({ label, error, ...props }) => {
-  const { name, required } = props;
+export default component$<InputProps>(({ error, ...props }) => {
+  const { name } = props;
 
   return (
     <div>
-      {label && (
-        <label for={name} class="block font-medium leading-10 text-primary">
-          {label} {required && <span>*</span>}
-        </label>
-      )}
       <input
         {...props}
         aria-errormessage={`${name}-error`}
