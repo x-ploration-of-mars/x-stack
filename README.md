@@ -91,8 +91,24 @@ You’re welcome to join the [🔗Discord server](https://discord.gg/W4e8ReQWv2)
 
 - Copy `.env.example` into `.env`
 - Add `AUTH_SECRET` with this [secret generator](https://generate-secret.vercel.app/32) or with `openssl rand -base64 32`
-- Add Discord provider `DISCORD_CLIENT_ID` `DISCORD_CLIENT_SECRET` with https://discord.com/developers/applications. You will need to create a new application (top-right corner button `New Application`); and in oauth2 settings, add redirects to your localhost url (e.g. `http://localhost:5173/api/auth/callback/discord`) and your production url (e.g. `https://x-stack.vercel.app/api/auth/callback/discord`).
-- Add Planetscale env vars. `DATABASE` `DATABASE_HOST` `DATABASE_USERNAME` `DATABASE_PASSWORD` with https://app.planetscale.com/. Go to `branches`, select your branch, click `connect`, and copy the env vars.
+- Add Discord provider `DISCORD_CLIENT_ID` `DISCORD_CLIENT_SECRET` with https://discord.com/developers/applications. You will need to create a new application (top-right corner button `New Application`) and copy the "client id" and "client_secret" from oauth2 settings.
+- Add Planetscale env vars. `DATABASE` `DATABASE_HOST` `DATABASE_USERNAME` `DATABASE_PASSWORD` with https://app.planetscale.com/. Go to `branches`, select your branch, click `connect`, and copy/paste.
+
+### Add discord redirect
+
+- Add discord redirect to your localhost url (e.g. `http://localhost:5173/api/auth/callback/discord`)
+
+### Replace GA4 property
+
+- In root.tsx, change id=G-VNBJX46X1T to your own GA4 property id
+
+## Deploy
+
+- Push your code in a new github repository
+- Go to vercel dashboard, `Add New` project (top-right button) and select your repository. Remember to add production env vars (the database env vars should point to your production database). Tip: you can copy your .env text and paste it directly in vercel dashboard fields.
+
+- Add discord redirect to your production url (e.g. `https://x-stack.vercel.app/api/auth/callback/discord`).
+
 
 # Evaluation & Alternatives (wip)
 
