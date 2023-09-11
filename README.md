@@ -31,6 +31,7 @@ A cli to let you choose great alternatives that better match your ambitious proj
   - Customize your sections and components easily with Tailwind utility classes
   - Bring in your favorite icon library: Lucide, HeroIcons, Font Awesome, etc.
   - Ship less CSS with Tailwind's JIT (just in time) engine
+  - Style your forms and markdown easily with @tailwindcss/forms and @tailwindcss/typography
   - Integrate your components with StoryBook _(tbd)_
 - 🔐 **Auth: Auth.js**
   - Enjoy a 100% free auth solution
