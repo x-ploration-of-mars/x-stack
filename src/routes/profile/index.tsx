@@ -14,9 +14,11 @@ import {
   type InitialValues,
   type SubmitHandler,
   valiForm$,
+  reset,
 } from "@modular-forms/qwik";
 import { type Input as valibotInput, pick, parse } from "valibot";
 import { useAuthSession } from "../plugin@auth";
+import { LuLoader2 } from "@qwikest/icons/lucide";
 
 const requestSchema = pick(insertUserSchema, [
   "firstName",
@@ -59,7 +61,7 @@ export const useFormAction = formAction$<UpdateProfileForm>(
 
 export default component$(() => {
   const session = useAuthSession();
-  const [, { Form, Field }] = useForm<UpdateProfileForm>({
+  const [updateProfileForm, { Form, Field }] = useForm<UpdateProfileForm>({
     loader: useFormLoader(),
     action: useFormAction(),
     validate: valiForm$(requestSchema),
@@ -276,12 +278,18 @@ export default component$(() => {
           </div>
 
           <div class="mt-6 flex items-center justify-end gap-x-6">
-            <Button variant="ghost" type="submit">
+            <Button variant="ghost" onClick$={() => reset(updateProfileForm)}>
               Cancel
             </Button>
-            <Button type="submit" variant="default">
-              Save
-            </Button>
+            {updateProfileForm.submitting ? (
+              <Button variant="default" class="w-16">
+                <LuLoader2 class="w-5 h-5 animate-spin" />
+              </Button>
+            ) : (
+              <Button type="submit" variant="default" class="w-16">
+                Save
+              </Button>
+            )}
           </div>
         </div>
       </Form>
