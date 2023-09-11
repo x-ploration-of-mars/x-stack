@@ -19,6 +19,7 @@ import {
 
 export default component$(
   ({ dialogRef }: { dialogRef: Signal<HTMLDialogElement | undefined> }) => {
+    // To move focus to Button
     const acceptCookiesButtonRef = useSignal<HTMLButtonElement>();
     useVisibleTask$(() => {
       acceptCookiesButtonRef.value?.focus();

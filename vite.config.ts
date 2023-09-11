@@ -14,12 +14,7 @@ export default defineConfig(() => {
       tsconfigPaths(), 
       qwikReact(),      
       partytownVite({ dest: join(__dirname, "dist", "~partytown") }),
-  ],
-    preview: {
-      headers: {
-        "Cache-Control": "public, max-age=600",
-      },
-    },
+    ],
     optimizeDeps: {
       include: [ "@auth/core" ]
     },
