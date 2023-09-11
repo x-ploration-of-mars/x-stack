@@ -257,7 +257,6 @@ export default component$(() => {
                           value={field.value}
                           error={field.error}
                           label="Public email"
-                          readOnly
                         />
                       )}
                     </Field>

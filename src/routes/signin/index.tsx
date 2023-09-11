@@ -1,10 +1,19 @@
-import { component$ } from "@builder.io/qwik";
+import { component$, useSignal, useVisibleTask$ } from "@builder.io/qwik";
 import { Link } from "@builder.io/qwik-city";
 import Signin from "~/components/auth/signin";
+import AcceptCookies from "./accept-cookies";
 
 export default component$(() => {
+  const dialogRef = useSignal<HTMLDialogElement>();
+
+  useVisibleTask$(() => {
+    return dialogRef.value?.showModal();
+  });
+
   return (
     <>
+      {/* <button onClick$={() => dialogRef.value?.showModal()}>Show modal</button> */}
+      <AcceptCookies dialogRef={dialogRef} />
       <div
         class={`container relative grid h-[100vh] flex-col items-center justify-center lg:max-w-none lg:grid-cols-2 lg:px-0`}
       >
@@ -17,8 +26,9 @@ export default component$(() => {
             <div class="">
               <blockquote class="space-y-2">
                 <p class="text-lg">
-                  &ldquo;The 𝕏 stack is the one stack to rule them all, the one stack to find them,
-                  the one stack to bring them all, and in the darkness bind them.&rdquo;
+                  &ldquo;The 𝕏 stack is the one stack to rule them all, the one
+                  stack to find them, the one stack to bring them all, and in
+                  the darkness bind them.&rdquo;
                 </p>
                 <footer class="text-sm">Elon Mush</footer>
               </blockquote>
@@ -29,7 +39,9 @@ export default component$(() => {
         <div class="flex w-full flex-col items-center justify-center lg:p-8">
           <div class=" space-y-6 sm:w-[350px]">
             <div class="flex flex-col space-y-4 text-center">
-              <h1 class="text-4xl font-semibold tracking-tight">The Everything Stack</h1>
+              <h1 class="text-4xl font-semibold tracking-tight">
+                The Everything Stack
+              </h1>
               <h2 class="text-xl">Try today</h2>
             </div>
             <div class="pt-4">
@@ -37,11 +49,17 @@ export default component$(() => {
             </div>
             <p class="px-8 text-center text-sm">
               By creating an account, you agree to our{" "}
-              <Link href="/terms" class="underline underline-offset-4 hover:text-primary">
+              <Link
+                href="/terms"
+                class="underline underline-offset-4 hover:text-primary"
+              >
                 Terms of Service
               </Link>{" "}
               and{" "}
-              <Link href="/privacy" class="underline underline-offset-4 hover:text-primary">
+              <Link
+                href="/privacy"
+                class="underline underline-offset-4 hover:text-primary"
+              >
                 Privacy Policy
               </Link>
               .
