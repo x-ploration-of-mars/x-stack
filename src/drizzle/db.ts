@@ -1,5 +1,4 @@
 import * as AuthSchema from "~/drizzle/schema/auth";
-import * as TodosSchema from "~/drizzle/schema/todos";
 
 import { drizzle } from "drizzle-orm/planetscale-serverless";
 import { connect } from "@planetscale/database";
@@ -10,6 +9,6 @@ const connection = connect({
   username: process.env["DATABASE_USERNAME"],
   password: process.env["DATABASE_PASSWORD"],
 });
-const schema = { ...AuthSchema, ...TodosSchema };
+const schema = { ...AuthSchema };
 
 export const db = drizzle(connection, { schema });

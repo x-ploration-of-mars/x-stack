@@ -29,7 +29,9 @@ export default component$(() => {
           <div class="ml-2 flex">
             <img
               class="min-w-[48px] rounded-full"
-              src={session.value?.user.image ?? "https://via.placeholder.com/48"}
+              src={
+                session.value?.user.image ?? "https://via.placeholder.com/48"
+              }
               alt="discord avatar"
               width={48}
               height={48}
@@ -37,8 +39,10 @@ export default component$(() => {
           </div>
           <div class="ml-2">
             <h2 class="text-2xl font-bold tracking-tight">Profile</h2>
-            <p class="text-muted-foreground">
-              Manage your public information and account settings.
+            <p class="text-muted-foreground max-w-6xl">
+              Manage your public information and account settings. This
+              information is stored in a real database and may be used to show
+              your profile to other 𝕏-plorers on another page in the future.
             </p>
           </div>
         </div>

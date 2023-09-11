@@ -7,6 +7,7 @@ import Checkbox from "~/components/ui/checkbox";
 import Input from "~/components/ui/input";
 import Button from "~/components/ui/button";
 import Textarea from "~/components/ui/textarea";
+import Label from "~/components/ui/label";
 import { type Session } from "@auth/core/types";
 import {
   useForm,
@@ -17,9 +18,8 @@ import {
   reset,
 } from "@modular-forms/qwik";
 import { type Input as valibotInput, pick, parse } from "valibot";
-import { useAuthSession } from "../plugin@auth";
 import { LuLoader2 } from "@qwikest/icons/lucide";
-import Label from "~/components/ui/label";
+import { useAuthSession } from "../plugin@auth";
 
 const requestSchema = pick(insertUserSchema, [
   "firstName",
