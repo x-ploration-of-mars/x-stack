@@ -105,9 +105,10 @@ You’re welcome to join the [🔗Discord server](https://discord.gg/W4e8ReQWv2)
 ## Deploy
 
 - Push your code in a new github repository
-- Go to vercel dashboard, `Add New` project (top-right button) and select your repository. Remember to add production env vars (the database env vars should point to your production database). Tip: you can copy your .env text and paste it directly in vercel dashboard fields.
-
+- Go to vercel dashboard, `Add New` project (top-right button) and select your repository. Remember to add production env vars (the database env vars should point to your production database).
 - Add discord redirect to your production url (e.g. `https://x-stack.vercel.app/api/auth/callback/discord`).
+
+
 
 
 # Evaluation & Alternatives (wip)
