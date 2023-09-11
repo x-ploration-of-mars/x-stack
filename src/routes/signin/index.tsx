@@ -7,7 +7,7 @@ export default component$(() => {
   const dialogRef = useSignal<HTMLDialogElement>();
 
   useVisibleTask$(() => {
-    return dialogRef.value?.showModal();
+    dialogRef.value?.showModal();
   });
 
   return (
