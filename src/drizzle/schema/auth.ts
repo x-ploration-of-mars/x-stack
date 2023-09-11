@@ -60,7 +60,6 @@ export const insertUserSchema = createInsertSchema(users, {
   linkedin: () => string([url("Please provide a valid URL")]),
   twitter: () => string([url("Please provide a valid URL")]),
   publicEmail: () => string([email("Please provide a valid email")]),
-  bio: () => string(),
 });
 
 // Schema for selecting a user - can be used to validate API responses

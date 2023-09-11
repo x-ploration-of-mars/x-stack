@@ -1,6 +1,11 @@
 // WIP
 
-import { type Signal, component$ } from "@builder.io/qwik";
+import {
+  type Signal,
+  component$,
+  useSignal,
+  useVisibleTask$,
+} from "@builder.io/qwik";
 import { Link } from "@builder.io/qwik-city";
 import Button from "~/components/ui/button";
 import {
@@ -14,6 +19,11 @@ import {
 
 export default component$(
   ({ dialogRef }: { dialogRef: Signal<HTMLDialogElement | undefined> }) => {
+    const acceptCookiesButtonRef = useSignal<HTMLButtonElement>();
+    useVisibleTask$(() => {
+      acceptCookiesButtonRef.value?.focus();
+    });
+
     return (
       <div>
         <dialog ref={dialogRef} class="bg-transparent">
@@ -35,7 +45,7 @@ export default component$(
             <CardFooter class="flex justify-between">
               <Button
                 variant={"default"}
-                id="acceptCookies"
+                ref={acceptCookiesButtonRef}
                 onClick$={() => {
                   dialogRef.value?.close();
                 }}
