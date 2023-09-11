@@ -26,9 +26,8 @@ export default component$(() => {
             <div class="">
               <blockquote class="space-y-2">
                 <p class="text-lg">
-                  &ldquo;The 𝕏 stack is the one stack to rule them all, the one
-                  stack to find them, the one stack to bring them all, and in
-                  the darkness bind them.&rdquo;
+                  &ldquo;The 𝕏 stack will definitely be the go to place for
+                  building apps on the everything app.&rdquo;
                 </p>
                 <footer class="text-sm">Elon Mush</footer>
               </blockquote>
