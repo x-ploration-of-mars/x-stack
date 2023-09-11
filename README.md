@@ -277,7 +277,7 @@ TLDR: For most projects, the most important criteria for choosing a framework is
 
 <br>
 
-# FAQ _(tbd)_
+# FAQ _(wip)_
 
 ### Is the 𝕏 stack ready for production?
 
