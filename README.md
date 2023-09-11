@@ -85,7 +85,7 @@ You’re welcome to join the [🔗Discord server](https://discord.gg/W4e8ReQWv2)
 ## Test locally
 
 - Clone project `git clone https://github.com/x-ploration/x-stack.git`
-- Install dependencies `npm install` | `pnpm install` | `yarn`
+- Install dependencies `npm install`
 
 ### Add env variables
 
@@ -106,10 +106,9 @@ You’re welcome to join the [🔗Discord server](https://discord.gg/W4e8ReQWv2)
 
 - Push your code in a new github repository
 - Go to vercel dashboard, `Add New` project (top-right button) and select your repository. Remember to add production env vars (the database env vars should point to your production database).
+- On your terminal, run build command `npm run build`
+- On your terminal, run deploy command `npm run deploy`
 - Add discord redirect to your production url (e.g. `https://x-stack.vercel.app/api/auth/callback/discord`).
-
-
-
 
 # Evaluation & Alternatives (wip)
 
