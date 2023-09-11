@@ -58,7 +58,7 @@ A cli to let you choose great alternatives that better match your ambitious proj
   - Run migrations with ease
   - Use it anywhere, even on the edge
 - 🎯 **Analytics: Firebase Analytics (GA4)**
-  - (100% free)[https://support.google.com/analytics/answer/1070983?hl=en#zippy=%2Cin-this-article]
+  - [100% free](https://support.google.com/analytics/answer/1070983?hl=en#zippy=%2Cin-this-article)
   - Keep track of your AARRR metrics with ease thanks to well-designed visualizations
   - Enjoy the power of cohort-based analysis to measure app usage and learn from your users
   - Run A/B tests with GrowthBook to find out what drives your users
