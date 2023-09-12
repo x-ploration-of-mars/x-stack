@@ -19,19 +19,17 @@ import {
 } from "@modular-forms/qwik";
 import { type Input as valibotInput, pick, parse } from "valibot";
 import { LuLoader2 } from "@qwikest/icons/lucide";
-import { useAuthSession } from "../../plugin@auth";
 import { QSeparator } from "~/integrations/react/ui/separator";
 
 const requestSchema = pick(insertUserSchema, [
   "firstName",
   "lastName",
   "available",
+  "bio",
   "website",
   "github",
   "linkedin",
   "twitter",
-  "bio",
-  "publicEmail",
 ]);
 
 type UpdateProfileForm = valibotInput<typeof requestSchema>;
@@ -41,7 +39,17 @@ export const useFormLoader = routeLoader$<InitialValues<UpdateProfileForm>>(
     const session: Session | null = event.sharedMap.get("session");
 
     const [user] = await db
-      .select()
+      .select({
+        firstName: users.firstName,
+        lastName: users.lastName,
+        name: users.name,
+        bio: users.bio,
+        available: users.available,
+        website: users.website,
+        github: users.github,
+        linkedin: users.linkedin,
+        twitter: users.twitter,
+      })
       .from(users)
       .where(eq(users.name, session?.user.name ?? ""));
 
@@ -62,7 +70,6 @@ export const useFormAction = formAction$<UpdateProfileForm>(
 );
 
 export default component$(() => {
-  const session = useAuthSession();
   const [updateProfileForm, { Form, Field }] = useForm<UpdateProfileForm>({
     loader: useFormLoader(),
     action: useFormAction(),
@@ -80,12 +87,13 @@ export default component$(() => {
         <div>
           <h3 class="text-lg font-semibold">Profile</h3>
           <p class="text-sm text-muted-foreground">
-            Manage your public information.
+            Manage your public information. This may be used in the future for
+            networking purposes.
           </p>
         </div>
-        <QSeparator className="mt-6" />
+        <QSeparator className="my-6" />
 
-        <div class="mt-12 space-y-12">
+        <div class=" space-y-12">
           {/*TODO: Location (country!, region?, city?), Favorite techs (top 5 / top 10 / top 50 ?) */}
 
           <div class="grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6 md:col-span-2">
@@ -138,6 +146,22 @@ export default component$(() => {
                       </p>
                     </div>
                   </div>
+                )}
+              </Field>
+            </div>
+
+            <div class="sm:col-span-6">
+              <Field name="bio">
+                {(field, props) => (
+                  <>
+                    <Label>Bio</Label>
+                    <Textarea
+                      {...props}
+                      class="resize-none h-16"
+                      value={field.value ?? ""}
+                      error={field.error}
+                    />
+                  </>
                 )}
               </Field>
             </div>
@@ -209,60 +233,10 @@ export default component$(() => {
                 )}
               </Field>
             </div>
-
-            <div class="sm:col-span-6">
-              <Field name="bio">
-                {(field, props) => (
-                  <>
-                    <Label>Bio</Label>
-                    <Textarea
-                      {...props}
-                      class="resize-none h-36"
-                      value={field.value ?? ""}
-                      error={field.error}
-                    />
-                  </>
-                )}
-              </Field>
-            </div>
-          </div>
-
-          <div class="grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6 md:col-span-2">
-            <div class="sm:col-span-4">
-              <Label>Discord username</Label>
-              <Input
-                type="text"
-                value={session.value?.user.name}
-                error={session.value ? "" : "This field is required"}
-                readOnly
-              />
-            </div>
-
-            <div class="sm:col-span-4">
-              <Label>Public email</Label>
-              <Field name="publicEmail">
-                {(field, props) => (
-                  <Input
-                    {...props}
-                    type="email"
-                    value={field.value}
-                    error={field.error}
-                  />
-                )}
-              </Field>
-            </div>
-
-            <div class="sm:col-span-4">
-              <Label>Oauth email</Label>
-              <Input
-                type="email"
-                value={session.value?.user.email}
-                error={session.value ? "" : "This field is required"}
-                readOnly
-              />
-            </div>
           </div>
         </div>
+
+        <QSeparator className="my-6" />
 
         <div class="mt-6 flex items-center justify-end gap-x-6">
           <Button variant="ghost" onClick$={() => reset(updateProfileForm)}>

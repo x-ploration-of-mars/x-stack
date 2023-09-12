@@ -24,6 +24,10 @@ const sidebarNavItems = [
     title: "Account",
     href: "/settings/account/",
   },
+  {
+    title: "Contact",
+    href: "/settings/contact/",
+  },
 ];
 
 export default component$(() => {
