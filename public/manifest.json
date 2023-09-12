@@ -1,7 +1,8 @@
 {
 	"$schema": "https://json.schemastore.org/web-manifest-combined.json",
 	"id": "com.example.xstackdemo",
-	"name": "X Stack",
+	"short_name": "X Stack",
+	"name": "X Stack Demo",
 	"start_url": ".",
 	"display": "standalone",
 	"theme_color": "#000",
