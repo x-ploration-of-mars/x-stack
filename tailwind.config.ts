@@ -102,7 +102,7 @@ module.exports = {
       },
       dropShadow: {
         "neon-sm": ["0 0 2px #fff"],
-        neon: ["10px 5px 100px #fff", "0 0 2px #fff"],
+        neon: ["0px 0px 100px #fff", "0 0 2px #fff"],
       },
     },
   },
