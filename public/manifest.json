@@ -5,6 +5,7 @@
 	"name": "X Stack Demo",
 	"start_url": ".",
 	"display": "fullscreen",
+	"display_override": ["window-controls-overlay", "fullscreen", "standalone"],
 	"theme_color": "#000",
 	"background_color": "#fff",
 	"description": "A demo of the X Stack",
@@ -40,11 +41,6 @@
 		"sizes": "150x150",
 		"type": "image/png"
 	  }
-	],
-	"display_override": [
-	  "fullscreen",
-	  "standalone",
-	  "window-controls-overlay"
 	],
 	"orientation": "portrait"
 }
