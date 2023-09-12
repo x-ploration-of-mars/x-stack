@@ -4,7 +4,6 @@
 	"short_name": "X Stack",
 	"start_url": ".",
 	"display": "fullscreen",
-	"theme_color": "#000",
 	"background_color": "#fff",
 	"description": "A demo of the X Stack",
 	"icons": [
