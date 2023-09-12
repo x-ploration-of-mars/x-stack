@@ -90,8 +90,8 @@ export default component$(() => {
         <div>
           <h3 class="text-lg font-semibold">Profile</h3>
           <p class="text-sm text-muted-foreground">
-            Manage your public information. This may be used in the future for
-            networking purposes.
+            Manage your public information. This may or may not be used in the
+            future for networking purposes.
           </p>
         </div>
         <QSeparator className="my-6" />
@@ -104,14 +104,13 @@ export default component$(() => {
               <Field name="firstName">
                 {(field, props) => (
                   <>
-                    <Label>First name *</Label>
+                    <Label>First name</Label>
                     <Input
                       {...props}
                       type="text"
                       value={field.value}
                       error={field.error}
                       autoComplete="given-name"
-                      required
                     />
                   </>
                 )}
@@ -122,14 +121,13 @@ export default component$(() => {
               <Field name="lastName">
                 {(field, props) => (
                   <>
-                    <Label>Last name *</Label>
+                    <Label>Last name</Label>
                     <Input
                       {...props}
                       type="text"
                       autoComplete="family-name"
                       value={field.value}
                       error={field.error}
-                      required
                     />
                   </>
                 )}
