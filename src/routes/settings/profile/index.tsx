@@ -37,6 +37,7 @@ type UpdateProfileForm = valibotInput<typeof requestSchema>;
 export const useFormLoader = routeLoader$<InitialValues<UpdateProfileForm>>(
   async (event) => {
     const session: Session | null = event.sharedMap.get("session");
+    console.log("session", session);
 
     const [user] = await db
       .select({
