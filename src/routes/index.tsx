@@ -2,7 +2,12 @@ import { component$ } from "@builder.io/qwik";
 import { Link, type DocumentHead } from "@builder.io/qwik-city";
 import { buttonVariants } from "~/components/ui/button";
 
-import { LuArrowRight, LuGamepad2, LuGithub, LuUser } from "@qwikest/icons/lucide";
+import {
+  LuArrowRight,
+  LuGamepad2,
+  LuGithub,
+  LuUser,
+} from "@qwikest/icons/lucide";
 import Signout from "~/components/auth/signout";
 import { useAuthSession } from "./plugin@auth";
 
@@ -52,10 +57,10 @@ export default component$(() => {
               buttonVariants({ variant: "link" }),
               "drop-shadow-neon-sm animate-flicker text-secondary",
             ]}
-            href="/profile"
+            href="/settings/profile"
           >
             <LuUser class="mr-2" />
-            {session.value?.user.name ?? "Profile"}
+            {session.value?.user.name ?? "Settings"}
           </Link>
           <Link
             class={[

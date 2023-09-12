@@ -6,8 +6,8 @@ import { DrizzleAdapter } from "@auth/drizzle-adapter";
 import { db } from "~/drizzle/db";
 import { users } from "~/drizzle/schema/auth";
 import { eq } from "drizzle-orm";
-import { User } from "@auth/core/types";
-import { AdapterUser } from "@auth/core/adapters";
+import { type User } from "@auth/core/types";
+import { type AdapterUser } from "@auth/core/adapters";
 
 type UpdateData = {
   email?: string;

@@ -1,14 +1,10 @@
 import { component$, type QwikIntrinsicElements } from "@builder.io/qwik";
-import { cva } from "class-variance-authority";
+import { cn } from "~/lib/utils";
 
 type InputProps = Omit<QwikIntrinsicElements["input"], "children"> & {
   label?: string;
   error: string;
 };
-
-const inputVariants = cva(
-  "flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus:border-input  focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
-);
 
 export default component$<InputProps>(({ error, ...props }) => {
   const { name } = props;
@@ -19,7 +15,10 @@ export default component$<InputProps>(({ error, ...props }) => {
         {...props}
         aria-errormessage={`${name}-error`}
         aria-invalid={!!error}
-        class={[inputVariants({ class: props.class })]}
+        class={cn(
+          "flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus:border-input  focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50",
+          props.class
+        )}
         id={name}
       />
       {error && (
