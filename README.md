@@ -1,6 +1,7 @@
 <h1 align="center">The cross-platform serverless bleeding-edge stack that scales</h1>
 <br>
 <h3 align="center">😌 Easier | 🚀 Faster | 🤑 Cheaper | 🦸‍♂️ Limitless</h3>
+<br>
 <p align="center"><a href="https://x-stack.vercel.app/">Try it out</a></p>
 <br>
 
