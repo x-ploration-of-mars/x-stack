@@ -6,6 +6,7 @@
 	"start_url": ".",
 	"display": "fullscreen",
 	"display_override": ["window-controls-overlay", "fullscreen", "standalone"],
+	"orientation": "portrait",
 	"theme_color": "#000",
 	"background_color": "#fff",
 	"description": "A demo of the X Stack",
@@ -42,5 +43,4 @@
 		"type": "image/png"
 	  }
 	],
-	"orientation": "portrait"
 }
