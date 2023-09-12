@@ -74,3 +74,9 @@
     @apply bg-background text-foreground;
   }
 }
+
+@layer base {
+  html {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  }
+}
