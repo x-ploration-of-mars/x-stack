@@ -1,6 +1,6 @@
 {
 	"$schema": "https://json.schemastore.org/web-manifest-combined.json",
-	"name": "X Stack Demo",
+	"id": "com.example.xstackdemo",
 	"short_name": "X Stack",
 	"start_url": ".",
 	"display": "standalone",
@@ -16,7 +16,8 @@
 	  {
 		"src": "/icons/X-light/android-chrome-512x512.png",
 		"sizes": "512x512",
-		"type": "image/png"
+		"type": "image/png",
+		"purpose": "any"
 	  },
 	  {
 		"src": "/icons/X-light/apple-touch-icon.png",
@@ -43,5 +44,6 @@
 	  "fullscreen",
 	  "standalone",
 	  "window-controls-overlay"
-	]
-  }
+	],
+	"orientation": "portrait"
+}
