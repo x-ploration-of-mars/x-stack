@@ -6,6 +6,8 @@ import { DrizzleAdapter } from "@auth/drizzle-adapter";
 import { db } from "~/drizzle/db";
 import { users } from "~/drizzle/schema/auth";
 import { eq } from "drizzle-orm";
+import { User } from "@auth/core/types";
+import { AdapterUser } from "@auth/core/adapters";
 
 type UpdateData = {
   email?: string;
@@ -39,8 +41,8 @@ declare module "@auth/core/types" {
   // }
 }
 
-export const { onRequest, useAuthSession, useAuthSignin, useAuthSignout } = serverAuth$(
-  ({ env }) => ({
+export const { onRequest, useAuthSession, useAuthSignin, useAuthSignout } =
+  serverAuth$(({ env }) => ({
     secret: env.get("AUTH_SECRET"),
     trustHost: true,
     providers: [
@@ -53,15 +55,22 @@ export const { onRequest, useAuthSession, useAuthSignin, useAuthSignout } = serv
     callbacks: {
       async signIn({ user, account, profile }) {
         // update db user with discord profile when profile has changed on discord
-        const {
-          email: profileEmail,
-          image_url: profileImage,
-          username: profileUsername,
-        }: NewProfile = profile ?? {};
 
-        const { email: userEmail, image: userImage, name: userName, id: userId } = user;
-
-        if (account?.provider === "discord") {
+        if (
+          (user as User | AdapterUser | undefined) &&
+          account?.provider === "discord"
+        ) {
+          const {
+            email: profileEmail = "",
+            image_url: profileImage = "",
+            username: profileUsername = "",
+          }: NewProfile = profile ?? {};
+          const {
+            email: userEmail = "",
+            image: userImage = "",
+            name: userName = "",
+            id: userId = "",
+          } = user;
           const updateData: UpdateData = {};
 
           if (profileEmail !== userEmail && profileEmail !== null) {
@@ -82,5 +91,4 @@ export const { onRequest, useAuthSession, useAuthSignin, useAuthSignout } = serv
         return true;
       },
     },
-  }),
-);
+  }));
