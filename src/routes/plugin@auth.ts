@@ -55,7 +55,6 @@ export const { onRequest, useAuthSession, useAuthSignin, useAuthSignout } =
     callbacks: {
       async signIn({ user, account, profile }) {
         // update db user with discord profile when profile has changed on discord
-
         if (
           (user as User | AdapterUser | undefined) &&
           account?.provider === "discord"
@@ -89,6 +88,10 @@ export const { onRequest, useAuthSession, useAuthSignin, useAuthSignout } =
           }
         }
         return true;
+      },
+      session({ session, user }) {
+        session.user.id = user.id;
+        return session;
       },
     },
   }));

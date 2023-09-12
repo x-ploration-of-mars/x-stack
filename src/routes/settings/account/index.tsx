@@ -1,21 +1,30 @@
 import { type Session } from "@auth/core/types";
-import { component$ } from "@builder.io/qwik";
+import { component$, useSignal } from "@builder.io/qwik";
 import { routeAction$ } from "@builder.io/qwik-city";
+import { LuLoader2 } from "@qwikest/icons/lucide";
 import { eq } from "drizzle-orm";
 import Button from "~/components/ui/button";
 import { db } from "~/drizzle/db";
-import { users } from "~/drizzle/schema/auth";
+import { accounts, sessions, users } from "~/drizzle/schema/auth";
 import { QSeparator } from "~/integrations/react/ui/separator";
 
 export const useDeleteAccountAction = routeAction$(async (data, event) => {
   const session: Session | null = event.sharedMap.get("session");
+  if (!session) throw event.redirect(302, "/signin/");
 
   await db.transaction(async (tx) => {
-    await tx.delete(users).where(eq(users.name, session?.user.name as string));
+    await tx.delete(users).where(eq(users.id, session.user.id));
+    await tx.delete(accounts).where(eq(accounts.userId, session.user.id));
+    await tx.delete(sessions).where(eq(sessions.userId, session.user.id));
   });
+
+  throw event.redirect(302, "/signin/");
 });
 
 export default component$(() => {
+  const deleteAccountAction = useDeleteAccountAction();
+
+  const deleteSubmitting = useSignal(false);
   return (
     <>
       <div>
@@ -34,9 +43,25 @@ export default component$(() => {
             this action is irreversible and I'm too lazy to code a warning
             popup.
           </p>
-          <Button variant={"destructive"} class="mt-4">
-            Delete Account
-          </Button>
+
+          <div class="mt-4">
+            {deleteSubmitting.value ? (
+              <Button variant={"destructive"} class="w-32">
+                <LuLoader2 class="w-5 h-5 animate-spin" />
+              </Button>
+            ) : (
+              <Button
+                variant={"destructive"}
+                class="w-32"
+                onClick$={async () => {
+                  deleteSubmitting.value = true;
+                  await deleteAccountAction.submit();
+                }}
+              >
+                Delete Account
+              </Button>
+            )}
+          </div>
         </div>
       </div>
     </>
