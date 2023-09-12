@@ -117,7 +117,11 @@ You’re welcome to join the [🔗Discord server](https://discord.gg/W4e8ReQWv2)
 
 # Evaluation & Alternatives _(wip)_
 
+The days of the MEAN (MongoDB, Express, Angular, Node.js) and MERN (MongoDB, Express, React, Node.js) stacks are over. For better or for worse, the web has gotten richer and richer. We now have amazing alternatives to what we used to use popping now and then, and this can feel overwhelming. So why not try to discuss and compare them in one single place?
+
 ## Fullstack Frameworks
+
+When we look at a fullstack framework, we need to take into consideration many aspects: Reactivity; SSR; DX; the ecosystem. Most frameworks have at least acceptable levels of reactivity, SSR, and DX, but the ecosystem is what makes the difference. So who is winning the battle?
 
 - 1️⃣ Qwik — Thanks to its serialized/resumable/compiled model, Qwik scores at the highest in many aspects: SSR _(ofc)_, but also Reactivity, DX, and **the ecosystem** (because you can run React inside of Qwik 🤯). Anything you can do in React, you can do in Qwik. But the opposite is not true. I wonder what could be possibly done in other frameworks that couldn’t be in Qwik 🤔.
 - 2️⃣ React / Next / Remix — If you ask me, I’d say Next comes next (👈), followed by Remix. They are not as good in terms of Reactivity as Svelte, Solid, or even Vue, but you will find libraries you won’t find natively built in the other frameworks (e.g. [react webcam](https://www.npmjs.com/package/react-webcam)) and get newer trendy libraries sooner (hi 👋 [shadcn](https://github.com/shadcn-ui/ui)).
