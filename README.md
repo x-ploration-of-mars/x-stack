@@ -1,8 +1,13 @@
 <h1 align="center">The cross-platform serverless bleeding-edge stack that scales</h1>
+
 <br>
+
 <h3 align="center">😌 Easier | 🚀 Faster | 🤑 Cheaper | 🦸‍♂️ Limitless</h3>
+
 <br>
+
 <p align="center"><a href="https://x-stack.vercel.app/">Try it out</a></p>
+
 <br>
 
 ### Start with total peace of mind
@@ -16,6 +21,8 @@ A place for you to easily weigh the pros and cons of each fullstack framework, c
 ### Choose what you want
 
 A cli to let you choose great alternatives that better match your ambitious project requirements _(tbd)_.
+
+<br>
 
 # Introducing the 𝕏 stack
 
