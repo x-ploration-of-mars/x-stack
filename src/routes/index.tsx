@@ -35,7 +35,7 @@ export default component$(() => {
             Join the Discord
           </Link>
         </div>
-        <div class="absolute top-24 flex w-full justify-around">
+        <div class="absolute top-28 flex w-full justify-around">
           <Link
             class={[
               buttonVariants({ variant: "link" }),
@@ -48,7 +48,7 @@ export default component$(() => {
           </Link>
           <Signout />
         </div>
-        <div class="absolute bottom-24 flex w-full justify-around">
+        <div class="absolute bottom-28 flex w-full justify-around">
           <Link
             class={[
               buttonVariants({ variant: "link" }),
