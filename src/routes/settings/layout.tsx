@@ -1,6 +1,6 @@
 import { QSeparator } from "~/integrations/react/ui/separator";
 import { Slot, component$ } from "@builder.io/qwik";
-import { Link, type DocumentHead } from "@builder.io/qwik-city";
+import { type DocumentHead } from "@builder.io/qwik-city";
 import { useAuthSession } from "../plugin@auth";
 import { LuChevronLeft } from "@qwikest/icons/lucide";
 import { SidebarNav } from "~/components/ui/sidebarNav";
@@ -38,9 +38,9 @@ export default component$(() => {
       <div class="space-y-6 p-10 pb-16">
         <div class="flex items-center space-y-0.5">
           <div class="">
-            <Link href="/">
+            <a href="/">
               <LuChevronLeft class="h-12 w-12 text-muted-foreground" />
-            </Link>
+            </a>
           </div>
           <div class="flex">
             <img

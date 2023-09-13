@@ -6,7 +6,6 @@ import {
   useSignal,
   useVisibleTask$,
 } from "@builder.io/qwik";
-import { Link } from "@builder.io/qwik-city";
 import Button from "~/components/ui/button";
 import {
   Card,
@@ -38,9 +37,9 @@ export default component$(
             <CardContent>
               We use cookies to enhance your experience. By continuing to visit
               this site, you agree to our use of cookies.{" "}
-              <Link href="/public/privacy-policy" class="underline">
+              <a href="/public/privacy-policy" class="underline">
                 Learn more
-              </Link>
+              </a>
               .
             </CardContent>
             <CardFooter class="flex justify-between">

@@ -1,5 +1,4 @@
 import { component$, useSignal, useVisibleTask$ } from "@builder.io/qwik";
-import { Link } from "@builder.io/qwik-city";
 import Signin from "~/components/auth/signin";
 import AcceptCookies from "./accept-cookies";
 
@@ -49,19 +48,19 @@ export default component$(() => {
             </div>
             <p class="px-8 text-center text-sm">
               By creating an account, you agree to our{" "}
-              <Link
+              <a
                 href="/public/terms-of-service"
                 class="underline underline-offset-4 hover:text-primary"
               >
                 Terms of Service
-              </Link>{" "}
+              </a>{" "}
               and{" "}
-              <Link
+              <a
                 href="/public/privacy-policy"
                 class="underline underline-offset-4 hover:text-primary"
               >
                 Privacy Policy
-              </Link>
+              </a>
               .
             </p>
           </div>
