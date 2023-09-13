@@ -13,6 +13,7 @@ export const RouterHead = component$(() => {
       <title>{head.title}</title>
 
       <link rel="canonical" href={loc.url.href} />
+      <link rel="icon" type="image/svg+xml" href="/icons/X-light/favicon.ico" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <meta property="og:type" content="website" />
       <meta property="og:url" content="https://linkfork.co/" />
@@ -21,8 +22,7 @@ export const RouterHead = component$(() => {
         property="og:description"
         content="The cross-platform serverless bleeding-edge stack that scales"
       />
-      <meta property="og:image" content="/icons/X-feature-graphic.png" />
-      <link rel="icon" type="image/svg+xml" href="/icons/X-dark/favicon.ico" />
+      <meta property="og:image" content="/icons/X-og-image.png" />
 
       {head.meta.map((m) => (
         <meta key={m.key} {...m} />
