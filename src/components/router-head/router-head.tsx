@@ -16,17 +16,14 @@ export const RouterHead = component$(() => {
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <meta property="og:type" content="website" />
       <meta property="og:url" content="https://linkfork.co/" />
-      <meta
-        property="og:title"
-        content="LinkFork | Link Preview Customization"
-      />
+      <meta property="og:title" content="𝕏 stack" />
       <meta
         property="og:description"
-        content="LinkFork lets you shorten, and customize how your link will appear when shared on social media, for free."
+        content="The cross-platform serverless bleeding-edge stack that scales"
       />
       <meta
         property="og:image"
-        content="https://linkfork.co/images/poster.png"
+        content="/icons/X-light/android-chrome-512x512.png"
       />
       <link rel="icon" type="image/svg+xml" href="/icons/X-light/favicon.ico" />
 
