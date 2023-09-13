@@ -13,7 +13,7 @@
 <p align="center">
 <a href="https://play.google.com/store/apps/details?id=app.vercel.x_stack.twa&pcampaignid=web_share">Download on Play Store</a>
 </p>
-<p align="center">(👆 Test build, still in review...)
+<p align="center">(👆 Test build, still in review...)</p>
 
 <br>
 
