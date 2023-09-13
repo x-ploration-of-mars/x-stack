@@ -21,11 +21,8 @@ export const RouterHead = component$(() => {
         property="og:description"
         content="The cross-platform serverless bleeding-edge stack that scales"
       />
-      <meta
-        property="og:image"
-        content="/icons/X-light/android-chrome-512x512.png"
-      />
-      <link rel="icon" type="image/svg+xml" href="/icons/X-light/favicon.ico" />
+      <meta property="og:image" content="/icons/X-icon-transparent-dark.png" />
+      <link rel="icon" type="image/svg+xml" href="/icons/X-dark/favicon.ico" />
 
       {head.meta.map((m) => (
         <meta key={m.key} {...m} />
