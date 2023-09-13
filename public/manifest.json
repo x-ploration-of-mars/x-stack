@@ -5,7 +5,7 @@
 	"name": "X Stack Demo",
 	"start_url": ".",
 	"display": "standalone",
-	"display_override": ["standalone", "fullscreen", "window-controls-overlay"],
+	"display_override": ["window-controls-overlay", "standalone", "fullscreen"],
 	"orientation": "portrait",
 	"theme_color": "#000",
 	"background_color": "#fff",
