@@ -10,6 +10,14 @@
 
 <br>
 
+<p align="center">
+<a href="https://play.google.com/store/apps/details?id=app.vercel.x_stack.twa&pcampaignid=web_share">Download on Play Store</a>
+</p>
+
+https://play.google.com/store/apps/details?id=app.vercel.x_stack.twa&pcampaignid=web_share
+
+<br>
+
 ### Start with total peace of mind
 
 An all-in-one toolbox for you to stop worrying about DX, scalability, performance, security, compatibility, customizability, maintainability, data modeling, data quality, and costs. Start with a robust and empowering stack that is not going to fail you.
