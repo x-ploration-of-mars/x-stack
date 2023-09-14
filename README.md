@@ -1,17 +1,17 @@
-<h1 align="center">The cross-platform serverless bleeding-edge stack that scales</h1>
+<h1 align="center">A new paradigm for the web - cross-platform edge-ready resumable apps at scale</h1>
 
 <br>
 
-<h3 align="center">😌 Easier | 🚀 Faster | 🤑 Cheaper | 🦸‍♂️ Limitless</h3>
+<h3 align="center">Write once, deploy anywhere: web, mobile, desktop, express, serverless, the edge.. You name it.</h3>
 
 <br>
 
-<p align="center"><a href="https://x-stack.vercel.app/">Try it out</a></p>
+<p align="center"><a href="https://x-stack.vercel.app/">Try out the website demo</a></p>
 
 <br>
 
 <p align="center">
-<a href="https://play.google.com/store/apps/details?id=app.vercel.x_stack.twa&pcampaignid=web_share">Download on Play Store</a>
+<a href="https://play.google.com/store/apps/details?id=app.vercel.x_stack.twa&pcampaignid=web_share">Or download on Play Store</a>
 </p>
 <p align="center">(👆 Test build, still in review...)</p>
 
