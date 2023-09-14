@@ -2,7 +2,7 @@
   <img src="/public/icons/X-light/safari-pinned-tab.svg" style="width: 20%;" alt="Click to see the source">
 </div>
 
-<h1 align="center">A new paradigm for the web — cross-platform edge-ready resumable apps at scale</h1>
+<h1 align="center">A new paradigm for the web — cross-platform edge-ready resumable apps that scale</h1>
 
 <br>
 
