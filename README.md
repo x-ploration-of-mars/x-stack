@@ -1,33 +1,38 @@
+<div align="center">
+  <img src="/public/icons/X-light/safari-pinned-tab.svg" style="width: 20%;" alt="Click to see the source">
+</div>
+
 <h1 align="center">A new paradigm for the web - cross-platform edge-ready resumable apps at scale</h1>
 
 <br>
 
-<h3 align="center">Write once, deploy anywhere: web, mobile, desktop, express, serverless, the edge.. You name it.</h3>
+<h3 align="center">Write once, deploy anywhere</h3>
+
+<p align="center">web, mobile, desktop, express, serverless, the edge.. You name it.</p>
 
 <br>
 
 <p align="center"><a href="https://x-stack.vercel.app/">Try out the website demo</a></p>
-
-<br>
-
 <p align="center">
-<a href="https://play.google.com/store/apps/details?id=app.vercel.x_stack.twa&pcampaignid=web_share">Or download on Play Store</a>
+<a href="https://play.google.com/store/apps/details?id=app.vercel.x_stack.twa&pcampaignid=web_share">Or download on Play Store 👀</a>
 </p>
 <p align="center">(👆 Test build, still in review...)</p>
 
 <br>
 
-### Start with total peace of mind
+<h2>𝕏-ray Vision & Goals</h2>
 
-An all-in-one toolbox for you to stop worrying about DX, scalability, performance, security, compatibility, customizability, maintainability, data modeling, data quality, and costs. Start with a robust and empowering stack that is not going to fail you.
+<h4>Start with total peace of mind</h4>
 
-### Forge your own opinion
+With an all-in-one toolbox for you to stop worrying about DX, scalability, performance, security, compatibility, customizability, maintainability, data modeling, data quality, and costs. Start with a robust and empowering stack that is not going to fail you.
 
-A place for you to easily weigh the pros and cons of each fullstack framework, components library/collection, API architecture, Database, ORM, analytics service, Auth toolkit, deployment strategy, and development tool.
+<h4>Forge your own opinion</h4>
 
-### Choose what you want
+With a place for you to easily weigh the pros and cons of each fullstack framework, components library/collection, API architecture, Database, ORM, analytics service, Auth toolkit, deployment strategy, and development tool.
 
-A cli to let you choose great alternatives that better match your ambitious project requirements _(tbd)_.
+<h4>Choose what you want</h4>
+
+With a cli to let you choose great alternatives that better match your ambitious project requirements _(tbd)_.
 
 <br>
 
