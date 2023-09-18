@@ -31,27 +31,25 @@ export const onGet: RequestHandler = async (event) => {
   const { sharedMap } = event;
   const session: Session | null = sharedMap.get("session");
   if (!session) {
-    event.cacheControl({
-      public: true,
-      staleWhileRevalidate: 86400,
-      maxAge: 60,
-      sMaxAge: 180,
-    });
+    event.headers.set(
+      "Cache-Control",
+      "public, max-age=60, s-maxage=120, stale-while-revalidate=86400"
+    );
+    // needed for vercel-edge to not trim s-maxage and stale-while-revalidate headers
+    event.headers.set(
+      "CDN-Cache-Control",
+      "public, max-age=60, s-maxage=120, stale-while-revalidate=86400"
+    );
   } else {
     event.headers.set(
       "Cache-Control",
       "private, max-age=5, s-maxage=0, stale-while-revalidate=86400"
     );
+    // needed for vercel-edge to not trim s-maxage and stale-while-revalidate headers
     event.headers.set(
       "CDN-Cache-Control",
       "private, max-age=5, s-maxage=0, stale-while-revalidate=86400"
     );
-    // cacheControl({
-    //   public: false,
-    //   staleWhileRevalidate: 86400,
-    //   maxAge: 5,
-    //   sMaxAge: 0,
-    // });
   }
 };
 export const useServerTimeLoader = routeLoader$(async () => {
