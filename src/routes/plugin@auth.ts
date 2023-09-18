@@ -6,8 +6,9 @@ import { DrizzleAdapter } from "@auth/drizzle-adapter";
 import { db } from "~/drizzle/db";
 import { users } from "~/drizzle/schema/auth";
 import { eq } from "drizzle-orm";
-import { type User } from "@auth/core/types";
+import type { Account, Profile, Session, User } from "@auth/core/types";
 import { type AdapterUser } from "@auth/core/adapters";
+import { type EnvGetter } from "@builder.io/qwik-city/middleware/request-handler";
 
 type UpdateData = {
   email?: string;
@@ -42,7 +43,7 @@ declare module "@auth/core/types" {
 }
 
 export const { onRequest, useAuthSession, useAuthSignin, useAuthSignout } =
-  serverAuth$(({ env }) => ({
+  serverAuth$(({ env }: { env: EnvGetter }) => ({
     secret: env.get("AUTH_SECRET"),
     trustHost: true,
     providers: [
@@ -53,17 +54,25 @@ export const { onRequest, useAuthSession, useAuthSignin, useAuthSignout } =
     ] as Provider[],
     adapter: DrizzleAdapter(db),
     callbacks: {
-      async signIn({ user, account, profile }) {
+      async signIn({
+        user,
+        account,
+        profile,
+      }: {
+        user: User;
+        account: Account;
+        profile: Profile;
+      }) {
         // update db user with discord profile when profile has changed on discord
         if (
           (user as User | AdapterUser | undefined) &&
-          account?.provider === "discord"
+          account.provider === "discord"
         ) {
           const {
             email: profileEmail = "",
             image_url: profileImage = "",
             username: profileUsername = "",
-          }: NewProfile = profile ?? {};
+          }: NewProfile = profile;
           const {
             email: userEmail = "",
             image: userImage = "",
@@ -89,7 +98,7 @@ export const { onRequest, useAuthSession, useAuthSignin, useAuthSignout } =
         }
         return true;
       },
-      session({ session, user }) {
+      session({ session, user }: { session: Session; user: User }) {
         session.user.id = user.id;
         return session;
       },
