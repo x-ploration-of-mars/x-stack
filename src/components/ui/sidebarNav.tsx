@@ -1,5 +1,5 @@
 import { type QwikIntrinsicElements, component$ } from "@builder.io/qwik";
-import { useLocation } from "@builder.io/qwik-city";
+import { Link, useLocation } from "@builder.io/qwik-city";
 import { cva } from "class-variance-authority";
 import { buttonVariants } from "./button";
 import { cn } from "~/lib/utils";
@@ -20,7 +20,7 @@ export const SidebarNav = component$<SidebarNavProps>(({ items, ...props }) => {
   return (
     <nav class={cardVariants({ class: props.class })} {...props}>
       {items.map((item) => (
-        <a
+        <Link
           key={item.href}
           href={item.href}
           class={cn(
@@ -32,7 +32,7 @@ export const SidebarNav = component$<SidebarNavProps>(({ items, ...props }) => {
           )}
         >
           {item.title}
-        </a>
+        </Link>
       ))}
     </nav>
   );
