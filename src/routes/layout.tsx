@@ -27,7 +27,7 @@ export const onRequest: RequestHandler = async ({
   }
 };
 
-export const onGet: RequestHandler = async ({ sharedMap, cacheControl }) => {
+export const onGet: RequestHandler = async ({ cacheControl }) => {
   cacheControl({
     public: true,
     staleWhileRevalidate: 86400,
