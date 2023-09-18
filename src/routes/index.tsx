@@ -1,5 +1,5 @@
 import { component$ } from "@builder.io/qwik";
-import { Link, type DocumentHead } from "@builder.io/qwik-city";
+import { type DocumentHead } from "@builder.io/qwik-city";
 import { buttonVariants } from "~/components/ui/button";
 
 import {
@@ -24,7 +24,7 @@ export default component$(() => {
           𝕏
         </div>
         <div class="top-12 absolute flex w-full justify-center">
-          <Link
+          <a
             class={[
               buttonVariants({ variant: "link" }),
               "drop-shadow-neon-sm animate-flicker text-secondary",
@@ -33,10 +33,10 @@ export default component$(() => {
           >
             <LuGamepad2 class="mr-2" />
             Join the Discord
-          </Link>
+          </a>
         </div>
         <div class="absolute top-28 flex w-full justify-around">
-          <Link
+          <a
             class={[
               buttonVariants({ variant: "link" }),
               "drop-shadow-neon-sm animate-flicker text-secondary",
@@ -45,11 +45,11 @@ export default component$(() => {
           >
             <LuGithub class="mr-2" />
             Github
-          </Link>
+          </a>
           <Signout />
         </div>
         <div class="absolute bottom-28 flex w-full justify-around">
-          <Link
+          <a
             class={[
               buttonVariants({ variant: "link" }),
               "drop-shadow-neon-sm animate-flicker text-secondary",
@@ -58,8 +58,8 @@ export default component$(() => {
           >
             <LuUser class="mr-2" />
             {session.value?.user.name ?? "Settings"}
-          </Link>
-          <Link
+          </a>
+          <a
             class={[
               buttonVariants({ variant: "link" }),
               "drop-shadow-neon-sm animate-flicker text-secondary",
@@ -67,7 +67,7 @@ export default component$(() => {
             href="/documentation"
           >
             Docs <LuArrowRight class="ml-2" />
-          </Link>
+          </a>
         </div>
       </div>
     </>
