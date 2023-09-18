@@ -18,5 +18,10 @@ export default defineConfig(() => {
     optimizeDeps: {
       include: [ "@auth/core" ]
     },
+    preview: {
+      headers: {
+        "Cache-Control": "public, max-age=600",
+      },
+    },
   };
 });
