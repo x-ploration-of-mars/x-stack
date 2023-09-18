@@ -1,4 +1,5 @@
 import { component$ } from "@builder.io/qwik";
+import { Link } from "@builder.io/qwik-city";
 
 export default component$(() => {
   return (
@@ -8,12 +9,12 @@ export default component$(() => {
         <br />
         <h2>
           Find current docs{" "}
-          <a
+          <Link
             class=" cursor-pointer underline underline-offset-4"
             href="https://github.com/x-ploration/x-stack"
           >
             on github
-          </a>
+          </Link>
         </h2>
       </div>
     </>

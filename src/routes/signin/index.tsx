@@ -1,6 +1,7 @@
 import { component$, useSignal, useVisibleTask$ } from "@builder.io/qwik";
 import Signin from "~/components/auth/signin";
 import AcceptCookies from "./accept-cookies";
+import { Link } from "@builder.io/qwik-city";
 
 export default component$(() => {
   const dialogRef = useSignal<HTMLDialogElement>();
@@ -48,19 +49,19 @@ export default component$(() => {
             </div>
             <p class="px-8 text-center text-sm">
               By creating an account, you agree to our{" "}
-              <a
-                href="/public/terms-of-service"
+              <Link
+                href="/pub/terms-of-service"
                 class="underline underline-offset-4 hover:text-primary"
               >
                 Terms of Service
-              </a>{" "}
+              </Link>{" "}
               and{" "}
-              <a
-                href="/public/privacy-policy"
+              <Link
+                href="/pub/privacy-policy"
                 class="underline underline-offset-4 hover:text-primary"
               >
                 Privacy Policy
-              </a>
+              </Link>
               .
             </p>
           </div>

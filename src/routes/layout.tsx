@@ -1,6 +1,16 @@
 import { type Session } from "@auth/core/types";
-import { component$, Slot } from "@builder.io/qwik";
-import { type RequestHandler, routeLoader$ } from "@builder.io/qwik-city";
+import { component$, Slot, useSignal, useVisibleTask$ } from "@builder.io/qwik";
+import {
+  type RequestHandler,
+  routeLoader$,
+  useLocation,
+} from "@builder.io/qwik-city";
+
+import { QProgress } from "~/integrations/react/ui/progress";
+
+function delay(time: number) {
+  return new Promise((resolve) => setTimeout(resolve, time));
+}
 
 export const onRequest: RequestHandler = async ({
   sharedMap,
@@ -11,22 +21,40 @@ export const onRequest: RequestHandler = async ({
   if (
     !session &&
     url.pathname !== "/signin/" &&
-    !url.pathname.startsWith("/public/")
+    !url.pathname.startsWith("/pub/")
   ) {
     throw redirect(302, `/signin/`);
   }
 };
 
-export const useServerTimeLoader = routeLoader$(() => {
+export const useServerTimeLoader = routeLoader$(async () => {
   return {
     date: new Date().toISOString(),
   };
 });
 
 export default component$(() => {
+  const location = useLocation();
+  const progress = useSignal(0);
+
+  useVisibleTask$(({ track }) => {
+    track(() => location.isNavigating);
+    if (location.isNavigating) {
+      delay(30).then(() => {
+        progress.value = 100;
+      });
+    }
+    if (!location.isNavigating) {
+      progress.value = 0;
+    }
+  });
+
   return (
     <>
       <main>
+        {location.isNavigating && (
+          <QProgress value={progress.value} className="w-full" />
+        )}
         <Slot />
       </main>
     </>
