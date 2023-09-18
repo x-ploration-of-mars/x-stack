@@ -28,7 +28,7 @@ export const onRequest: RequestHandler = async ({
 };
 
 export const onGet: RequestHandler = async (event) => {
-  const { sharedMap, cacheControl } = event;
+  const { sharedMap } = event;
   const session: Session | null = sharedMap.get("session");
   if (!session) {
     event.cacheControl({
