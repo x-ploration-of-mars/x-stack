@@ -32,16 +32,16 @@ export const onGet: RequestHandler = async ({ sharedMap, cacheControl }) => {
   if (!session) {
     cacheControl({
       public: true,
+      staleWhileRevalidate: 86400,
       maxAge: 60,
       sMaxAge: 180,
-      staleWhileRevalidate: 60 * 60 * 24,
     });
   } else {
     cacheControl({
       public: false,
+      staleWhileRevalidate: 86400,
       maxAge: 5,
       sMaxAge: 0,
-      staleWhileRevalidate: 60 * 60 * 24,
     });
   }
 };
