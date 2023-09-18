@@ -27,13 +27,23 @@ export const onRequest: RequestHandler = async ({
   }
 };
 
-export const onGet: RequestHandler = async ({ cacheControl }) => {
-  cacheControl({
-    public: true,
-    staleWhileRevalidate: 86400,
-    maxAge: 60,
-    sMaxAge: 180,
-  });
+export const onGet: RequestHandler = async ({ sharedMap, cacheControl }) => {
+  const session: Session | null = sharedMap.get("session");
+  if (!session) {
+    cacheControl({
+      public: true,
+      staleWhileRevalidate: 86400,
+      maxAge: 60,
+      sMaxAge: 180,
+    });
+  } else {
+    cacheControl({
+      public: false,
+      staleWhileRevalidate: 86400,
+      maxAge: 5,
+      sMaxAge: 0,
+    });
+  }
 };
 export const useServerTimeLoader = routeLoader$(async () => {
   return {
