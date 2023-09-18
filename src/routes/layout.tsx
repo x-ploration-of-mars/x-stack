@@ -16,25 +16,8 @@ export const onRequest: RequestHandler = async ({
   sharedMap,
   url,
   redirect,
-  cacheControl,
 }) => {
   const session: Session | null = sharedMap.get("session");
-  if (!session) {
-    cacheControl({
-      public: true,
-      maxAge: 60,
-      sMaxAge: 180,
-      staleWhileRevalidate: 60 * 60 * 24 * 30,
-    });
-  } else {
-    cacheControl({
-      public: false,
-      maxAge: 5,
-      sMaxAge: 0,
-      staleWhileRevalidate: 60 * 60 * 24 * 30,
-    });
-  }
-
   if (
     !session &&
     url.pathname !== "/signin/" &&
@@ -44,6 +27,24 @@ export const onRequest: RequestHandler = async ({
   }
 };
 
+export const onGet: RequestHandler = async ({ sharedMap, cacheControl }) => {
+  const session: Session | null = sharedMap.get("session");
+  if (!session) {
+    cacheControl({
+      public: true,
+      maxAge: 60,
+      sMaxAge: 180,
+      staleWhileRevalidate: 60 * 60 * 24,
+    });
+  } else {
+    cacheControl({
+      public: false,
+      maxAge: 5,
+      sMaxAge: 0,
+      staleWhileRevalidate: 60 * 60 * 24,
+    });
+  }
+};
 export const useServerTimeLoader = routeLoader$(async () => {
   return {
     date: new Date().toISOString(),
