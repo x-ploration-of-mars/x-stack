@@ -29,7 +29,7 @@ export const onRequest: RequestHandler = async ({
   } else {
     cacheControl({
       public: false,
-      maxAge: 2,
+      maxAge: 5,
       sMaxAge: 0,
       staleWhileRevalidate: 60 * 60 * 24 * 365,
     });
