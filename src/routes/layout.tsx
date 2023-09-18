@@ -24,14 +24,14 @@ export const onRequest: RequestHandler = async ({
       public: true,
       maxAge: 60,
       sMaxAge: 180,
-      staleWhileRevalidate: 60 * 60 * 24 * 365,
+      staleWhileRevalidate: 60 * 60 * 24 * 30,
     });
   } else {
     cacheControl({
       public: false,
       maxAge: 5,
       sMaxAge: 0,
-      staleWhileRevalidate: 60 * 60 * 24 * 365,
+      staleWhileRevalidate: 60 * 60 * 24 * 30,
     });
   }
 
