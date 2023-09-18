@@ -16,8 +16,25 @@ export const onRequest: RequestHandler = async ({
   sharedMap,
   url,
   redirect,
+  cacheControl,
 }) => {
   const session: Session | null = sharedMap.get("session");
+  if (!session) {
+    cacheControl({
+      public: true,
+      maxAge: 60,
+      sMaxAge: 180,
+      staleWhileRevalidate: 60 * 60 * 24 * 365,
+    });
+  } else {
+    cacheControl({
+      public: false,
+      maxAge: 2,
+      sMaxAge: 0,
+      staleWhileRevalidate: 60 * 60 * 24 * 365,
+    });
+  }
+
   if (
     !session &&
     url.pathname !== "/signin/" &&
