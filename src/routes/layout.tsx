@@ -35,7 +35,7 @@ export const onGet: RequestHandler = async (event) => {
       "Cache-Control",
       "public, max-age=60, s-maxage=120, stale-while-revalidate=86400"
     );
-    // needed for vercel-edge to not trim s-maxage and stale-while-revalidate headers
+    // needed for vercel-edge to not trim s-maxage and stale-while-revalidate headers https://vercel.com/docs/edge-network/caching#cdn-cache-control
     event.headers.set(
       "CDN-Cache-Control",
       "public, max-age=60, s-maxage=120, stale-while-revalidate=86400"
@@ -43,12 +43,12 @@ export const onGet: RequestHandler = async (event) => {
   } else {
     event.headers.set(
       "Cache-Control",
-      "private, max-age=5, s-maxage=0, stale-while-revalidate=86400"
+      "private, max-age=1, s-maxage=0, stale-while-revalidate=86400"
     );
-    // needed for vercel-edge to not trim s-maxage and stale-while-revalidate headers
+    // needed for vercel-edge to not trim s-maxage and stale-while-revalidate headers https://vercel.com/docs/edge-network/caching#cdn-cache-control
     event.headers.set(
       "CDN-Cache-Control",
-      "private, max-age=5, s-maxage=0, stale-while-revalidate=86400"
+      "private, max-age=1, s-maxage=0, stale-while-revalidate=86400"
     );
   }
 };
