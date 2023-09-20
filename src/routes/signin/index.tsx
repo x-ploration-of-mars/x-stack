@@ -29,7 +29,7 @@ export default component$(() => {
                   &ldquo;The 𝕏 stack will definitely be the go to place for
                   building apps on the everything app.&rdquo;
                 </p>
-                <footer class="text-sm">Elon Mush</footer>
+                <footer class="text-sm">Mush</footer>
               </blockquote>
             </div>
           </div>

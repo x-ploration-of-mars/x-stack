@@ -286,7 +286,7 @@ When we look at a fullstack framework, we need to take into consideration many a
 
 ## Cross Platform solutions
 
-> ⚠️ Push notifications now work with PWA on ios. Unless you need specific mobile features that aren't yet available on ios with the web APIs, PWA are by far the easiest solution for porting your web app to mobile, and they can be even more performant than React Native.
+> ⚠️ Push notifications now work with PWA on ios. Unless you need specific mobile features that aren't yet available on ios with the web APIs, PWA are by far the easiest solution for porting your web app to mobile, and they can be even more performant than React Native thanks to SSR.
 
 - 1️⃣ PWA — Installable through ios and android apps stores; Suprising performance on Android thanks to [TWA](https://developer.chrome.com/docs/android/trusted-web-activity/); incredibly easy to port with the web manifest; Needs a bit more testing on ios as a webview.
 - 2️⃣ Capacitor — Successor to Cordova; Slow on Android because [Android webviews are slow](https://github.com/ionic-team/capacitor/discussions/3899); Doesn't work with SSR; Can be buggy if you don't use Ionic; Plugins can be buggy too and aren't updated often.

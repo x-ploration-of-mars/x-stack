@@ -79,15 +79,17 @@ export default component$(() => {
 
           <div class="grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6 md:col-span-2">
             <div class="sm:col-span-4">
-              <Label>Public email</Label>
               <Field name="publicEmail">
                 {(field, props) => (
-                  <Input
-                    {...props}
-                    type="email"
-                    value={field.value}
-                    error={field.error}
-                  />
+                  <>
+                    <Label>Public email</Label>
+                    <Input
+                      {...props}
+                      type="email"
+                      value={field.value}
+                      error={field.error}
+                    />
+                  </>
                 )}
               </Field>
             </div>

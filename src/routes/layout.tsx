@@ -16,8 +16,30 @@ export const onRequest: RequestHandler = async ({
   sharedMap,
   url,
   redirect,
+  headers,
 }) => {
   const session: Session | null = sharedMap.get("session");
+  if (!session) {
+    headers.set(
+      "Cache-Control",
+      "public, max-age=60, s-maxage=120, stale-while-revalidate=86400"
+    );
+    // needed for vercel-edge to not trim s-maxage and stale-while-revalidate headers https://vercel.com/docs/edge-network/caching#cdn-cache-control
+    headers.set(
+      "CDN-Cache-Control",
+      "public, max-age=60, s-maxage=120, stale-while-revalidate=86400"
+    );
+  } else {
+    headers.set(
+      "Cache-Control",
+      "private, max-age=1, s-maxage=0, stale-while-revalidate=86400"
+    );
+    // needed for vercel-edge to not trim s-maxage and stale-while-revalidate headers https://vercel.com/docs/edge-network/caching#cdn-cache-control
+    headers.set(
+      "CDN-Cache-Control",
+      "private, max-age=1, s-maxage=0, stale-while-revalidate=86400"
+    );
+  }
   if (
     !session &&
     url.pathname !== "/signin/" &&
@@ -27,31 +49,6 @@ export const onRequest: RequestHandler = async ({
   }
 };
 
-export const onGet: RequestHandler = async (event) => {
-  const { sharedMap } = event;
-  const session: Session | null = sharedMap.get("session");
-  if (!session) {
-    event.headers.set(
-      "Cache-Control",
-      "public, max-age=60, s-maxage=120, stale-while-revalidate=86400"
-    );
-    // needed for vercel-edge to not trim s-maxage and stale-while-revalidate headers https://vercel.com/docs/edge-network/caching#cdn-cache-control
-    event.headers.set(
-      "CDN-Cache-Control",
-      "public, max-age=60, s-maxage=120, stale-while-revalidate=86400"
-    );
-  } else {
-    event.headers.set(
-      "Cache-Control",
-      "private, max-age=1, s-maxage=0, stale-while-revalidate=86400"
-    );
-    // needed for vercel-edge to not trim s-maxage and stale-while-revalidate headers https://vercel.com/docs/edge-network/caching#cdn-cache-control
-    event.headers.set(
-      "CDN-Cache-Control",
-      "private, max-age=1, s-maxage=0, stale-while-revalidate=86400"
-    );
-  }
-};
 export const useServerTimeLoader = routeLoader$(async () => {
   return {
     date: new Date().toISOString(),
