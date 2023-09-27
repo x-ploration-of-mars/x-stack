@@ -1,5 +1,9 @@
 import { component$, useVisibleTask$ } from "@builder.io/qwik";
-import { QwikCityProvider, RouterOutlet, ServiceWorkerRegister } from "@builder.io/qwik-city";
+import {
+  QwikCityProvider,
+  RouterOutlet,
+  ServiceWorkerRegister,
+} from "@builder.io/qwik-city";
 import { RouterHead } from "./components/router-head/router-head";
 
 import "./global.css";
@@ -13,7 +17,7 @@ export default component$(() => {
    * Don't remove the `<head>` and `<body>` elements.
    */
   useVisibleTask$(() => {
-    gtag("event", "notification_received");
+    gtag("event", "root loaded");
   });
 
   return (

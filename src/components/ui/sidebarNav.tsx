@@ -21,6 +21,7 @@ export const SidebarNav = component$<SidebarNavProps>(({ items, ...props }) => {
     <nav class={cardVariants({ class: props.class })} {...props}>
       {items.map((item) => (
         <Link
+          prefetch
           key={item.href}
           href={item.href}
           class={cn(

@@ -38,7 +38,7 @@ export default component$(() => {
       <div class="space-y-6 p-10 pb-16">
         <div class="flex items-center space-y-0.5">
           <div class="">
-            <Link href="/">
+            <Link href="/" prefetch>
               <LuChevronLeft class="h-12 w-12 text-muted-foreground" />
             </Link>
           </div>

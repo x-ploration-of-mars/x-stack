@@ -50,6 +50,7 @@ export default component$(() => {
             <p class="px-8 text-center text-sm">
               By creating an account, you agree to our{" "}
               <Link
+                prefetch
                 href="/pub/terms-of-service"
                 class="underline underline-offset-4 hover:text-primary"
               >
@@ -57,6 +58,7 @@ export default component$(() => {
               </Link>{" "}
               and{" "}
               <Link
+                prefetch
                 href="/pub/privacy-policy"
                 class="underline underline-offset-4 hover:text-primary"
               >
