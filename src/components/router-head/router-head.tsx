@@ -22,7 +22,12 @@ export const RouterHead = component$(() => {
         property="og:description"
         content="The cross-platform serverless bleeding-edge stack that scales"
       />
-      <meta property="og:image" content="/icons/X-og-image.png" />
+      <meta
+        property="og:image"
+        content="https://x-stack.vercel.app/icons/X-og-image.png"
+      />
+      <meta property="og:image:width" content="1200" />
+      <meta property="og:image:height" content="630" />
       <meta property="og:image:type" content="image/png" />
 
       {head.meta.map((m) => (
