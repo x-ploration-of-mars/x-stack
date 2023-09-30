@@ -97,7 +97,7 @@ With a cli to let you choose great alternatives that better match your ambitious
 
 Credits to [create-t3-app](https://github.com/t3-oss/create-t3-app) and [epic-stack](https://github.com/epicweb-dev/epic-stack) that I’ve used as inspiration to make the 𝕏 stack a better stack.
 
-You’re welcome to join the [🔗Discord server](https://discord.gg/W4e8ReQWv2) and hang out with us 🤖.
+Feel welcomed to hang out with us on [🔗Discord 🤖](https://discord.gg/W4e8ReQWv2).
 
 <br>
 
