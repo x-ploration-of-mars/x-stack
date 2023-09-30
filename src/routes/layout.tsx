@@ -18,27 +18,6 @@ export const onRequest: RequestHandler = async ({
   redirect,
 }) => {
   const session: Session | null = sharedMap.get("session");
-  // if (!session) {
-  //   headers.set(
-  //     "Cache-Control",
-  //     "public, max-age=60, s-maxage=120, stale-while-revalidate=86400"
-  //   );
-  //   // needed for vercel-edge to not trim s-maxage and stale-while-revalidate headers https://vercel.com/docs/edge-network/caching#cdn-cache-control
-  //   headers.set(
-  //     "CDN-Cache-Control",
-  //     "public, max-age=60, s-maxage=120, stale-while-revalidate=86400"
-  //   );
-  // } else {
-  //   headers.set(
-  //     "Cache-Control",
-  //     "private, max-age=1, s-maxage=0, stale-while-revalidate=86400"
-  //   );
-  //   // needed for vercel-edge to not trim s-maxage and stale-while-revalidate headers https://vercel.com/docs/edge-network/caching#cdn-cache-control
-  //   headers.set(
-  //     "CDN-Cache-Control",
-  //     "private, max-age=1, s-maxage=0, stale-while-revalidate=86400"
-  //   );
-  // }
   if (
     !session &&
     url.pathname !== "/signin/" &&
