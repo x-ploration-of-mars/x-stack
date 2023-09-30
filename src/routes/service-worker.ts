@@ -18,7 +18,7 @@ import { CacheFirst } from "workbox-strategies";
 
 import { setupServiceWorker } from "@builder.io/qwik-city/service-worker";
 
-const revision = import.meta.env.BUILD_NUMBER;
+const revision = import.meta.env.BUILD_NUMBER || "default";
 
 precacheAndRoute([{ url: "/", revision }]);
 cleanupOutdatedCaches();
