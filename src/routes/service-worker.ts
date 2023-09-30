@@ -8,26 +8,7 @@
  * You can also use this file to add more functionality that runs in the service worker.
  */
 
-import {
-  cleanupOutdatedCaches,
-  createHandlerBoundToURL,
-  precacheAndRoute,
-} from "workbox-precaching";
-import { NavigationRoute, registerRoute } from "workbox-routing";
-import { CacheFirst } from "workbox-strategies";
-
 import { setupServiceWorker } from "@builder.io/qwik-city/service-worker";
-
-const revision = import.meta.env.BUILD_NUMBER || "default";
-
-precacheAndRoute([{ url: "/", revision }]);
-cleanupOutdatedCaches();
-registerRoute(new NavigationRoute(createHandlerBoundToURL("/")));
-registerRoute(
-  ({ request }) =>
-    request.destination === "style" || request.destination === "image",
-  new CacheFirst()
-);
 
 setupServiceWorker();
 

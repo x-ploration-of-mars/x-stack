@@ -16,13 +16,14 @@ export const RouterHead = component$(() => {
       <link rel="icon" type="image/svg+xml" href="/icons/X-light/favicon.ico" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <meta property="og:type" content="website" />
-      <meta property="og:url" content="https://linkfork.co/" />
+      <meta property="og:url" content="https://x-stack.vercel.app" />
       <meta property="og:title" content="𝕏 stack" />
       <meta
         property="og:description"
         content="The cross-platform serverless bleeding-edge stack that scales"
       />
       <meta property="og:image" content="/icons/X-og-image.png" />
+      <meta property="og:image:type" content="image/png" />
 
       {head.meta.map((m) => (
         <meta key={m.key} {...m} />
