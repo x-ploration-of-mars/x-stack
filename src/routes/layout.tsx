@@ -1,5 +1,11 @@
 import { type Session } from "@auth/core/types";
-import { component$, Slot, useSignal, useVisibleTask$ } from "@builder.io/qwik";
+import {
+  $,
+  component$,
+  Slot,
+  useSignal,
+  useVisibleTask$,
+} from "@builder.io/qwik";
 import {
   type RequestHandler,
   routeLoader$,
@@ -7,10 +13,6 @@ import {
 } from "@builder.io/qwik-city";
 
 import { QProgress } from "~/integrations/react/ui/progress";
-
-function delay(time: number) {
-  return new Promise((resolve) => setTimeout(resolve, time));
-}
 
 export const onRequest: RequestHandler = async ({
   sharedMap,
@@ -39,10 +41,14 @@ export default component$(() => {
 
   useVisibleTask$(({ track }) => {
     track(() => location.isNavigating);
+    track(() => progress.value);
     if (location.isNavigating) {
-      delay(30).then(() => {
-        progress.value = 100;
-      });
+      setTimeout(
+        $(() => {
+          progress.value = 100;
+        }),
+        50
+      );
     }
     if (!location.isNavigating) {
       progress.value = 0;
