@@ -63,7 +63,40 @@
 		 "src": "/icons/X/icon-512x512.png",
 		 "sizes": "512x512",
 		 "type": "image/png",
-		 "purpose": "maskable any"
+		 "purpose": "any"
 		 }
-	 ]
+	 ],
+	 "edge_side_panel": {
+		"default": "closed",
+		"hide_close_button": false
+	},
+	"handle_links": {
+		"capture": true
+	},
+	"launch_handler": {
+		"route_to": "auto",
+		"navigate_existing_client": "always"
+	},
+	"screenshots": [
+		{
+			"src": "/screenshots/account.jpg",
+			"sizes": "1080x1920",
+			"type": "image/jpg"
+		},
+		{
+			"src": "/screenshots/profile.jpg",
+			"sizes": "1080x1920",
+			"type": "image/jpg"
+		},
+		{
+			"src": "/screenshots/signin.jpg",
+			"sizes": "1080x1920",
+			"type": "image/jpg"
+		},
+		{
+			"src": "/screenshots/x.jpg",
+			"sizes": "1080x1920",
+			"type": "image/jpg"
+		}
+	]
 }
