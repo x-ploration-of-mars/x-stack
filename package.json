@@ -61,9 +61,9 @@
   "dependencies": {
     "@auth/drizzle-adapter": "^0.3.2",
     "@builder.io/partytown": "^0.8.1",
-    "@modular-forms/qwik": "^0.20.2",
+    "@modular-forms/qwik": "^0.21.0",
     "@planetscale/database": "^1.11.0",
-    "@qwikest/icons": "^0.0.8",
+    "@qwikest/icons": "^0.0.10",
     "@radix-ui/react-progress": "^1.0.3",
     "@radix-ui/react-separator": "^1.0.3",
     "class-variance-authority": "^0.7.0",
@@ -73,6 +73,6 @@
     "mysql2": "^3.6.1",
     "tailwind-merge": "^1.14.0",
     "tailwindcss-animate": "^1.0.7",
-    "valibot": "^0.17.1"
+    "valibot": "^0.18.0"
   }
 }
