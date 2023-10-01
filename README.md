@@ -2,13 +2,13 @@
   <img src="/public/icons/X-light/safari-pinned-tab.svg" style="width: 20%;" alt="Click to see the source">
 </div>
 
-<h1 align="center">Cross-platform edge-ready resumable apps that scale</h1>
+<h1 align="center">Cross-platform edge-ready resumable</h1>
 
 <br>
 
 <h3 align="center">Write once, deploy anywhere</h3>
 
-<p align="center">web, mobile, desktop, express, serverless, the edge.. You name it.</p>
+<p align="center">web, mobile, desktop, serverless, the edge.. You name it.</p>
 
 <br>
 
@@ -23,11 +23,11 @@
 
 # Introducing the 𝕏 stack
 
-✅ An all-in-one toolbox for you to stop worrying about DX, scalability, performance, security, compatibility, customizability, maintainability, data modeling, data quality, and costs. Start with a robust and empowering stack that is not going to fail you.
+✅ An all-in-one toolbox for you to stop worrying about DX, scalability, performance, security, compatibility, customizability, maintainability, data modeling, data quality, and costs. Start with a robust and empowering stack that is not going to fail you along the way.
 
 ✅ A place for you to easily weigh the pros and cons of each fullstack framework, components library/collection, API architecture, Database, ORM, analytics service, Auth toolkit, deployment strategy, and development tool.
 
-✅ A cli to let you choose great alternatives that better match your ambitious project requirements _(tbd)_.
+✅ A cli to let you choose great alternatives that better match your project requirements _(tbd)_.
 
 - ⚡️ **Fullstack framework: Qwik**
   - Enjoy the best DX imaginable with server actions/loaders, typescript server/client RPC calls, Valibot validation, Middlewares, Image optimization, etc.
