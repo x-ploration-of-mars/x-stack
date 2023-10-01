@@ -70,12 +70,9 @@
 		"default": "closed",
 		"hide_close_button": false
 	},
-	"handle_links": {
-		"capture": true
-	},
+	"handle_links": "auto",
 	"launch_handler": {
-		"route_to": "auto",
-		"navigate_existing_client": "always"
+		"client_mode": "auto"
 	},
 	"screenshots": [
 		{
