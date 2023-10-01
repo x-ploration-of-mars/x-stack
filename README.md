@@ -89,7 +89,7 @@ With a cli to let you choose great alternatives that better match your ambitious
   - AI assistants: Codeium & chatgpt
   - VScode shortcuts: `ctrl + d` `ctrl + f` `ctrl + shift + f` `ctrl + p`
   - Logging _(tbd)_
-  - Icon generation: https://realfavicongenerator.net/
+  - [Icon generation](https://tools.crawlink.com/tools/pwa-icon-generator/)
 - 🌐📱💻🥽 **Deployment: Vercel + PWA**
   - Deploy your app seamlessly on the web, but also on mobile and desktop with just one codebase
   - Take advantage of the wide ecosystem of npm libraries from the web
