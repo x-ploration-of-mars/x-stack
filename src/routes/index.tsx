@@ -16,8 +16,11 @@ export default component$(() => {
   return (
     <>
       <div class="relative h-[100vh] w-[100vw] flex-col bg-primary">
-        <div class="drop-shadow-neon animate-flicker absolute left-1/2 top-1/2 flex -translate-x-1/2 -translate-y-1/2 transform justify-center text-white text-[50vh]">
+        <div class="hidden drop-shadow-neon animate-flicker absolute left-1/2 top-1/2 lg:flex -translate-x-1/2 -translate-y-1/2 transform lg:justify-center text-white text-[50vh]">
           𝕏
+        </div>
+        <div class="lg:hidden drop-shadow-neon animate-flicker absolute left-1/2 top-1/2 flex -translate-x-1/2 -translate-y-1/2 transform justify-center text-white text-[50vh]">
+          X
         </div>
         <div class="top-12 absolute flex w-full justify-center">
           <Link

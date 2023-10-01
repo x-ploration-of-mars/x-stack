@@ -36,7 +36,7 @@ export default component$(() => {
         </div>
         {/* Right Section */}
         <div class="flex w-full flex-col items-center justify-center lg:p-8">
-          <h1 class="text-9xl font-medium lg:hidden">𝕏</h1>
+          <h1 class="text-9xl font-medium lg:hidden">X</h1>
           <div class=" space-y-6 sm:w-[350px]">
             <div class="flex flex-col space-y-4 text-center">
               <h1 class="text-4xl font-semibold tracking-tight">
