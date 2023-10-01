@@ -5,7 +5,7 @@
 	"short_name": "X Stack",
 	"description": "A demo of the X Stack",
 	"start_url": ".",
-    "theme_color": "#1976d2",
+	"theme_color": "#000",
     "background_color": "#fafafa",
 	"display": "standalone",
 	"display_override": ["window-controls-overlay", "standalone", "fullscreen"],
