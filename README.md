@@ -1,14 +1,32 @@
+Happy to share with you guys my first open-source project: a cross-platform stack with Qwik, Auth.js, Planetscale, Drizzle, Valibot, Drizzle-Valibot, Modular-forms, GA4, shadcn design.
+
+Check out the demo PWA deployed on Vercel: https://x-stack.vercel.app/
+
+Downloadable as a TWA on the Play Store: https://play.google.com/store/apps/details?id=app.vercel.x_stack.twa
+
+Many more features to come:
+
+- Qwikcn (I have already started working on it :eyes:)
+- CLI for choosing your DB (Planetscale, Turso, Neon...) Analytics tool (GA4, Plausible, Umami...), Deployment platform (Vercel, Netlify, Cloudflare Pages), and more...
+- UI transitions
+- Link prefetch on mobile
+- Offline access
+
+I have decided to work full-time on open-source for the foreseeable future and I'll be sharing my adventure and joining the conversation on ~~ twitter~~ 𝕏 (x.com, not the 𝕏 stack...): https://twitter.com/maiieul
+
+Also, contributors are more than welcome! Come and have fun on the discord (even if you don't have time to contribute): https://discord.com/invite/W4e8ReQWv2
+
 <div align="center">
   <img src="/public/icons/X-light/safari-pinned-tab.svg" style="width: 20%;" alt="Click to see the source">
 </div>
 
-<h1 align="center">Cross-platform edge-ready resumable</h1>
+<h1 align="center">Cross-platform - edge-ready - resumable</h1>
 
 <br>
 
-<h3 align="center">Write once, deploy anywhere</h3>
-
-<p align="center">web, mobile, desktop, serverless, the edge.. You name it.</p>
+<p align="center">No more re-writing your code for your mobile app</p>
+<p align="center">No more backend slowness</p>
+<p align="center">No more optimizing to get to your app to just work</p>
 
 <br>
 
