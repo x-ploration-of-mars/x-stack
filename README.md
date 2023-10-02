@@ -14,9 +14,8 @@
 
 <p align="center"><a href="https://x-stack.vercel.app/">Website demo</a></p>
 <p align="center">
-<a href="https://play.google.com/store/apps/details?id=app.vercel.x_stack.twa&pcampaignid=web_share">Play Store demo 👀</a>
+<a href="https://play.google.com/store/apps/details?id=app.vercel.x_stack.twa">Play Store demo 👀</a>
 </p>
-<p align="center">(👆 Test build, still in review...)</p>
 
 <br>
 <br>
@@ -295,7 +294,7 @@ Although some pieces are still in beta (auth.js, drizzle, valibot, qwik-ui’s h
 
 ### Who are you?
 
-I’m an indie dev and I’ve had the chance to work on many projects that required learning many different technologies. I have worked extensively with React Vanilla in a project that used the GRAND stack (Graphql, React, Apollo, Neo4j Database). I’ve worked with Next 12 for my portfolio website using the t3 stack. I’ve worked with Nuxt 3 on a French government site. And I’ve tried my hands at Sveltekit for a side hustle. I have to admit, I’ve only read Solid’s documentation 🙈.
+👋 My name's Maïeul and I’ve had the chance to work on many projects that required learning many different technologies. I have worked extensively with React Vanilla in a project that used the GRAND stack (Graphql, React, Apollo, Neo4j Database). I’ve worked with Next 12 for my portfolio website using the t3 stack. I’ve worked with Nuxt 3 on a French government site. And I’ve tried my hands at Sveltekit for a side hustle. I have to admit, I’ve only read Solid’s documentation 🙈.
 
 ### Why?
 
