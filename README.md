@@ -2,7 +2,7 @@
   <img src="/public/icons/X-light/safari-pinned-tab.svg" style="width: 20%;" alt="Click to see the source">
 </div>
 
-<h1 align="center">Cross-platform - edge-ready - resumable</h1>
+<h1 align="center">Cross-platform (hence the 𝕏) - edge-ready - resumable</h1>
 
 <br>
 
