@@ -23,7 +23,7 @@
 
 <br>
 
-<p align="center">Come hang out on [Discord 🤖](https://discord.gg/W4e8ReQWv2)</p>
+<p align="center">Come hang out on <a href="https://discord.gg/W4e8ReQWv2">Discord 🤖</a></p>
 
 <br>
 <br>
