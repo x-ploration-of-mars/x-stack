@@ -8,7 +8,11 @@
 
 <p align="center">No more re-writing your code for your mobile app</p>
 <p align="center">No more backend slowness</p>
-<p align="center">No more optimizing to get to your app to just work</p>
+<p align="center">No more frontend optimization</p>
+
+<br>
+
+<p align="center">Everything just works, out of the box.</p>
 
 <br>
 
