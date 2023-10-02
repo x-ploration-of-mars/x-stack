@@ -1,4 +1,3 @@
-<p align="center">No more frontend optimization</p>
 <div align="center">
   <img src="/public/icons/X-light/safari-pinned-tab.svg" style="width: 20%;" alt="Click to see the source">
 </div>
