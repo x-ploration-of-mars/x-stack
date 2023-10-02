@@ -63,7 +63,6 @@
   - Run migrations with ease
   - Use it anywhere, even on the edge
 - 💪 **Database: [Planetscale](https://planetscale.com/) (Turso & Neon incoming)**
-
   - Scale to planet scale
   - Don’t worry about costs
   - Branch your database like you branch your code
@@ -71,7 +70,6 @@
   - Seamlessly deploy and revert schema changes with no downtime
   - Get real-time insights into your database performance
   - Integrate with third-party services for data warehousing, etc.
-
 - 🎯 **Analytics: [GA4](https://analytics.google.com/analytics) (Plausible & Umami incoming)**
   - Enjoy a [100% free](https://support.google.com/analytics/answer/1070983?hl=en#zippy=%2Cin-this-article) non-open-source software
   - Keep track of your AARRR metrics with ease thanks to well-designed visualizations
@@ -91,6 +89,7 @@
   - Logging _(tbd)_
   - [Icon generation](https://tools.crawlink.com/tools/pwa-icon-generator/)
 - 🌐📱💻🥽 **Deployment: [Vercel](https://qwik.builder.io/docs/deployments/vercel-edge/) (Netlify + Cloudflare incoming) + [TWA](https://www.pwabuilder.com/)**
+  > ⚠️ Be aware that there is currently no deployment option for Vercel serverless on Qwik. It means a bit of extra latency with Planetscale's free tier that is deployed in one region vs Qwik on the edge.
   - Deploy your app seamlessly on the web, but also on mobile and desktop with just one codebase
   - Take advantage of the wide ecosystem of npm libraries from the web
   - Port your web app to native easily without impacting performance & development costs
