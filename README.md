@@ -12,7 +12,7 @@
 
 <br>
 
-<p align="center">Everything just works, out of the box.</p>
+<p align="center">🙋‍♂️ Everything just works, out of the box.</p>
 
 <br>
 
@@ -23,7 +23,7 @@
 
 <br>
 
-<p align="center">Come hang out on <a href="https://discord.gg/W4e8ReQWv2">Discord 🤖</a></p>
+<p align="center">Come hang out on <a href="https://discord.gg/W4e8ReQWv2">Discord.</a></p>
 
 <br>
 <br>
