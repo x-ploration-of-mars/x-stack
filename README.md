@@ -90,7 +90,7 @@
   - VScode shortcuts: `ctrl + d` `ctrl + f` `ctrl + shift + f` `ctrl + p`
   - Logging _(tbd)_
   - [Icon generation](https://tools.crawlink.com/tools/pwa-icon-generator/)
-- 🌐📱💻🥽 **Deployment: Vercel (Netlify + Cloudflare incoming) + TWA**
+- 🌐📱💻🥽 **Deployment: [Vercel](https://qwik.builder.io/docs/deployments/vercel-edge/) (Netlify + Cloudflare incoming) + [TWA](https://www.pwabuilder.com/)**
   - Deploy your app seamlessly on the web, but also on mobile and desktop with just one codebase
   - Take advantage of the wide ecosystem of npm libraries from the web
   - Port your web app to native easily without impacting performance & development costs
