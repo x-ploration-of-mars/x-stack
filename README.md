@@ -36,9 +36,9 @@
   - Enjoy the best DX imaginable with server actions/loaders, typescript server/client RPC calls, Valibot validation, Middlewares, Image optimization, etc.
   - Make your app performant right from the start thanks to built-in Resumability, Lazy-loading ($), Signals-based Reactivity, and Edge Deployment
   - Use any library from other frameworks (React & Angular ✅; Svelte, Solid & Vue incoming)
-- ✨ **Components ~~library~~ collection: Shadcn/ui (TailwindCSS w/ headless components)**
+- ✨ **Components ~~library~~ collection: Qwikcn (Shadcn "port" to Qwik with Tailwind & headless components)**
 
-  > ⚠️ Since some shadcn components must be rewritten natively or imported with qwikify$, this is a hard piece to use with Qwik atm. I have already started porting a few components and will spend most of my time on this before I can confidently release v1.
+  > ⚠️ Qwikcn is still a work in progress and should be considered as experimental!
 
   - Own your components and create your own design system to match your own brand requirements
   - Copy/Paste UI templates to speed up your scaffolding
@@ -58,7 +58,7 @@
   - Never break your app again with end-to-end type safety
   - Handle Form validation with Valibot and modular-form
   - Rate limit your requests with Upstash’s serverless Redis _(tbd)_
-- 💪 **Database platform: Planetscale**
+- 💪 **Database platform: Planetscale (Turso & Neon incoming)**
   - Scale to planet scale
   - Don’t worry about costs
   - Branch your database like you branch your code
@@ -72,7 +72,7 @@
   - Don’t worry about joins (thank you, relational queries)
   - Run migrations with ease
   - Use it anywhere, even on the edge
-- 🎯 **Analytics: Firebase Analytics (GA4)**
+- 🎯 **Analytics: GA4 (Plausible & Umami incoming)**
   - Enjoy a [100% free](https://support.google.com/analytics/answer/1070983?hl=en#zippy=%2Cin-this-article) open-source software
   - Keep track of your AARRR metrics with ease thanks to well-designed visualizations
   - Enjoy the power of cohort-based analysis to measure app usage and learn from your users
@@ -84,7 +84,7 @@
   - VScode shortcuts: `ctrl + d` `ctrl + f` `ctrl + shift + f` `ctrl + p`
   - Logging _(tbd)_
   - [Icon generation](https://tools.crawlink.com/tools/pwa-icon-generator/)
-- 🌐📱💻🥽 **Deployment: Vercel + PWA**
+- 🌐📱💻🥽 **Deployment: Vercel (Netlify + Cloudflare incoming) + TWA**
   - Deploy your app seamlessly on the web, but also on mobile and desktop with just one codebase
   - Take advantage of the wide ecosystem of npm libraries from the web
   - Port your web app to native easily without impacting performance & development costs
