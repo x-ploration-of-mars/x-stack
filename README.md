@@ -6,9 +6,9 @@
 
 <br>
 
-<p align="center">No more re-writing your code for your mobile app</p>
-<p align="center">No more backend slowness</p>
-<p align="center">No more frontend optimization</p>
+<p align="center">🙅‍♂️ No more re-writing your code for your mobile app</p>
+<p align="center">🙅‍♂️ No more backend slowness</p>
+<p align="center">🙅‍♂️ No more frontend optimization</p>
 
 <br>
 
@@ -20,6 +20,10 @@
 <p align="center">
 <a href="https://play.google.com/store/apps/details?id=app.vercel.x_stack.twa">Play Store demo 👀</a>
 </p>
+
+<br>
+
+<p align="center">Come hang out on [Discord 🤖](https://discord.gg/W4e8ReQWv2)</p>
 
 <br>
 <br>
@@ -36,7 +40,7 @@
   - Enjoy the best DX imaginable with server actions/loaders, typescript server/client RPC calls, Valibot validation, Middlewares, Image optimization, etc.
   - Make your app performant right from the start thanks to built-in Resumability, Lazy-loading ($), Signals-based Reactivity, and Edge Deployment
   - Use any library from other frameworks (React & Angular ✅; Svelte, Solid & Vue incoming)
-- ✨ **Components ~~library~~ collection: Qwikcn (Shadcn "port" to Qwik with Tailwind & headless components)**
+- ✨ **Components ~~library~~ collection: Qwikcn (Shadcn "port" with Tailwind & headless components)**
 
   > ⚠️ Qwikcn is still a work in progress and should be considered as experimental!
 
@@ -48,17 +52,18 @@
   - Style your forms and markdown easily with @tailwindcss/forms and @tailwindcss/typography
   - Integrate your components with StoryBook _(tbd)_
 
-- 🔐 **Auth: Auth.js**
-  - Enjoy a 100% free auth solution
-  - Easily implement social and OTP login
-  - RBAC/ABAC support with custom user properties _(tbd)_
-  - Choose between Database or JWT sessions _(tbd)_
-  - Own your auth backend and improve query performance
 - 🦺 **API layer: Server actions/loaders**
   - Never break your app again with end-to-end type safety
   - Handle Form validation with Valibot and modular-form
   - Rate limit your requests with Upstash’s serverless Redis _(tbd)_
+- 💦 **ORM: Drizzle**
+  - Define a type-safe schema and take advantage of Intellisense/Auto-completion
+  - Write queries even faster than raw SQL
+  - Don’t worry about joins (thank you, relational queries)
+  - Run migrations with ease
+  - Use it anywhere, even on the edge
 - 💪 **Database: Planetscale (Turso & Neon incoming)**
+
   - Scale to planet scale
   - Don’t worry about costs
   - Branch your database like you branch your code
@@ -66,18 +71,19 @@
   - Seamlessly deploy and revert schema changes with no downtime
   - Get real-time insights into your database performance
   - Integrate with third-party services for data warehousing, etc.
-- 💦 **ORM: Drizzle**
-  - Define a type-safe schema and take advantage of Intellisense/Auto-completion
-  - Write queries even faster than raw SQL
-  - Don’t worry about joins (thank you, relational queries)
-  - Run migrations with ease
-  - Use it anywhere, even on the edge
+
 - 🎯 **Analytics: GA4 (Plausible & Umami incoming)**
   - Enjoy a [100% free](https://support.google.com/analytics/answer/1070983?hl=en#zippy=%2Cin-this-article) open-source software
   - Keep track of your AARRR metrics with ease thanks to well-designed visualizations
   - Enjoy the power of cohort-based analysis to measure app usage and learn from your users
   - Run A/B tests with GrowthBook to find out what drives your users
   - Works on any platform
+- 🔐 **Auth: Auth.js**
+  - Enjoy a 100% free auth solution
+  - Easily implement social and OTP login
+  - RBAC/ABAC support with custom user properties _(tbd)_
+  - Choose between Database or JWT sessions _(tbd)_
+  - Own your auth backend and improve query performance
 - 🍀 **Development tools:**
   - Vscode extensions: Eslint, Prettier, Pretty Typescript Errors
   - AI assistants: Codeium & chatgpt
@@ -91,7 +97,7 @@
 
 Credits to [create-t3-app](https://github.com/t3-oss/create-t3-app) and [epic-stack](https://github.com/epicweb-dev/epic-stack) that I’ve used as inspiration to make the 𝕏 stack a better stack.
 
-Feel welcomed to hang out with us on [🔗Discord 🤖](https://discord.gg/W4e8ReQWv2).
+Feel welcomed to hang out with us on [Discord 🤖](https://discord.gg/W4e8ReQWv2).
 
 <br>
 
