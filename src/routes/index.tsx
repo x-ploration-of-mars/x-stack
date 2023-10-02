@@ -4,6 +4,7 @@ import { buttonVariants } from "~/components/ui/button";
 
 import {
   LuArrowRight,
+  LuDownloadCloud,
   LuGamepad2,
   LuGithub,
   LuUser,
@@ -34,7 +35,7 @@ export default component$(() => {
             Join the Discord
           </Link>
         </div>
-        <div class="absolute top-28 flex w-full justify-around">
+        <div class="absolute top-32 flex w-full justify-around">
           <Link
             class={[
               buttonVariants({ variant: "link" }),
@@ -47,7 +48,7 @@ export default component$(() => {
           </Link>
           <Signout />
         </div>
-        <div class="absolute bottom-28 flex w-full justify-around">
+        <div class="absolute bottom-32 flex w-full justify-around">
           <Link
             class={[
               buttonVariants({ variant: "link" }),
@@ -66,6 +67,18 @@ export default component$(() => {
             href="/documentation"
           >
             Docs <LuArrowRight class="ml-2" />
+          </Link>
+        </div>
+        <div class="bottom-12 absolute flex w-full justify-center">
+          <Link
+            class={[
+              buttonVariants({ variant: "link" }),
+              "drop-shadow-neon-sm animate-flicker text-secondary",
+            ]}
+            href="https://play.google.com/store/apps/details?id=app.vercel.x_stack.twa"
+          >
+            <LuDownloadCloud class="mr-2" />
+            Download on Play Store
           </Link>
         </div>
       </div>
