@@ -1,3 +1,4 @@
+<p align="center">No more frontend optimization</p>
 <div align="center">
   <img src="/public/icons/X-light/safari-pinned-tab.svg" style="width: 20%;" alt="Click to see the source">
 </div>
@@ -54,11 +55,11 @@
   - RBAC/ABAC support with custom user properties _(tbd)_
   - Choose between Database or JWT sessions _(tbd)_
   - Own your auth backend and improve query performance
-- 🦺 **API architecture: Server actions/loaders**
+- 🦺 **API layer: Server actions/loaders**
   - Never break your app again with end-to-end type safety
   - Handle Form validation with Valibot and modular-form
   - Rate limit your requests with Upstash’s serverless Redis _(tbd)_
-- 💪 **Database platform: Planetscale (Turso & Neon incoming)**
+- 💪 **Database: Planetscale (Turso & Neon incoming)**
   - Scale to planet scale
   - Don’t worry about costs
   - Branch your database like you branch your code
