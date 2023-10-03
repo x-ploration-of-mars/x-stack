@@ -96,8 +96,6 @@
 
 Credits to [create-t3-app](https://github.com/t3-oss/create-t3-app) and the [epic-stack](https://github.com/epicweb-dev/epic-stack) that I’ve used as inspiration to make the 𝕏 stack a better stack.
 
-Feel welcomed to hang out with us on [Discord 🤖](https://discord.gg/W4e8ReQWv2).
-
 <br>
 
 # How to _(wip)_
