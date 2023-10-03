@@ -15,7 +15,6 @@ import {
   type InitialValues,
   type SubmitHandler,
   valiForm$,
-  reset,
 } from "@modular-forms/qwik";
 import { type Input as valibotInput, pick, parse } from "valibot";
 import { LuLoader2 } from "@qwikest/icons/lucide";
@@ -240,10 +239,7 @@ export default component$(() => {
         <QSeparator className="my-6" />
 
         <div class="mt-6 flex items-center justify-end gap-x-6">
-          <Button variant="ghost" onClick$={() => reset(updateProfileForm)}>
-            Cancel
-          </Button>
-          {updateProfileForm.submitting && updateProfileForm.touched ? (
+          {updateProfileForm.submitting ? (
             <Button variant="default" class="w-16">
               <LuLoader2 class="w-5 h-5 animate-spin" />
             </Button>
