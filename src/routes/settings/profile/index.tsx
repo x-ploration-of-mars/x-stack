@@ -240,10 +240,14 @@ export default component$(() => {
         <QSeparator className="my-6" />
 
         <div class="mt-6 flex items-center justify-end gap-x-6">
-          <Button variant="ghost" onClick$={() => reset(updateProfileForm)}>
+          <Button
+            variant="ghost"
+            onClick$={() => reset(updateProfileForm)}
+            preventdefault:submit
+          >
             Cancel
           </Button>
-          {updateProfileForm.submitting ? (
+          {updateProfileForm.submitting && updateProfileForm.touched ? (
             <Button variant="default" class="w-16">
               <LuLoader2 class="w-5 h-5 animate-spin" />
             </Button>
