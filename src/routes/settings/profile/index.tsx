@@ -243,7 +243,7 @@ export default component$(() => {
           <Button variant="ghost" onClick$={() => reset(updateProfileForm)}>
             Cancel
           </Button>
-          {updateProfileForm.submitting ? (
+          {updateProfileForm.submitting && updateProfileForm.touched ? (
             <Button variant="default" class="w-16">
               <LuLoader2 class="w-5 h-5 animate-spin" />
             </Button>
