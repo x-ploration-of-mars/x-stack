@@ -240,11 +240,7 @@ export default component$(() => {
         <QSeparator className="my-6" />
 
         <div class="mt-6 flex items-center justify-end gap-x-6">
-          <Button
-            variant="ghost"
-            onClick$={() => reset(updateProfileForm)}
-            preventdefault:submit
-          >
+          <Button variant="ghost" onClick$={() => reset(updateProfileForm)}>
             Cancel
           </Button>
           {updateProfileForm.submitting && updateProfileForm.touched ? (
