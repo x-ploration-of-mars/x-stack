@@ -1,11 +1,5 @@
 import { type Session } from "@auth/core/types";
-import {
-  $,
-  component$,
-  Slot,
-  useSignal,
-  useVisibleTask$,
-} from "@builder.io/qwik";
+import { $, component$, Slot, useSignal, useTask$ } from "@builder.io/qwik";
 import {
   type RequestHandler,
   routeLoader$,
@@ -39,16 +33,17 @@ export default component$(() => {
   const location = useLocation();
   const progress = useSignal(0);
 
-  useVisibleTask$(({ track }) => {
+  useTask$(({ track, cleanup }) => {
     track(() => location.isNavigating);
     track(() => progress.value);
     if (location.isNavigating) {
-      setTimeout(
+      const timeout = setTimeout(
         $(() => {
           progress.value = 100;
         }),
         50
       );
+      cleanup(() => clearTimeout(timeout));
     }
     if (!location.isNavigating) {
       progress.value = 0;
