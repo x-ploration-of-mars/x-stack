@@ -1,4 +1,4 @@
-import { $, component$ } from "@builder.io/qwik";
+import { component$ } from "@builder.io/qwik";
 import { routeLoader$ } from "@builder.io/qwik-city";
 import { eq } from "drizzle-orm";
 import { db } from "~/drizzle/db";
@@ -13,7 +13,6 @@ import {
   useForm,
   formAction$,
   type InitialValues,
-  type SubmitHandler,
   valiForm$,
 } from "@modular-forms/qwik";
 import { type Input as valibotInput, pick, parse } from "valibot";
@@ -78,14 +77,9 @@ export default component$(() => {
     validate: valiForm$(requestSchema),
   });
 
-  const handleSubmit = $<SubmitHandler<UpdateProfileForm>>((values) => {
-    // Runs on client
-    console.log(values);
-  });
-
   return (
     <>
-      <Form onSubmit$={handleSubmit}>
+      <Form>
         <div>
           <h3 class="text-lg font-semibold">Profile</h3>
           <p class="text-sm text-muted-foreground">

@@ -1,10 +1,9 @@
-import { $, component$ } from "@builder.io/qwik";
+import { component$ } from "@builder.io/qwik";
 import {
   formAction$,
   type InitialValues,
   valiForm$,
   useForm,
-  type SubmitHandler,
   reset,
 } from "@modular-forms/qwik";
 import Input from "~/components/ui/input";
@@ -61,13 +60,9 @@ export default component$(() => {
     validate: valiForm$(requestSchema),
   });
 
-  const handleSubmit = $<SubmitHandler<UpdateProfileForm>>((values) => {
-    // Runs on client
-    console.log(values);
-  });
   return (
     <>
-      <Form onSubmit$={handleSubmit}>
+      <Form>
         <div>
           <div>
             <h3 class="text-lg font-semibold">Contact</h3>
