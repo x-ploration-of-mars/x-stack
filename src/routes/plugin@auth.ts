@@ -59,15 +59,14 @@ export const { onRequest, useAuthSession, useAuthSignin, useAuthSignout } =
         account,
         profile,
       }: {
-        user: User;
+        user: User | AdapterUser | undefined;
         account: Account;
         profile: Profile;
       }) {
-        // update db user with discord profile when profile has changed on discord
-        if (
-          (user as User | AdapterUser | undefined) &&
-          account.provider === "discord"
-        ) {
+        /**
+         * Section to update db user with discord profile when profile has changed on discord
+         */
+        if (user && account.provider === "discord") {
           const {
             email: profileEmail = "",
             image_url: profileImage = "",
