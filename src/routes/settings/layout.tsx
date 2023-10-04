@@ -1,9 +1,9 @@
-import { QSeparator } from "~/integrations/react/ui/separator";
 import { Slot, component$ } from "@builder.io/qwik";
 import { Link, type DocumentHead } from "@builder.io/qwik-city";
 import { useAuthSession } from "../plugin@auth";
 import { LuChevronLeft } from "@qwikest/icons/lucide";
 import { SidebarNav } from "~/components/ui/sidebarNav";
+import { Separator } from "~/components/ui/separator";
 
 export const head: DocumentHead = {
   title: "X-Stack",
@@ -62,7 +62,7 @@ export default component$(() => {
             </p>
           </div>
         </div>
-        <QSeparator className="my-6" />
+        <Separator class="my-6" />
         <div class="flex flex-col space-y-8 lg:flex-row lg:space-x-12 lg:space-y-0">
           <aside class="lg:pl-28 lg:w-80">
             <SidebarNav items={sidebarNavItems} />

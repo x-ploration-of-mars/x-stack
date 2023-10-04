@@ -4,9 +4,9 @@ import { routeAction$ } from "@builder.io/qwik-city";
 import { LuLoader2 } from "@qwikest/icons/lucide";
 import { eq } from "drizzle-orm";
 import Button from "~/components/ui/button";
+import { Separator } from "~/components/ui/separator";
 import { db } from "~/drizzle/db";
 import { accounts, sessions, users } from "~/drizzle/schema/auth";
-import { QSeparator } from "~/integrations/react/ui/separator";
 
 export const useDeleteAccountAction = routeAction$(async (data, event) => {
   const session: Session | null = event.sharedMap.get("session");
@@ -34,7 +34,7 @@ export default component$(() => {
             Manage your account settings.
           </p>
         </div>
-        <QSeparator className="my-6" />
+        <Separator class="my-6" />
 
         <div>
           <h3 class="text-primary font-bold text-3xl">Delete Account</h3>
