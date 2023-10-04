@@ -1,4 +1,4 @@
-import { component$ } from "@builder.io/qwik";
+import { $, type QRL, component$ } from "@builder.io/qwik";
 import { routeLoader$ } from "@builder.io/qwik-city";
 import { eq } from "drizzle-orm";
 import { db } from "~/drizzle/db";
@@ -14,6 +14,7 @@ import {
   formAction$,
   type InitialValues,
   valiForm$,
+  type SubmitHandler,
 } from "@modular-forms/qwik";
 import { type Input as valibotInput, pick, parse } from "valibot";
 import { LuLoader2 } from "@qwikest/icons/lucide";
@@ -77,9 +78,17 @@ export default component$(() => {
     validate: valiForm$(requestSchema),
   });
 
+  const handleSubmit: QRL<SubmitHandler<UpdateProfileForm>> = $(() => {
+    gtag("event", "update_profile");
+  });
+
   return (
     <>
-      <Form>
+      <Form
+        onSubmit$={handleSubmit}
+        name="updateProfileForm"
+        id="updateProfileForm"
+      >
         <div>
           <h3 class="text-lg font-semibold">Profile</h3>
           <p class="text-sm text-muted-foreground">

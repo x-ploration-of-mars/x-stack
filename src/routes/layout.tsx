@@ -1,5 +1,12 @@
 import { type Session } from "@auth/core/types";
-import { $, component$, Slot, useSignal, useTask$ } from "@builder.io/qwik";
+import {
+  $,
+  component$,
+  Slot,
+  useSignal,
+  useTask$,
+  useVisibleTask$,
+} from "@builder.io/qwik";
 import {
   type RequestHandler,
   routeLoader$,
@@ -7,6 +14,7 @@ import {
 } from "@builder.io/qwik-city";
 
 import { QProgress } from "~/integrations/react/ui/progress";
+import { useAuthSession } from "./plugin@auth";
 
 export const onRequest: RequestHandler = async ({
   sharedMap,
@@ -30,6 +38,16 @@ export const useServerTimeLoader = routeLoader$(async () => {
 });
 
 export default component$(() => {
+  const session = useAuthSession();
+
+  useVisibleTask$(() => {
+    if (session.value.user.id) {
+      gtag("set", {
+        user_id: session.value.user.id,
+      });
+    }
+  });
+
   const location = useLocation();
   const progress = useSignal(0);
 

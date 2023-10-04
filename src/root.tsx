@@ -17,7 +17,7 @@ export default component$(() => {
    * Don't remove the `<head>` and `<body>` elements.
    */
   useVisibleTask$(() => {
-    gtag("event", "root loaded");
+    gtag("event", "root_loaded");
   });
 
   return (
