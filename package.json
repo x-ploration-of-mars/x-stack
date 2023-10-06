@@ -66,6 +66,7 @@
     "@planetscale/database": "^1.11.0",
     "@qwikest/icons": "^0.0.10",
     "@radix-ui/react-progress": "^1.0.3",
+    "@radix-ui/react-separator": "^1.0.3",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.0.0",
     "drizzle-orm": "^0.28.6",

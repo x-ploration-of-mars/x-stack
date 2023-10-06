@@ -18,7 +18,7 @@ import {
 } from "@modular-forms/qwik";
 import { type Input as valibotInput, pick, parse } from "valibot";
 import { LuLoader2 } from "@qwikest/icons/lucide";
-import { Separator } from "~/components/ui/separator";
+import { QSeparator } from "~/integrations/react/ui/separator";
 
 const requestSchema = pick(insertUserSchema, [
   "firstName",
@@ -96,7 +96,7 @@ export default component$(() => {
             future for networking purposes.
           </p>
         </div>
-        <Separator class="my-6" />
+        <QSeparator className="my-6" />
 
         <div class=" space-y-12">
           {/*TODO: Location (country!, region?, city?), Favorite techs (top 5 / top 10 / top 50 ?) */}
@@ -239,7 +239,7 @@ export default component$(() => {
           </div>
         </div>
 
-        <Separator class="my-6" />
+        <QSeparator className="my-6" />
 
         <div class="mt-6 flex items-center justify-end gap-x-6">
           {updateProfileForm.submitting ? (

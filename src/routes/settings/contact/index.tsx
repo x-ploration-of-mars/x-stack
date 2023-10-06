@@ -8,6 +8,7 @@ import {
 } from "@modular-forms/qwik";
 import Input from "~/components/ui/input";
 import Label from "~/components/ui/label";
+import { QSeparator } from "~/integrations/react/ui/separator";
 import { useAuthSession } from "~/routes/plugin@auth";
 import { type Input as valibotInput, pick, parse } from "valibot";
 import { insertUserSchema, users } from "~/drizzle/schema/auth";
@@ -17,7 +18,6 @@ import { eq } from "drizzle-orm";
 import { routeLoader$ } from "@builder.io/qwik-city";
 import Button from "~/components/ui/button";
 import { LuLoader2 } from "@qwikest/icons/lucide";
-import { Separator } from "~/components/ui/separator";
 
 const requestSchema = pick(insertUserSchema, ["publicEmail"]);
 
@@ -70,7 +70,7 @@ export default component$(() => {
               Tell us where we can reach out to you.
             </p>
           </div>
-          <Separator class="my-6" />
+          <QSeparator className="my-6" />
 
           <div class="grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6 md:col-span-2">
             <div class="sm:col-span-4">
@@ -111,7 +111,7 @@ export default component$(() => {
           </div>
         </div>
 
-        <Separator class="my-6" />
+        <QSeparator className="my-6" />
 
         <div class="mt-6 flex items-center justify-end gap-x-6">
           <Button variant="ghost" onClick$={() => reset(updateProfileForm)}>
