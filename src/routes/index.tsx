@@ -25,6 +25,7 @@ export default component$(() => {
         </div>
         <div class="top-12 absolute flex w-full justify-center">
           <Link
+            prefetch
             class={[
               buttonVariants({ variant: "link" }),
               "drop-shadow-neon-sm animate-flicker text-secondary",
@@ -50,6 +51,7 @@ export default component$(() => {
         </div>
         <div class="absolute bottom-32 flex w-full justify-around">
           <Link
+            prefetch
             class={[
               buttonVariants({ variant: "link" }),
               "drop-shadow-neon-sm animate-flicker text-secondary",
@@ -60,6 +62,7 @@ export default component$(() => {
             {session.value?.user.name ?? "Settings"}
           </Link>
           <Link
+            prefetch
             class={[
               buttonVariants({ variant: "link" }),
               "drop-shadow-neon-sm animate-flicker text-secondary",
@@ -71,6 +74,7 @@ export default component$(() => {
         </div>
         <div class="bottom-12 absolute flex w-full justify-center">
           <Link
+            prefetch
             class={[
               buttonVariants({ variant: "link" }),
               "drop-shadow-neon-sm animate-flicker text-secondary",
