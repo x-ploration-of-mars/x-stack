@@ -16,7 +16,7 @@ export default component$(() => {
   const session = useAuthSession();
   return (
     <>
-      <div class="relative h-[100vh] w-[100vw] flex-col bg-primary">
+      <div class="relative h-screen w-screen flex-col bg-primary">
         <div class="hidden drop-shadow-neon animate-flicker absolute left-1/2 top-1/2 lg:flex -translate-x-1/2 -translate-y-1/2 transform lg:justify-center text-white text-[50vh]">
           𝕏
         </div>

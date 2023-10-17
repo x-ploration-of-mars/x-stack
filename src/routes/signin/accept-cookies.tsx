@@ -1,9 +1,4 @@
-import {
-  type Signal,
-  component$,
-  useSignal,
-  useVisibleTask$,
-} from "@builder.io/qwik";
+import { type Signal, component$ } from "@builder.io/qwik";
 import { Link } from "@builder.io/qwik-city";
 import Button from "~/components/ui/button";
 import {
@@ -17,15 +12,13 @@ import {
 
 export default component$(
   ({ dialogRef }: { dialogRef: Signal<HTMLDialogElement | undefined> }) => {
-    // To move focus to Button
-    const acceptCookiesButtonRef = useSignal<HTMLButtonElement>();
-    useVisibleTask$(() => {
-      acceptCookiesButtonRef.value?.focus();
-    });
-
     return (
       <div>
-        <dialog ref={dialogRef} class="bg-transparent">
+        <dialog
+          ref={dialogRef}
+          class="backdrop:backdrop-blur-sm backdrop:bg-white/20 bg-transparent"
+          preventdefault:keydown
+        >
           <Card class="w-[350px]">
             <CardHeader>
               <CardTitle>Who wants cookies?</CardTitle>
@@ -43,8 +36,8 @@ export default component$(
             </CardContent>
             <CardFooter class="flex justify-between">
               <Button
+                autoFocus
                 variant={"default"}
-                ref={acceptCookiesButtonRef}
                 onClick$={() => {
                   localStorage.setItem("hasAcceptedCookies", "true");
                   dialogRef.value?.close();

@@ -15,7 +15,7 @@ export default component$(() => {
     <>
       <AcceptCookies dialogRef={dialogRef} />
       <div
-        class={`container relative grid h-[100vh] flex-col items-center justify-center lg:max-w-none lg:grid-cols-2 lg:px-0`}
+        class={`container relative grid h-screen flex-col items-center justify-center lg:max-w-none lg:grid-cols-2 lg:px-0`}
       >
         {/* Left Section */}
         <div class="relative hidden h-full flex-col bg-muted p-10 text-white dark:border-r lg:flex">
