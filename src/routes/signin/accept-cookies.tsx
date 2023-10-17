@@ -1,5 +1,3 @@
-// WIP
-
 import {
   type Signal,
   component$,

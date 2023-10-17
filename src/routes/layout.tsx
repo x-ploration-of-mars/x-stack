@@ -41,7 +41,7 @@ export default component$(() => {
   const session = useAuthSession();
 
   useVisibleTask$(() => {
-    if (session.value.user.id) {
+    if (session.value?.user.id) {
       gtag("set", {
         user_id: session.value.user.id,
       });
@@ -72,7 +72,7 @@ export default component$(() => {
     <>
       <main>
         {location.isNavigating && (
-          <QProgress value={progress.value} className="w-full" />
+          <QProgress value={progress.value} className="w-full z-50" />
         )}
         <Slot />
       </main>
