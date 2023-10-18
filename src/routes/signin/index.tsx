@@ -1,4 +1,4 @@
-import { component$, useSignal, useVisibleTask$ } from "@builder.io/qwik";
+import { component$ } from "@builder.io/qwik";
 import Signin from "~/components/auth/signin";
 import AcceptCookies from "./accept-cookies";
 import { Link } from "@builder.io/qwik-city";

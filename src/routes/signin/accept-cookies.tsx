@@ -1,12 +1,4 @@
-import {
-  type Signal,
-  component$,
-  useVisibleTask$,
-  useSignal,
-  useOn,
-  $,
-  useOnDocument,
-} from "@builder.io/qwik";
+import { component$, useVisibleTask$, useSignal } from "@builder.io/qwik";
 import { Link } from "@builder.io/qwik-city";
 import Button from "~/components/ui/button";
 import {
