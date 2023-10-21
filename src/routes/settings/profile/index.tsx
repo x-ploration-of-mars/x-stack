@@ -19,8 +19,9 @@ import {
 import { type Input as valibotInput, pick, parse } from "valibot";
 import { LuLoader2 } from "@qwikest/icons/lucide";
 import { QSeparator } from "~/integrations/react/ui/separator";
+import { type MySqlColumn } from "drizzle-orm/mysql-core";
 
-const requestSchema = pick(insertUserSchema, [
+type Fields = [
   "firstName",
   "lastName",
   "available",
@@ -29,7 +30,35 @@ const requestSchema = pick(insertUserSchema, [
   "github",
   "linkedin",
   "twitter",
-]);
+];
+
+const fields: Fields = [
+  "firstName",
+  "lastName",
+  "available",
+  "bio",
+  "website",
+  "github",
+  "linkedin",
+  "twitter",
+];
+
+function createSelectFields<T extends string>(
+  fields: T[],
+  source: Partial<Record<T, MySqlColumn>>
+): Record<T, MySqlColumn> {
+  const result: Partial<Record<T, MySqlColumn>> = {};
+
+  for (const field of fields) {
+    if (field in source) {
+      result[field] = source[field];
+    }
+  }
+
+  return result as Record<T, MySqlColumn>;
+}
+
+const requestSchema = pick(insertUserSchema, fields);
 
 type UpdateProfileForm = valibotInput<typeof requestSchema>;
 
@@ -38,18 +67,9 @@ export const useFormLoader = routeLoader$<InitialValues<UpdateProfileForm>>(
     const session: Session | null = event.sharedMap.get("session");
     if (!session) throw event.redirect(302, "/signin/");
 
+    const selectFields = createSelectFields(fields, users);
     const [user] = await db
-      .select({
-        firstName: users.firstName,
-        lastName: users.lastName,
-        name: users.name,
-        bio: users.bio,
-        available: users.available,
-        website: users.website,
-        github: users.github,
-        linkedin: users.linkedin,
-        twitter: users.twitter,
-      })
+      .select(selectFields)
       .from(users)
       .where(eq(users.id, session.user.id));
 
