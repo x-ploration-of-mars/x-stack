@@ -6,13 +6,13 @@
 
 <br>
 
-<p align="center">🙅‍♂️ No more re-writing your web app for your mobile app</p>
+<p align="center">🙅‍♂️ No more re-writing your code for different platforms</p>
 <p align="center">🙅‍♂️ No more backend slowness</p>
 <p align="center">🙅‍♂️ No more frontend optimization</p>
 
 <br>
 
-<p align="center">🙋‍♂️ Portable to mobile & desktop</p>
+<p align="center">🙋‍♂️ Deployable on the web, mobile & desktop</p>
 <p align="center">🙋‍♂️ SSR first & Edge-Ready</p>
 <p align="center">🙋‍♂️ Signals based & Resumable</p>
 
@@ -179,143 +179,129 @@ When we look at a fullstack framework, we need to take into consideration many a
 
 ## Components collections → [🔗comparison-table](https://docs.google.com/spreadsheets/d/1CHG5uK4AoMEl4giF9uY0RDJawjTdtT27gFwoIdRlxTY/edit#gid=225083988) _(wip)_
 
-### Shadcn/ui
-
-### Tailwind-ui
-
-### Bootstrap
-
-### MUI
-
-### Bulma
-
-### Chakra-ui
-
-### Mantine
-
-### Ark UI
+- 1️⃣ Shadcn/ui
+- 2️⃣ Tailwind-ui
+- 3️⃣ Bootstrap
+- 4️⃣ MUI
+- 5️⃣ Bulma
+- 6️⃣ Chakra-ui
+- 7️⃣ Mantine
+- 8️⃣ Ark UI
 
 ## API Architecture
 
-### REST
-
-### Graphql
-
-### tRPC
-
-### loader/action RPC calls
+- 1️⃣ tRPC
+- 2️⃣ REST
+- 3️⃣ GraphQL
+- 4️⃣ loader/action RPC calls
 
 ## Database Platform
 
-### Planetscale (MySQL)
-
-### Turso (SQLite)
-
-### Neon (Postgres)
-
-### CockroachDB (Postgres)
-
-### Supabase (Postgres)
-
-### Railway (Postgres)
-
-### SurrealDB (NewSQL)
-
-### Neo4j Aura (Graph)
-
-### MongoDB (Document)
-
-### Fauna
-
-### ArrangoDB
+- 1️⃣ Planetscale
+- 2️⃣ Turso
+- 3️⃣ Neon
+- 4️⃣ CockroachDB
+- 5️⃣ Supabase
+- 6️⃣ Railway
+- 7️⃣ SurrealDB
+- 8️⃣ Neo4j Aura
+- 9️⃣ MongoDB
+- 1️⃣0️⃣ Fauna
+- 1️⃣1️⃣ ArrangoDB
 
 ## ORM
 
-### Knex
-
-### TypeORM
-
-### Prisma
-
-### Kysely
-
-### Drizzle
+- 1️⃣ Drizzle
+- 2️⃣ Kysely
+- 3️⃣ Prisma
+- 4️⃣ Knex
+- 5️⃣ TypeORM
 
 ## Analytics
 
-### GA4
-
-### Umami
-
-### Plausible
-
-### Mixpanel
-
-### Amplitude
-
-### Matomo
-
-### Piwik Pro
-
-### Heap
-
-### Hotjar
-
-### Gauges
-
-### PostHog
+- 1️⃣ GA4
+- 2️⃣ Umami
+- 3️⃣ Plausible
+- 4️⃣ Mixpanel
+- 5️⃣ Amplitude
+- 6️⃣ Matomo
+- 7️⃣ Piwik Pro
+- 8️⃣ Heap
+- 9️⃣ Hotjar
+- 1️⃣0️⃣ Gauges
+- 1️⃣1️⃣ PostHog
 
 ## A/B Testing
 
-### Optimizely
-
-### Growthbook
+- 1️⃣ GrowthBook
+- 2️⃣ Optimizely
 
 ## Rate Limiting
 
-### Redis
-
-### Upstash
+- 1️⃣ Upstash
+- 2️⃣ Redis
+- 3️⃣ Memcached
 
 ## Deployment
 
-### Vercel
-
-### Netlify
-
-### Cloudflare pages
-
-### AWS
-
-### GCP
-
-### Azure
+- 1️⃣ Vercel
+- 2️⃣ Netlify
+- 3️⃣ Cloudflare pages
+- 4️⃣ AWS
+- 5️⃣ GCP
+- 6️⃣ Azure
 
 ## Cross Platform solutions
 
-> ⚠️ Push notifications now work with PWA on ios. Unless you need specific mobile features that aren't yet available on ios with the web APIs, PWA are by far the easiest solution for porting your web app to mobile, and they can be even more performant than React Native thanks to SSR.
+The main goal of a cross-platform solution is to write your code once, and run it on multiple platforms to reduce development costs. But before we take a look at the available options, we need to talk about the fundamentals.
 
-- 1️⃣ PWA — Installable through ios and android apps stores; Suprising performance on Android thanks to [TWA](https://developer.chrome.com/docs/android/trusted-web-activity/); incredibly easy to port with the web manifest; Needs a bit more testing on ios as a webview.
-- 2️⃣ Capacitor — Successor to Cordova; Slow on Android because [Android webviews are slow](https://github.com/ionic-team/capacitor/discussions/3899); Doesn't work with SSR; Can be buggy if you don't use Ionic; Plugins can be buggy too and aren't updated often.
-- 3️⃣ Tauri — Slow on Android because [Android webviews are slow](https://github.com/ionic-team/capacitor/discussions/3899); Still in alpha/beta;
+The core difference between web and native is that web always starts blank while native starts with a shell. As long as it's been built, you can access anything on the web, but you have to request the static parts (the shell) and the dynamic parts (the body) as part of the initial requests. On native apps on the other hand, you pre-download the static parts and then request the dynamic parts as the application is running.
 
-<br>
+All of this might seem obvious, but this fundamental difference forces you to choose between three strategies: web-first, native-first, or native-only.
 
-# FAQ _(wip)_
+**Web-first strategy**
 
-### Is the 𝕏 stack ready for production?
+Web-first means that you build you app on the web and optimize it for the web with SSR for better SEO and performance - and then you port it to native. This is the strategy of the 𝕏 stack. On the web, you are obviously limited to the web APIs, and so are you (more or less) when porting to native (for example, you can still use push notifications on native, which is a native API).
 
-Although some pieces are still in beta (auth.js, drizzle, valibot, qwik-ui’s headless components), I am confident that this stack can already be used in production.
+The key thing to understand here is that your native apps will mostly consist of an empty shell that serves your SSR optimized web app. This might feel a bit wrong, but an SSR optimized app with proper UI transitions and prefetching mechanisms can result in far better UX: an app that feels like an app with almost **zero** loading times.
 
-> ⚠️ Since some shadcn components must be rewritten natively or imported with qwikify$, this is a hard piece to use with Qwik atm. I have already started porting a few components and will spend most of my time on this before I can confidently release v1.
+**Native-first**
 
-### Who are you?
+Native-first means that you build your app as if it were a native app on native and on the web, so that it can use the native APIs with equivalent fallbacks on the browser. For example, your app will use the native camera access on the android and ios apps, but will fallback to the web camera access on the web.
 
-👋 My name's Maïeul and I’ve had the chance to work on many projects that required learning many different technologies. I have worked extensively with React Vanilla in a project that used the GRAND stack (Graphql, React, Apollo, Neo4j Database). I’ve worked with Next 12 for my portfolio website using the t3 stack. I’ve worked with Nuxt 3 on a French government site. And I’ve tried my hands at Sveltekit for a side hustle. I have to admit, I’ve only read Solid’s documentation 🙈.
+This approach has two major drawbacks. **(1)** In order to make this happen, you need to deploy your app as a static or CSR app that will fetch the body of the app once the static shell is up and running, which is known to be slower and bad for SEO. **(2)** It requires writing complex code that bridges the web and native APIs and will either result in limited capabilities or in imcompatibilities that will force you to write different code for native and web.
 
-### Why?
+**Native-only**
 
-In July 2023, I started looking into making the t3 stack cross-platform with Capacitor. But one month of research later, I came up to the unintuitive conclusion that SSR applications can also perfectly serve as mobile apps if done well. Capacitor was therefore not needed anymore, and the loader/action pattern became attractive. So I started playing a bit with Remix, Next 13.4, Nuxt, and Qwik. I was already a big fan of shadcn and I wanted it to be a part of my stack, so I thought Qwik and Nuxt were out of question. But looking more closely, everything except shadcn was ready to use with top-notch DX in Qwik while server actions were in beta in Next and there was no middleware capability in Remix. So I tried to see if anyone was working on a shadcn port and realized I could qwikify$ shadcn. Thus here I am with the 𝕏 stack on Qwik and qwikcn 🙃.
+Native-only means that you build your app for all platforms except for the web. This allows you to use the native APIs to their full capabilities and even extend them further. This requires building your app quite differently than mobile-first and forces you to give up on having a website, which can be okay if you don't expect much benefits from SEO.
+
+> ⚠️ The 𝕏 stack could potentially be used for native-only if future solutions support SSR out of the box. This would require testing.
+
+<hr>
+
+- 1️⃣ PWA — Web-first.
+  - Installable through ios and android apps stores
+  - Better performance than webviews on Android thanks to [TWA](https://developer.chrome.com/docs/android/trusted-web-activity/)
+  - Incredibly easy to build with the web manifest
+  - Needs a bit more testing on ios as a webview.
+    > ⚠️ Push notifications should work with PWA on ios now. You can see PWA as a web app deployable on ios, android and desktop, hence web-first.
+- 2️⃣ Capacitor — Native-first or Native-only.
+  - Slow on Android because [Android webviews are slow](https://github.com/ionic-team/capacitor/discussions/3899)
+  - Doesn't work with SSR (server.url isn't intended for use in production and it is impossible to set-up authentication tools that use cookies with it)
+  - Can be buggy if you don't use Ionic
+  - Plugins are quite limited, aren't updated often and can be buggy
+- 3️⃣ Tauri — Native-first, Native-only and **potentially** web-first (requires testing)
+  - Still in alpha/beta.
+  - Likely slow on Android because [Android webviews are slow](https://github.com/ionic-team/capacitor/discussions/3899)
+- 4️⃣ Socket-Supply — Native-first, Native-only and **potentially** web-first (requires testing)
+  - Still in alpha/beta
+  - Likely Slow on Android because [Android webviews are slow](https://github.com/ionic-team/capacitor/discussions/3899)
+  - Allows you to implement an on-the-device backend (e.g. for handling file-system access) thanks to built-in Rust security.
+  - Can extend native APIs with Socket APIs like P2P capabilities.
+- 5️⃣ React-Native — Native-only (ios and android)
+  - Battle tested for ios and android
+  - React native for web is a joke, isn't it?
+  - Limited to React (no automatic lazy-loading, no signals-based reactivity)
 
 <br>
 
