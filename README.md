@@ -2,17 +2,19 @@
   <img src="/public/icons/X-light/safari-pinned-tab.svg" style="width: 20%;" alt="Click to see the source">
 </div>
 
-<h1 align="center">Cross-platform (hence the 𝕏) - edge-ready - resumable</h1>
+<h1 align="center">Web-first, cross-platform stack for building apps at scale.</h1>
 
 <br>
 
-<p align="center">🙅‍♂️ No more re-writing your code for your mobile app</p>
+<p align="center">🙅‍♂️ No more re-writing your web app for your mobile app</p>
 <p align="center">🙅‍♂️ No more backend slowness</p>
 <p align="center">🙅‍♂️ No more frontend optimization</p>
 
 <br>
 
-<p align="center">🙋‍♂️ Everything just works, out of the box.</p>
+<p align="center">🙋‍♂️ Portable to mobile & desktop</p>
+<p align="center">🙋‍♂️ SSR first & Edge-Ready</p>
+<p align="center">🙋‍♂️ Signals based & Resumable</p>
 
 <br>
 
@@ -28,17 +30,25 @@
 <br>
 <br>
 
-# Introducing the 𝕏 stack
+## Core design
 
-✅ An all-in-one toolbox for you to stop worrying about DX, scalability, performance, security, compatibility, customizability, maintainability, data modeling, data quality, and costs. Start with a robust and empowering stack that is not going to fail you along the way.
+**Empowering**
 
-✅ A place for you to easily weigh the pros and cons of each fullstack framework, components library/collection, API architecture, Database, ORM, analytics service, Auth toolkit, deployment strategy, and development tool.
+An all-in-one toolbox for you to stop worrying about DX, scalability, performance, security, compatibility, customizability, maintainability, data modeling, data quality, and costs.
 
-✅ A cli to let you choose great alternatives that better match your project requirements _(tbd)_.
+**Intelligible**
+
+A place for you to easily weigh the pros and cons of each fullstack framework, components library/collection, API architecture, Database, ORM, analytics service, Auth toolkit, deployment strategy, and development tool.
+
+**Flexible**
+
+A cli to let you choose great alternatives that better match your project requirements _(tbd)_.
+
+## Building blocks - bleeding edge, but production-ready.
 
 - ⚡️ **Fullstack framework: [Qwik](https://qwik.builder.io/)**
-  - Enjoy the best DX imaginable with server actions/loaders, typescript server/client RPC calls, Valibot validation, Middlewares, Image optimization, etc.
-  - Make your app performant right from the start thanks to built-in Resumability, Lazy-loading ($), Signals-based Reactivity, and Edge Deployment
+  - Make your app performant right from the start thanks to built-in resumability, automatic lazy-loading ($), signals-based reactivity, edge deployment, and server actions/loaders
+  - Enjoy the best DX imaginable with code colocation, server/client RPC calls, app-wide middlewares, and automatic image optimization
   - Use any library from other frameworks (React & Angular ✅; Svelte, Solid & Vue incoming)
 - ✨ **Components ~~library~~ collection: [Qwikcn](https://github.com/x-ploration-of-mars/qwikcn) (Shadcn "port" with Tailwind & headless components)**
 
@@ -54,8 +64,8 @@
 
 - 🦺 **API layer: [Server actions/loaders](https://qwik.builder.io/docs/route-loader/)**
   - Never break your app again with end-to-end type safety
-  - Handle Form validation with Valibot and modular-form
-  - Rate limit your requests with Upstash’s serverless Redis _(tbd)_
+  - Handle Form validation with **Valibot** and **modular-form**
+  - Rate limit your requests with **Upstash** (serverless Redis) _(tbd)_
 - 💦 **ORM: [Drizzle](https://orm.drizzle.team/)**
   - Define a type-safe schema and take advantage of Intellisense/Auto-completion
   - Write queries even faster than raw SQL
