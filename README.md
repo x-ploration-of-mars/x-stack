@@ -259,19 +259,21 @@ The core difference between web and native is that web always starts blank while
 
 All of this might seem obvious, but this fundamental difference forces you to choose between three strategies: web-first, native-first, or native-only.
 
-**Web-first strategy**
+### Web-first strategy
 
-Web-first means that you build you app on the web and optimize it for the web with SSR for better SEO and performance - and then you port it to native. This is the strategy of the 𝕏 stack. On the web, you are obviously limited to the web APIs, and so are you (more or less) when porting to native (for example, you can still use push notifications on native, which is a native API).
+Web-first means that you build you app on the web and optimize it for the web with SSR for better SEO and performance - and then you port it to native. On the web, you are obviously limited to the web APIs, and so are you (more or less) when porting to native (for example, you can still use push notifications on native, which is a native API).
 
 The key thing to understand here is that your native apps will mostly consist of an empty shell that serves your SSR optimized web app. This might feel a bit wrong, but an SSR optimized app with proper UI transitions and prefetching mechanisms can result in far better UX: an app that feels like an app with almost **zero** loading times.
 
-**Native-first**
+> This is currently the strategy being used by the 𝕏 stack demo.
+
+### Native-first
 
 Native-first means that you build your app as if it were a native app on native and on the web, so that it can use the native APIs with equivalent fallbacks on the browser. For example, your app will use the native camera access on the android and ios apps, but will fallback to the web camera access on the web.
 
 This approach has two major drawbacks. **(1)** In order to make this happen, you need to deploy your app as a static or CSR app that will fetch the body of the app once the static shell is up and running, which is known to be slower and bad for SEO. **(2)** It requires writing complex code that bridges the web and native APIs and will either result in limited capabilities or in imcompatibilities that will force you to write different code for native and web.
 
-**Native-only**
+### Native-only
 
 Native-only means that you build your app for all platforms except for the web. This allows you to use the native APIs to their full capabilities and even extend them further. This requires building your app quite differently than mobile-first and forces you to give up on having a website, which can be okay if you don't expect much benefits from SEO.
 
