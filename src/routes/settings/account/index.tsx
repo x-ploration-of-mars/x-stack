@@ -10,12 +10,15 @@ import { QSeparator } from "~/integrations/react/ui/separator";
 
 export const useDeleteAccountAction = routeAction$(async (data, event) => {
   const session: Session | null = event.sharedMap.get("session");
-  if (!session) throw event.redirect(302, "/signin/");
 
   await db.transaction(async (tx) => {
-    await tx.delete(users).where(eq(users.id, session.user.id));
-    await tx.delete(accounts).where(eq(accounts.userId, session.user.id));
-    await tx.delete(sessions).where(eq(sessions.userId, session.user.id));
+    await tx.delete(users).where(eq(users.id, session?.user.id ?? ""));
+    await tx
+      .delete(accounts)
+      .where(eq(accounts.userId, session?.user.id ?? ""));
+    await tx
+      .delete(sessions)
+      .where(eq(sessions.userId, session?.user.id ?? ""));
   });
 
   throw event.redirect(302, "/signin/");

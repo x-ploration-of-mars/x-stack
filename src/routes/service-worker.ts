@@ -9,8 +9,10 @@
  */
 
 import { setupServiceWorker } from "@builder.io/qwik-city/service-worker";
+import { setupPwa } from "./sw";
 
 setupServiceWorker();
+setupPwa();
 
 addEventListener("install", () => self.skipWaiting());
 

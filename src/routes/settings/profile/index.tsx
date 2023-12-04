@@ -36,7 +36,6 @@ type UpdateProfileForm = valibotInput<typeof requestSchema>;
 export const useFormLoader = routeLoader$<InitialValues<UpdateProfileForm>>(
   async (event) => {
     const session: Session | null = event.sharedMap.get("session");
-    if (!session) throw event.redirect(302, "/signin/");
 
     const [user] = await db
       .select({
@@ -51,7 +50,7 @@ export const useFormLoader = routeLoader$<InitialValues<UpdateProfileForm>>(
         twitter: users.twitter,
       })
       .from(users)
-      .where(eq(users.id, session.user.id));
+      .where(eq(users.id, session?.user.id ?? ""));
 
     return user;
   }
@@ -61,12 +60,11 @@ export const useFormAction = formAction$<UpdateProfileForm>(
   async (values, event) => {
     const parsedValues = parse(requestSchema, values); // Necessary because valiForm doesn't yet apply transformations
     const session: Session | null = event.sharedMap.get("session");
-    if (!session) throw event.redirect(302, "/signin/");
 
     await db
       .update(users)
       .set(parsedValues)
-      .where(eq(users.id, session.user.id));
+      .where(eq(users.id, session?.user.id ?? ""));
   },
   valiForm$(requestSchema)
 );

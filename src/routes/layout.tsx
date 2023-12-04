@@ -16,21 +16,6 @@ import {
 import { QProgress } from "~/integrations/react/ui/progress";
 import { useAuthSession } from "./plugin@auth";
 
-export const onRequest: RequestHandler = async ({
-  sharedMap,
-  url,
-  redirect,
-}) => {
-  const session: Session | null = sharedMap.get("session");
-  if (
-    !session &&
-    url.pathname !== "/signin/" &&
-    !url.pathname.startsWith("/pub/")
-  ) {
-    throw redirect(302, `/signin/`);
-  }
-};
-
 export const useServerTimeLoader = routeLoader$(async () => {
   return {
     date: new Date().toISOString(),
