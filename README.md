@@ -277,7 +277,7 @@ This approach has two major drawbacks. **(1)** In order to make this happen, you
 
 Native-only means that you build your app for all platforms except for the web. This allows you to use the native APIs to their full capabilities and even extend them further. This requires building your app quite differently than mobile-first and forces you to give up on having a website, which can be okay if you don't expect much benefits from SEO.
 
-> ⚠️ The 𝕏 stack could potentially be used for native-only if future solutions support SSR out of the box. This would require testing.
+> The 𝕏 stack could potentially be used for native-only if future solutions support SSR out of the box. This would require testing.
 
 <hr>
 
@@ -286,7 +286,7 @@ Native-only means that you build your app for all platforms except for the web. 
   - Better performance than webviews on Android thanks to [TWA](https://developer.chrome.com/docs/android/trusted-web-activity/)
   - Incredibly easy to build with the web manifest
   - Needs a bit more testing on ios as a webview.
-    > ⚠️ Push notifications should work with PWA on ios now. You can see PWA as a web app deployable on ios, android and desktop, hence web-first.
+    > Push notifications should work with PWA on ios now. You can see PWA as a web app deployable on ios, android and desktop, hence web-first.
 - 2️⃣ Capacitor — Native-first or Native-only.
   - Slow on Android because [Android webviews are slow](https://github.com/ionic-team/capacitor/discussions/3899)
   - Doesn't work with SSR (server.url isn't intended for use in production and it is impossible to set-up authentication tools that use cookies with it)
