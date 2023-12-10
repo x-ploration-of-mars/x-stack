@@ -39,6 +39,6 @@ module.exports = {
     "no-case-declarations": "off",
     "prefer-spread": "off",
     "qwik/no-react-props": "off",
-    "qwik/no-use-visible-task": "warn",
+    "qwik/no-use-visible-task": "off",
   },
 };

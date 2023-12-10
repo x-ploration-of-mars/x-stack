@@ -1,7 +1,7 @@
 import { component$, type QwikIntrinsicElements } from "@builder.io/qwik";
 import { cn } from "~/lib/utils";
 
-type TextareaProps = Omit<QwikIntrinsicElements["textarea"], "children"> & {
+type TextareaProps = QwikIntrinsicElements["textarea"] & {
   label?: string;
   error: string;
 };

@@ -1,7 +1,7 @@
 import { component$, type QwikIntrinsicElements } from "@builder.io/qwik";
 import { cn } from "~/lib/utils";
 
-type CheckboxProps = Omit<QwikIntrinsicElements["input"], "children">;
+type CheckboxProps = QwikIntrinsicElements["input"];
 
 export default component$<CheckboxProps>(({ ...props }) => {
   const { name } = props;
