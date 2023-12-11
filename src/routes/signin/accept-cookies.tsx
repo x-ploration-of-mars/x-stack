@@ -1,4 +1,9 @@
-import { component$, useVisibleTask$, useSignal } from "@builder.io/qwik";
+import {
+  component$,
+  useVisibleTask$,
+  useSignal,
+  useTask$,
+} from "@builder.io/qwik";
 import { Link } from "@builder.io/qwik-city";
 import Button from "~/components/ui/button";
 import {
@@ -9,6 +14,7 @@ import {
   CardHeader,
   CardTitle,
 } from "~/components/ui/card";
+import { isBrowser } from "@builder.io/qwik/build";
 
 export default component$(() => {
   const dialogRef = useSignal<HTMLDialogElement>();
@@ -17,14 +23,16 @@ export default component$(() => {
       dialogRef.value?.showModal();
   });
 
-  useVisibleTask$(() => {
-    const handler = (event: KeyboardEvent) => {
-      if (event.key === "Escape") {
-        event.preventDefault();
-      }
-    };
-    dialogRef.value!.addEventListener("keydown", handler);
-    return () => dialogRef.value!.removeEventListener("keydown", handler);
+  useTask$(() => {
+    if (isBrowser) {
+      const handler = (event: KeyboardEvent) => {
+        if (event.key === "Escape") {
+          event.preventDefault();
+        }
+      };
+      dialogRef.value!.addEventListener("keydown", handler);
+      return () => dialogRef.value!.removeEventListener("keydown", handler);
+    }
   });
   return (
     <div>
