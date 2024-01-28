@@ -46,13 +46,13 @@ export default component$(() => {
 
           <div class="mt-4">
             {deleteSubmitting.value ? (
-              <Button variant={"destructive"} class="w-32">
+              <Button variant={"destructive"} class="w-36">
                 <LuLoader2 class="w-5 h-5 animate-spin" />
               </Button>
             ) : (
               <Button
                 variant={"destructive"}
-                class="w-32"
+                class="w-36"
                 onClick$={async () => {
                   deleteSubmitting.value = true;
                   await deleteAccountAction.submit();

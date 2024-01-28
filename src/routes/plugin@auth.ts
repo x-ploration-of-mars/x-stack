@@ -98,7 +98,9 @@ export const { onRequest, useAuthSession, useAuthSignin, useAuthSignout } =
         return true;
       },
       session({ session, user }: { session: Session; user: User }) {
-        session.user.id = user.id;
+        if (user.id) {
+          session.user.id = user.id;
+        }
         return session;
       },
     },
