@@ -30,7 +30,7 @@ type NewProfile = {
 declare module "@auth/core/types" {
   interface Session extends DefaultSession {
     user: DefaultSession["user"] & {
-      id: string;
+      id: string | undefined;
       // role: string;
       // ...other properties
     };
@@ -59,14 +59,15 @@ export const { onRequest, useAuthSession, useAuthSignin, useAuthSignout } =
         account,
         profile,
       }: {
-        user: User | AdapterUser | undefined;
+        user: User;
         account: Account;
         profile: Profile;
       }) {
-        /**
-         * Section to update db user with discord profile when profile has changed on discord
-         */
-        if (user && account.provider === "discord") {
+        // update db user with discord profile when profile has changed on discord
+        if (
+          (user as User | AdapterUser | undefined) &&
+          account.provider === "discord"
+        ) {
           const {
             email: profileEmail = "",
             image_url: profileImage = "",
@@ -98,9 +99,7 @@ export const { onRequest, useAuthSession, useAuthSignin, useAuthSignout } =
         return true;
       },
       session({ session, user }: { session: Session; user: User }) {
-        if (user.id) {
-          session.user.id = user.id;
-        }
+        session.user.id = user.id;
         return session;
       },
     },
