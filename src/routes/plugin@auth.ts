@@ -30,7 +30,7 @@ type NewProfile = {
 declare module "@auth/core/types" {
   interface Session extends DefaultSession {
     user: DefaultSession["user"] & {
-      id: string | undefined;
+      id: string;
       // role: string;
       // ...other properties
     };
@@ -44,6 +44,7 @@ declare module "@auth/core/types" {
 
 export const { onRequest, useAuthSession, useAuthSignin, useAuthSignout } =
   serverAuth$(({ env }: { env: EnvGetter }) => ({
+    debug: true,
     secret: env.get("AUTH_SECRET"),
     trustHost: true,
     providers: [
@@ -99,7 +100,7 @@ export const { onRequest, useAuthSession, useAuthSignin, useAuthSignout } =
         return true;
       },
       session({ session, user }: { session: Session; user: User }) {
-        session.user.id = user.id;
+        session.user.id = user.id || "";
         return session;
       },
     },
